@@ -1,0 +1,24 @@
+## Interface: 70200
+## Title: Best In Slot
+## Notes: Keep track of your, your raid member, and your guilds Best in Slot list!
+## Author: Beleria @ Argent Dawn-EU
+## Version: @project-version@
+## SavedVariables: BestInSlotDB
+
+Libs\Libs.xml
+Locales\Locales.xml
+Include.xml
+Frames\Include.xml
+Modules\Include.xml
+
+#@do-not-package@
+Utils/ExportRaid.lua
+Utils/ItemInfo.lua
+Modules\LegionModule\LegionLegendaries.lua
+Modules\LegionModule\EmeraldNightmare.lua
+Modules\LegionModule\Nighthold.lua
+Modules\LegionModule\LegionArtifact.lua
+Modules\LegionModule\TrialOfValor.lua
+Modules\LegionModule\TombOfSargeras.lua
+Modules\LegionDungeon\BestInSlot_LegionDungeons.lua
+#@end-do-not-package@
