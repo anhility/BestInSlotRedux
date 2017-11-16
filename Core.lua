@@ -21,7 +21,7 @@ BestInSlot.Author = ("%s%s @ %s"):format("|c"..RAID_CLASS_COLORS.DEMONHUNTER.col
 --[===[@non-debug@ 
 BestInSlot.version = @project-revision@ 
 --@end-non-debug@]===]
-BestInSlot.AlphaVersion = not (GetAddOnMetadata("BestInSlot", "Version"):find("Release") and true or false)
+BestInSlot.AlphaVersion = not (GetAddOnMetadata("BestInSlotRedux", "Version"):find("Release") and true or false)
 --@do-not-package@
 BestInSlot.version = 353
 BestInSlot.options.DEBUG = true
