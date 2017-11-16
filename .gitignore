@@ -1,2 +1,6 @@
+# Libraries
 Libs/*
 !Libs/Libs.xml
+
+# Project files
+.project
