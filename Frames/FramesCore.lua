@@ -440,7 +440,7 @@ local function GetFrame()
   _G[frameName] = frame.frame
   tinsert(UISpecialFrames, frameName)
   UISpecialFramesId = #UISpecialFrames
-  frame:SetTitle("Best In Slot "..GetAddOnMetadata("BestInSlot", "Version"))
+  frame:SetTitle("Best In Slot Redux "..GetAddOnMetadata("BestInSlotRedux", "Version"))
   frame:SetStatusText((L["Developed by %s"]):format(BestInSlot.Author))
   local FrameBackdrop = {
     bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background-Dark",
@@ -569,7 +569,7 @@ function BestInSlot:HideFrame()
     frame = nil
     container = nil
     menuContainer = nil
-    PlaySound("igCharacterInfoClose")
+    PlaySound(SOUNDKIT.IG_CHARACTER_INFO_CLOSE)
     if BestInSlotTutorialFrame:IsVisible() then
       BestInSlotTutorialFrame:Hide()
     end
@@ -897,7 +897,7 @@ end
 function BestInSlot:ShowFrame()
   if not frame then
     GetFrame()
-    PlaySound("igCharacterInfoOpen")
+    PlaySound(SOUNDKIT.IG_CHARACTER_INFO_OPEN)
   end
 end
 
