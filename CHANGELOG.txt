@@ -1,4 +1,22 @@
-#BestInSlot Changelog
+# BestInSlotRedux Changelog
+
+## TODO
+* Add new Argus dungeon loot
+* Add new Argus "rift boss" loot
+* Add Antorus loot
+* Code documentation
+
+## Devel 7.3.01
+## Major additions
+
+## Bug fixes
+* TOC updated for 7.3
+
+## Other
+* Forked and renamed with new developer
+
+#Old BestInSlot Changelog
+
 ##Release 7.2.02
 ## Major additions
 * Added missing items in Tomb of Sargeras
