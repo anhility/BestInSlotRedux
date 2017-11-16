@@ -1,8 +1,8 @@
-## Interface: 70200
-## Title: Best In Slot [|cffff975bLegion Dungeons|r]
+## Interface: 70300
+## Title: Best In Slot Redux [|cffff975bLegion Dungeons|r] -deval
 ## Notes: Legion Dungeons Module for BestInSlot
 ## Author: Beleria @ Argent Dawn-EU
 ## Version: @project-version@
-## Dependencies: BestInSlot
+## Dependencies: BestInSlotRedux
 
 BestInSlot_LegionDungeons.lua

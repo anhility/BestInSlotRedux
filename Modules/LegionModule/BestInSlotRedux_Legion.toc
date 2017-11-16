@@ -1,9 +1,9 @@
-## Interface: 70200
-## Title: Best In Slot [|cffff975bLegion|r]
+## Interface: 70300
+## Title: Best In Slot Redux [|cffff975bLegion|r] -deval
 ## Notes: Warlords of Draenor Module for BestInSlot
 ## Author: Beleria @ Argent Dawn-EU
 ## Version: @project-version@
-## Dependencies: BestInSlot
+## Dependencies: BestInSlotRedux
 
 LegionLegendaries.lua
 EmeraldNightmare.lua

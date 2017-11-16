@@ -1,7 +1,7 @@
-## Interface: 70200
-## Title: Best In Slot
-## Notes: Keep track of your, your raid member, and your guilds Best in Slot list!
-## Author: Beleria @ Argent Dawn-EU
+## Interface: 70300
+## Title: Best In Slot Redux -deval
+## Notes: Keep track of your, your raid members and your guilds Best in Slot list!
+## Author: Beleria @ Argent Dawn-EU & Anhility @ Ravencrest-EU
 ## Version: @project-version@
 ## SavedVariables: BestInSlotDB
 
