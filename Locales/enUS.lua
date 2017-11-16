@@ -56,7 +56,6 @@ L["You can shift-click icons or items to link them in the chat."] = true
 L["After selecting an item, hovering over a different item will popup a compare window."] = true
 
 -- Manager Frame
-
 L["%s manager"] = true
 L["Use left-click to (de)select the left one, and right-click to select the right one"] = true
 L["Are you sure you want to import the %s difficulty? This will override your old BiS list!"] = true
