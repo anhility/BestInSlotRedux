@@ -11,3 +11,4 @@ Nighthold.lua
 TrialOfValor.lua
 LegionArtifact.lua
 TombOfSargeras.lua
+AntorusTheBurningThrone.lua
