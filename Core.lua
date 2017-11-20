@@ -249,7 +249,7 @@ end
 -- @param #... The next parameters are considered the difficulties you would like to add, can be "Normal", "Heroic", and "Mythic".
 function BestInSlot:RegisterRaidTier(expansion, raidTier, description, ...)
   local difficulties = {...}
-  if data.raidTiers[raidTier] then error("This raid tier is allready registered!") end
+  if data.raidTiers[raidTier] then error("This raid tier is already registered!") end
   if not data.expansions[expansion] then error("The expansion has not been registered yet!") end
   if not description or type(description) ~= "string" then error("The raid tier needs to provide a description!") end
   if not difficulties or #difficulties == 0  then error("The raid tier "..description.." needs to provide difficulties!") end
