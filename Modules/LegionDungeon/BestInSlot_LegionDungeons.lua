@@ -2,9 +2,9 @@ local Dungeons = LibStub("AceAddon-3.0"):GetAddon("BestInSlot"):NewModule("Legio
 local dungeonTierId = 70003
 local bonusIds = {
   bonusids = {
-    [1] = {1826, 3407},
-    [2] = {1726, 3407},
-    [3] = {1727, 3407}
+    [1] = {1826, 1497},
+    [2] = {1726, 1517},
+    [3] = {1727, 1537}
   }
 }
 
@@ -1285,7 +1285,7 @@ function Dungeons:ReturnToKarazhan()
   self:RegisterBossLoot(RtK, lootTable, bossName)
 end
 
-function Dungeons:CathedralofEternalNight()
+function Dungeons:CathedralOfEternalNight()
   local CoEN = "CoEN"
   local name = GetMapNameByID(1146)
   self:RegisterRaidInstance(dungeonTierId, CoEN, name, bonusIds)
@@ -1374,6 +1374,100 @@ function Dungeons:CathedralofEternalNight()
     144487, -- Treads of Creeping Shadows
   }
   self:RegisterBossLoot(CoEN, lootTable, bossName)
+end
+
+function Dungeons:SeatOfTheTriumvirate()
+  local SotT = "SotT"
+  local name = GetMapNameByID(1178)
+  self:RegisterRaidInstance(dungeonTierId, SotT, name, bonusIds)
+  --------------------------------------------------
+  ----- Seat of the Triumvirate
+  --------------------------------------------------
+  
+
+  -----------------------------------
+  ----- Zuraal the Ascended
+  -----------------------------------
+  local bossName = EJ_GetEncounterInfo(1979)
+  local lootTable = {
+    151291, --Frozen Void Shard
+    151293, --Orb of the Abandoned Magi
+    151336, --Voidlashed Hood
+    151331, --Pauldrons of the Broken
+    151329, --Breastplate of the Dark Touch
+    151315, --Bracers of Dark Binding
+    151300, --Handwraps of the Ascended
+    151326, --Waistguard of Bound Energy
+    151304, --Subjugator's Leggings
+    151320, --Void-Coated Stompers
+    151308, --Mac'Aree Seal of Nobility
+    151312, --Ampoule of Pure Void
+  }
+  self:RegisterBossLoot(SotT, lootTable, bossName)
+  
+
+  -----------------------------------
+  ----- Saprish
+  -----------------------------------
+  local bossName = EJ_GetEncounterInfo(1980)
+  local lootTable = {
+    151294, --Coalesced Void
+    151295, --Darkstorm Arrowhead
+    151337, --Shadow-Weaver's Crown
+    151323, --Pauldrons of the Void Hunter
+    151303, --Voidbender Robe
+    151321, --Darkfang Scale Wristguards
+    151318, --Gloves of the Dark Shroud
+    151327, --Girdle of the Shadowguard
+    151314, --Shifting Stalker Hide Pants
+    151330, --Trap Jammers
+    151307, --Void Stalker's Contract
+  }
+  self:RegisterBossLoot(SotT, lootTable, bossName)
+  
+
+  -----------------------------------
+  ----- Viceroy Nezhar
+  -----------------------------------
+  local bossName = EJ_GetEncounterInfo(1981)
+  local lootTable = {
+    151297, --Carved Argunite Idol
+    151290, --Darktide Fervor
+    151288, --Void-Resistant Seedpod
+    151333, --Crown of the Dark Envoy
+    151309, --Necklace of the Twisting Void
+    151299, --Viceroy's Umbral Mantle
+    151325, --Void-Linked Robe
+    151305, --Entropic Wristwraps
+    151332, --Voidclaw Gauntlets
+    151316, --Cinch of the Umbral Lasher
+    151338, --Leggings of Shifting Darkness
+    151317, --Footpads of Seeping Dread
+    151310, --Reality Breacher
+  }
+  self:RegisterBossLoot(SotT, lootTable, bossName)
+  
+
+  -----------------------------------
+  ----- L'ura
+  -----------------------------------
+  local bossName = EJ_GetEncounterInfo(1982)
+  local lootTable = {
+    151289, --Badge of the Fallen Vindicator
+    151296, --Blood of the Vanquished
+    151292, --Sanctified Eredar Lock
+    151324, --Helm of Shadowy Descent
+    151319, --Twilight's Edge Spaulders
+    151313, --Vest of the Void's Embrace
+    151328, --Vambraces of Lost Hope
+    151322, --Void-Touched Grips
+    151302, --Cord of Unraveling Reality
+    151339, --Legplates of Ultimate Sacrifice
+    151301, --Slippers of Growing Despair
+    151311, --Band of the Triumvirate
+    151340, --Echo of L'ura
+  }
+  self:RegisterBossLoot(SotT, lootTable, bossName)
 end
 
 function Dungeons:InitializeZoneDetect(ZoneDetect)
@@ -1467,13 +1561,19 @@ function Dungeons:InitializeZoneDetect(ZoneDetect)
   ZoneDetect:RegisterNPCID(114790, RtK, 10) -- Vizaduum
   ZoneDetect:RegisterNPCID(114895, RtK, 11) -- Nightbane
   
-  
   local CoEN = "CoEN"
   ZoneDetect:RegisterMapID(1146, CoEN)
   ZoneDetect:RegisterNPCID(117193, CoEN, 1) -- Agronox
   ZoneDetect:RegisterNPCID(117194, CoEN, 2) -- Trashbite
   ZoneDetect:RegisterNPCID(119542, CoEN, 3) -- Dematrax
   ZoneDetect:RegisterNPCID(120793, CoEN, 4) -- Mephistroth
+  
+  local SotT = "SotT"
+  ZoneDetect:RegisterMapID(1178, SotT)
+  ZoneDetect:RegisterNPCID(122313, SotT, 1) -- Zuraal the Ascended
+  ZoneDetect:RegisterNPCID(122316, SotT, 2) -- Saprish
+  ZoneDetect:RegisterNPCID(124309, SotT, 3) -- Viceroy Nezhar
+  ZoneDetect:RegisterNPCID(122314, SotT, 4) -- L'ura
 end
 
 function Dungeons:OnEnable()
@@ -1491,5 +1591,6 @@ function Dungeons:OnEnable()
   self:Arcway()
   self:VaultOfTheWardens()
   self:ReturnToKarazhan()
-  self:CathedralofEternalNight()
+  self:CathedralOfEternalNight()
+  self:SeatOfTheTriumvirate()
 end
