@@ -119,7 +119,7 @@ function Credits:Draw(container)
   scroll:AddChild(self:CreateTranslatorLabel(ESES, "Luskaner"))
   scroll:AddChild(self:CreateTranslatorLabel(ZHCN, "nrg3331"))
   -- Translation help
-  scroll:AddChild(self:CreateUneditableTextbox("to be added", "Want to help translate BestInSlotRedux?"))
+  scroll:AddChild(self:CreateUneditableTextbox("https://wow.curseforge.com/projects/bestinslotredux/localization", "Want to help translate BestInSlotRedux?"))
   
   local header = AceGUI:Create("Heading")
   header:SetText("Testers")
