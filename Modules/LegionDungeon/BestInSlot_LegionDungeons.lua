@@ -1,4 +1,4 @@
-local Dungeons = LibStub("AceAddon-3.0"):GetAddon("BestInSlot"):NewModule("LegionDungeons")
+local Dungeons = LibStub("AceAddon-3.0"):GetAddon("BestInSlotRedux"):NewModule("LegionDungeons")
 local dungeonTierId = 70003
 local bonusIds = {
   bonusids = {

@@ -1,7 +1,7 @@
 ## Interface: 70300
-## Title: Best In Slot Redux [|cffff975bLegion|r] -deval
-## Notes: Warlords of Draenor Module for BestInSlot
-## Author: Beleria @ Argent Dawn-EU
+## Title: Best In Slot Redux [|cffff975bLegion|r]
+## Notes: Legion Raid Module for BestInSlotRedux
+## Author: Beleria @ Argent Dawn-EU, Anhility @ Ravencrest-EU
 ## Version: @project-version@
 ## Dependencies: BestInSlotRedux
 
