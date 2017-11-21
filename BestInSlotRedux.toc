@@ -20,5 +20,5 @@ Modules\LegionModule\Nighthold.lua
 Modules\LegionModule\LegionArtifact.lua
 Modules\LegionModule\TrialOfValor.lua
 Modules\LegionModule\TombOfSargeras.lua
-Modules\LegionDungeon\BestInSlot_LegionDungeons.lua
+Modules\LegionDungeon\BestInSlotRedux_LegionDungeons.lua
 #@end-do-not-package@

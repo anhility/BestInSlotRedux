@@ -27,8 +27,8 @@ externals:
 		url: https://repos.wowace.com/wow/libdbicon-1-0/trunk
 
 move-folders:
-	BestInSlot/Modules/LegionModule: BestInSlot_Legion
-	BestInSlot/Modules/LegionDungeon: BestInSlot_LegionDungeons
+	BestInSlot/Modules/LegionModule: BestInSlotRedux_Legion
+	BestInSlot/Modules/LegionDungeon: BestInSlotRedux_LegionDungeons
 
 license-output: LICENSE.html
 
