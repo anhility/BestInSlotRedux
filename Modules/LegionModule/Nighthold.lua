@@ -1,7 +1,7 @@
-local Nighthold = LibStub("AceAddon-3.0"):GetAddon("BestInSlot"):NewModule("NightHold")
+local Nighthold = LibStub("AceAddon-3.0"):GetAddon("BestInSlotRedux"):NewModule("NightHold")
 local NH = "NH"
 function Nighthold:OnEnable()
-  local L = LibStub("AceLocale-3.0"):GetLocale("BestInSlot")
+  local L = LibStub("AceLocale-3.0"):GetLocale("BestInSlotRedux")
   
   local nightHoldName = GetMapNameByID(1088)
   self:RegisterExpansion("Legion", EXPANSION_NAME6)

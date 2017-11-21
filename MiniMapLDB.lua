@@ -1,11 +1,11 @@
 local BestInSlot, L = unpack(select(2,...))
 local isRegistered = false
-local BiSLDB = LibStub("LibDataBroker-1.1"):NewDataObject("BestInSlot!", {
+local BiSLDB = LibStub("LibDataBroker-1.1"):NewDataObject("BestInSlotRedux", {
   type = "launcher",
-  text = "Best In Slot",
+  text = "Best In Slot Redux",
   icon = "Interface\\Icons\\Achievement_ChallengeMode_Gold",
   OnTooltipShow = function(tooltip)
-    tooltip:AddLine("Best In Slot")
+    tooltip:AddLine("Best In Slot Redux")
     tooltip:AddLine(("%s%s: %s%s|r"):format(BestInSlot.colorHighlight, L["Click"], BestInSlot.colorNormal, L["Show the GUI"]))
   end
 })
@@ -16,7 +16,7 @@ function BiSLDB:OnClick(button, down)
 end
 
 function BestInSlot:RegisterMinimapIcon()
-  minimapIcon:Register("BestInSlot", BiSLDB, BestInSlot.db.profile.minimap)
+  minimapIcon:Register("BestInSlotRedux", BiSLDB, BestInSlot.db.profile.minimap)
   isRegistered = true
 end
 
@@ -25,10 +25,10 @@ function BestInSlot:MiniMapButtonVisible(bool)
     if not isRegistered then
       self:RegisterMinimapIcon()
     end
-    minimapIcon:Show("BestInSlot")
+    minimapIcon:Show("BestInSlotRedux")
   else
     if not isRegistered then return end
-    minimapIcon:Hide("BestInSlot")
+    minimapIcon:Hide("BestInSlotRedux")
   end
 end
 

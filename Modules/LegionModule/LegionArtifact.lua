@@ -1,4 +1,4 @@
-local BestInSlot = LibStub("AceAddon-3.0"):GetAddon("BestInSlot")
+local BestInSlot = LibStub("AceAddon-3.0"):GetAddon("BestInSlotRedux")
 local GetItemInfo, tinsert =
       GetItemInfo, table.insert
 local Artifact = BestInSlot:NewModule("Artifacts")

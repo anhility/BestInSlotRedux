@@ -1,11 +1,12 @@
-local TombOfSargeras = LibStub("AceAddon-3.0"):GetAddon("BestInSlot"):NewModule("TombOfSargeras")
+local TombOfSargeras = LibStub("AceAddon-3.0"):GetAddon("BestInSlotRedux"):NewModule("TombOfSargeras")
 local ToS = "ToS"
 function TombOfSargeras:OnEnable()
+  --local L = LibStub("AceLocale-3.0"):GetLocale("BestInSlotRedux")
 
-  local name = GetMapNameByID(1147)
+  local tombOfSargerasName = GetMapNameByID(1147)
   self:RegisterExpansion("Legion", EXPANSION_NAME6)
-  self:RegisterRaidTier("Legion", 70200, name, PLAYER_DIFFICULTY1, PLAYER_DIFFICULTY2, PLAYER_DIFFICULTY6)
-  self:RegisterRaidInstance(70200, ToS, name,  {
+  self:RegisterRaidTier("Legion", 70200, tombOfSargerasName, PLAYER_DIFFICULTY1, PLAYER_DIFFICULTY2, PLAYER_DIFFICULTY6)
+  self:RegisterRaidInstance(70200, ToS, tombOfSargerasName,  {
     bonusids = {
       [1] = {3524},
       [2] = {3524},
@@ -307,12 +308,16 @@ end
 function TombOfSargeras:InitializeZoneDetect(ZoneDetect)
   ZoneDetect:RegisterMapID(1147, ToS)
   ZoneDetect:RegisterNPCID(115844, ToS, 1) --Goroth
+  
   ZoneDetect:RegisterNPCID(116691, ToS, 2) --Demonic Inquisition (Belac)
   ZoneDetect:RegisterNPCID(116689, ToS, 2) --Demonic Inquisition (Atrigan)
+  
   ZoneDetect:RegisterNPCID(116407, ToS, 3) --Harjatan
+  
   ZoneDetect:RegisterNPCID(118523, ToS, 4) --Sisters of the Moon (Huntress Kasparian)
   ZoneDetect:RegisterNPCID(118374, ToS, 4) --Sisters of the Moon (Captain Yathae Moonstrike)
   ZoneDetect:RegisterNPCID(118518, ToS, 4) --Sisters of the Moon (Priestess Lunaspyre)
+  
   ZoneDetect:RegisterNPCID(115767, ToS, 5) --Mistress Sassz'ine
   ZoneDetect:RegisterNPCID(118460, ToS, 6) --The Desolate Host (Engine of Souls)
   ZoneDetect:RegisterNPCID(118289, ToS, 7) --Maiden of Vigilance

@@ -1,4 +1,4 @@
-local EmeraldNightmare = LibStub("AceAddon-3.0"):GetAddon("BestInSlot"):NewModule("EmeraldNightmare")
+local EmeraldNightmare = LibStub("AceAddon-3.0"):GetAddon("BestInSlotRedux"):NewModule("EmeraldNightmare")
 local EN = "EN"
 function EmeraldNightmare:OnEnable()
   local L = LibStub("AceLocale-3.0"):GetLocale("BestInSlot")

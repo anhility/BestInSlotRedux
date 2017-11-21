@@ -1,7 +1,7 @@
-local TrialOfValor = LibStub("AceAddon-3.0"):GetAddon("BestInSlot"):NewModule("Trial of Valor")
+local TrialOfValor = LibStub("AceAddon-3.0"):GetAddon("BestInSlotRedux"):NewModule("Trial of Valor")
 local ToV = "ToV"
 function TrialOfValor:OnEnable()
-    local L = LibStub("AceLocale-3.0"):GetLocale("BestInSlot")
+    local L = LibStub("AceLocale-3.0"):GetLocale("BestInSlotRedux")
   
   local trialOfValorName = GetMapNameByID(1114)
   self:RegisterExpansion("Legion", EXPANSION_NAME6)

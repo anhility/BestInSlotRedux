@@ -86,7 +86,7 @@ end
 --- Function for the /bis versioncheck command
 local function versionCheck(data, channel, source)
   if not versionNumber then
-    versionNumber = GetAddOnMetadata("BestInSlot", "Version")
+    versionNumber = GetAddOnMetadata("BestInSlotRedux", "Version")
     if versionNumber:find("@project") and versionNumber:find("version@") then
       versionNumber = "Development Version"
     end
