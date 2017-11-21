@@ -4,7 +4,11 @@
 * Add new Argus "rift boss" loot
 * Code documentation
 
-## Beta 7.3.01
+## Release 7.3.02-beta.01
+## Bug fixes
+* Tinkering with .pgkmeta file to try make the Curse client package the files correctly
+
+## Release 7.3.01
 ## Major additions
 * Seat of the Triumvirate loot added
 * Antorus, the Burning Throne loot added
