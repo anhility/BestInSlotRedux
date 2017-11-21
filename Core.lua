@@ -6,9 +6,9 @@ local GetNumSpecializations, GetSpecializationInfo, GetItemInfo, IsEquippedItem,
     = GetNumSpecializations, GetSpecializationInfo, GetItemInfo, IsEquippedItem, GetContainerNumSlots, GetContainerItemID, UnitClass, GetInventorySlotInfo, GetNumGuildMembers, ConvertRGBtoColorString, GetInventoryItemLink, GetContainerItemInfo, GetAddOnMetadata, GetItemSpecInfo, GetItemUniqueness, IsInGuild, GetGuildInfo, GetSpecialization, GetSpecializationInfoByID, IsInRaid, UnitName, IsInGroup, GetGuildRosterInfo, UnitFullName, UnitRace, UnitSex
 
 local E = select(2, ...)
-local BestInSlot = LibStub("AceAddon-3.0"):NewAddon("BestInSlot", "AceComm-3.0", "AceHook-3.0", "AceSerializer-3.0", "AceTimer-3.0")
+local BestInSlot = LibStub("AceAddon-3.0"):NewAddon("BestInSlotRedux", "AceComm-3.0", "AceHook-3.0", "AceSerializer-3.0", "AceTimer-3.0")
 local AceGUI = LibStub("AceGUI-3.0")
-local L = LibStub("AceLocale-3.0"):GetLocale("BestInSlot")
+local L = LibStub("AceLocale-3.0"):GetLocale("BestInSlotRedux")
 local AceEvent = LibStub("AceEvent-3.0")
 E[1] = BestInSlot
 E[2] = L
@@ -17,13 +17,15 @@ BestInSlot.unsafeIDs = {}
 BestInSlot.options = {}
 BestInSlot.defaultModuleState = false
 BestInSlot.options.DEBUG = false
-BestInSlot.Author = ("%s%s @ %s"):format("|c"..RAID_CLASS_COLORS.DEMONHUNTER.colorStr, "Beleria".."|r",ConvertRGBtoColorString(PLAYER_FACTION_COLORS[1]).."Argent Dawn-EU|r")
+-- Authors
+BestInSlot.Author1 = ("%s%s @ %s"):format("|c"..RAID_CLASS_COLORS.DEMONHUNTER.colorStr, "Beleria".."|r",ConvertRGBtoColorString(PLAYER_FACTION_COLORS[1]).."Argent Dawn-EU|r")
+BestInSlot.Author2 = ("%s%s @ %s"):format("|c"..RAID_CLASS_COLORS.PALADIN.colorStr, "Anhility".."|r",ConvertRGBtoColorString(PLAYER_FACTION_COLORS[1]).."Ravencrest-EU|r")
 --[===[@non-debug@ 
-BestInSlot.version = @project-revision@ 
+--BestInSlot.version = @project-revision@ 
 --@end-non-debug@]===]
 BestInSlot.AlphaVersion = not (GetAddOnMetadata("BestInSlotRedux", "Version"):find("Release") and true or false)
 --@do-not-package@
-BestInSlot.version = 353
+BestInSlot.version = 354
 BestInSlot.options.DEBUG = true
 --@end-do-not-package@
 local slashCommands = {}
@@ -31,7 +33,7 @@ local defaults = {
   char = {
     ['*'] = { --raidTier
       ['*'] = { --raidDifficulty
-         ['*'] = { --listType (spec as nubmer, customList as string)
+         ['*'] = { --listType (spec as number, customList as string)
            ['*'] = nil
          }
        },
@@ -481,7 +483,7 @@ end
 
 --- Called on initializing the add-on
 function BestInSlot:OnInitialize()
-  self.db = LibStub("AceDB-3.0"):New("BestInSlotDB", defaults)
+  self.db = LibStub("AceDB-3.0"):New("BestInSlotReduxDB", defaults)
   SLASH_BESTINSLOT1, SLASH_BESTINSLOT2 = '/bestinslot', '/bis'
   self:RegisterComm(self.MSGPREFIX)
   self.options.instantAnimation = self.db.global.options.instantAnimation
@@ -736,8 +738,8 @@ BestInSlot:RegisterSlashCmd("help", (L["%s - this dialog"]):format("/bis help"),
       tremove(orderedList, i + 1)
     end
   end
-  DEFAULT_CHAT_FRAME:AddMessage(printString)(BestInSlot.colorHighlight..("-"):rep(5)..BestInSlot.colorNormal.."BestInSlot "..L["commands"]..BestInSlot.colorHighlight..("-"):rep(5).."|r")
-  BestInSlot:Print(("%s: %s (%s)"):format(GAME_VERSION_LABEL, GetAddOnMetadata("BestInSlot", "Version"), BestInSlot.version))
+  DEFAULT_CHAT_FRAME:AddMessage(printString)(BestInSlot.colorHighlight..("-"):rep(5)..BestInSlot.colorNormal.."BestInSlotRedux "..L["commands"]..BestInSlot.colorHighlight..("-"):rep(5).."|r")
+  BestInSlot:Print(("%s: %s (%s)"):format(GAME_VERSION_LABEL, GetAddOnMetadata("BestInSlotRedux", "Version"), BestInSlot.version))
   for i=1,#orderedList do
     BestInSlot:Print(slashCommands[orderedList[i]].descr, true)
   end
