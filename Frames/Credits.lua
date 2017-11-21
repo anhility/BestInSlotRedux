@@ -6,7 +6,7 @@ local ConvertRGBtoColorString
 =     ConvertRGBtoColorString 
 local BestInSlot, L, AceGUI = unpack(select(2, ...))
 local AceGUI = LibStub("AceGUI-3.0")
-local L = LibStub("AceLocale-3.0"):GetLocale("BestInSlot")
+local L = LibStub("AceLocale-3.0"):GetLocale("BestInSlotRedux")
 local Credits = BestInSlot:GetMenuPrototype(L["Credits"])
 local hordeColor, allianceColor
 Credits.Width = 600
@@ -51,11 +51,12 @@ function Credits:Draw(container)
   scroll:SetFullWidth(true)
   scroll:SetFullHeight(true)
   container:AddChild(scroll)
+  
   local header = AceGUI:Create("Heading")
   header:SetText("Foreword")
   header:SetFullWidth(true)
   scroll:AddChild(header)
-  
+  -- foreword
   local label = AceGUI:Create("Label")
   label:SetText(
     "I have developped this AddOn. But the credit doesn't go solely to me.\n"..
@@ -64,33 +65,41 @@ function Credits:Draw(container)
     "\n"..
     "Thanks for taking the time to read these credits.\n"..
     "\n"..
-    "With kind regards "..self.Author
+    "With kind regards "..self.Author1..
+    "\n\n----------\n\n"..
+    "I want to thank Baleria for letting me take over this project.\n"..
+    "The work you have put down into this AddOn is really amazing and it has been a pleasure figuring out how it works.\n"..
+    "-"..self.Author2
   )
   label:SetFullWidth(true)
   scroll:AddChild(label)
   
   local header = AceGUI:Create("Heading")
-  header:SetText("Author")
+  header:SetText("Authors")
   header:SetFullWidth(true)
   scroll:AddChild(header)
   
   label = AceGUI:Create("Label")
   label:SetText(self.Author)
   label:SetFullWidth(true)
-  scroll:AddChild(self:CreateTesterLabel("Beleria", "Argent Dawn-EU", "DEMONHUNTER", "A"))
+  -- authors
+  scroll:AddChild(self:CreateTesterLabel("Beleria",   "Argent Dawn-EU", "DEMONHUNTER",  "A"))
+  scroll:AddChild(self:CreateTesterLabel("Anhility",  "Ravencrest-EU",  "PALADIN",      "A"))
   
   local header = AceGUI:Create("Heading")
   header:SetText("Contributors")
   header:SetFullWidth(true)
   scroll:AddChild(header)
+  -- contributors
   scroll:AddChild(self:CreateTesterLabel("Sannath", "Elune-EU", "DRUID", "A"))
   
   local header = AceGUI:Create("Heading")
-  header:SetText("Official websites")
+  header:SetText("Official Websites")
   header:SetFullWidth(true)
   scroll:AddChild(header)
-  
-  scroll:AddChild(self:CreateUneditableTextbox("http://www.curse.com/addons/wow/bestinslot/", "BestInSlot on Curse.com"))
+  -- urls
+  scroll:AddChild(self:CreateUneditableTextbox("https://www.curseforge.com/wow/addons/bestinslotredux", "BestInSlotRedux on Curse.com"))
+  scroll:AddChild(self:CreateUneditableTextbox("https://github.com/anhility/BestInSlotRedux", "BestInSlotRedux on Github.com"))
   --scroll:AddChild(self:CreateUneditableTextbox("http://www.curse.com/addons/wow/bestinslot-pvp/", "BestInSlot PvP Module"))
   --scroll:AddChild(self:CreateUneditableTextbox("http://www.curse.com/addons/wow/bestinslot-warlords-draenor-dung/", "BestInSlot WoD Dungeon Module"))
   
@@ -98,32 +107,33 @@ function Credits:Draw(container)
   header:SetText("Translators")
   header:SetFullWidth(true)
   scroll:AddChild(header)
-  
-  scroll:AddChild(self:CreateTranslatorLabel(DEDE,"Simcat"))
-  scroll:AddChild(self:CreateTranslatorLabel(DEDE,"SpeedsharkX"))
-  scroll:AddChild(self:CreateTranslatorLabel(DEDE,"neo0608"))
-  scroll:AddChild(self:CreateTranslatorLabel(RURU,"KAPMA"))
+  -- Translators
+  scroll:AddChild(self:CreateTranslatorLabel(DEDE, "Simcat"))
+  scroll:AddChild(self:CreateTranslatorLabel(DEDE, "SpeedsharkX"))
+  scroll:AddChild(self:CreateTranslatorLabel(DEDE, "neo0608"))
+  scroll:AddChild(self:CreateTranslatorLabel(RURU, "KAPMA"))
   scroll:AddChild(self:CreateTranslatorLabel(RURU, "Je\195\177ka"))
   scroll:AddChild(self:CreateTranslatorLabel(KOKR, "yuk6196"))
-  scroll:AddChild(self:CreateTranslatorLabel(KOKR,"cyberyahoo"))
-  scroll:AddChild(self:CreateTranslatorLabel(FRFR,  "Kalissar"))
-  scroll:AddChild(self:CreateTranslatorLabel(ESES,  "Luskaner"))
-  scroll:AddChild(self:CreateTranslatorLabel(ZHCN,"nrg3331"))
-  scroll:AddChild(self:CreateUneditableTextbox("http://wow.curseforge.com/addons/bestinslot/localization/", "Want to help translate BestInSlot?"))
+  scroll:AddChild(self:CreateTranslatorLabel(KOKR, "cyberyahoo"))
+  scroll:AddChild(self:CreateTranslatorLabel(FRFR, "Kalissar"))
+  scroll:AddChild(self:CreateTranslatorLabel(ESES, "Luskaner"))
+  scroll:AddChild(self:CreateTranslatorLabel(ZHCN, "nrg3331"))
+  -- Translation help
+  scroll:AddChild(self:CreateUneditableTextbox("to be added", "Want to help translate BestInSlotRedux?"))
   
   local header = AceGUI:Create("Heading")
   header:SetText("Testers")
   header:SetFullWidth(true)
   scroll:AddChild(header)
   
-  scroll:AddChild(self:CreateTesterLabel("Yulrich","Argent Dawn-EU","PRIEST", "A"))
-  scroll:AddChild(self:CreateTesterLabel("Mard","Steamwheedle Cartel-EU","DRUID", "H"))
-  scroll:AddChild(self:CreateTesterLabel("Minta","Defias Brotherhood-EU","PRIEST", "H"))
-  scroll:AddChild(self:CreateTesterLabel("Peanut", "Defias Brotherhood-EU", "HUNTER", "A"))
-  scroll:AddChild(self:CreateTesterLabel("Nema\195\175r", "Defias Brotherhood-EU", "MAGE", "A"))
+  scroll:AddChild(self:CreateTesterLabel("Yulrich",       "Argent Dawn-EU",         "PRIEST", "A"))
+  scroll:AddChild(self:CreateTesterLabel("Mard",          "Steamwheedle Cartel-EU", "DRUID",  "H"))
+  scroll:AddChild(self:CreateTesterLabel("Minta",         "Defias Brotherhood-EU",  "PRIEST", "H"))
+  scroll:AddChild(self:CreateTesterLabel("Peanut",        "Defias Brotherhood-EU",  "HUNTER", "A"))
+  scroll:AddChild(self:CreateTesterLabel("Nema\195\175r", "Defias Brotherhood-EU",  "MAGE",   "A"))
   
   local header = AceGUI:Create("Heading")
-  header:SetText("Special thanks")
+  header:SetText("Special Thanks")
   header:SetFullWidth(true)
   scroll:AddChild(header)
   
@@ -132,7 +142,7 @@ function Credits:Draw(container)
   label:SetText(
     "Special thanks to the guild <Shadowsongs Bane>.\n"..
     "When the AddOn was in early development they allowed me to extensively test it.\n"..
-    "So for everyone I haven't mentioned in person from Shadowsongs Bane, thanks!"
+    "So for everyone I haven't mentioned in person from Shadowsongs Bane, thanks!\n-"..self.Author1
   )
   scroll:AddChild(label)
 end
