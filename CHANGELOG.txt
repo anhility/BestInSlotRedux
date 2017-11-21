@@ -4,9 +4,9 @@
 * Add new Argus "rift boss" loot
 * Code documentation
 
-## Release 7.3.02-beta.01
+## Release 7.3.02
 ## Bug fixes
-* Tinkering with .pgkmeta file to try make the Curse client package the files correctly
+* Fixed the .pgkmeta and ToC files so the Curse client can correctly deploy the addon
 
 ## Release 7.3.01
 ## Major additions
