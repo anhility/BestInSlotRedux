@@ -658,7 +658,7 @@ function Manager:SetImportDropdownData(dropdown)
   local firstChar = true
   local thisChar = self.db:GetCurrentProfile()
   for id, profile in pairs(self.db:GetProfiles()) do
-    local charDb = BestInSlotDB.char[profile]
+    local charDb = BestInSlotReduxDB.char[profile]
     if charDb and profile ~= thisChar and charDb[selectedRaidTier] and charDb[selectedRaidTier][selecDifficulty] and charDb[selectedRaidTier][selecDifficulty][selectedSpecialization] then
       if firstChar then
         firstChar = false
@@ -734,7 +734,7 @@ end
 function Manager:DoCopyChar()
     local selectedChar = dropdownImport:GetValue()
     local selectedInfo = Manager:GetSelected()
-    local otherCharList = BestInSlotDB.char[selectedChar][selectedInfo.raidtier][selectedInfo.difficulty][selectedInfo.specialization]
+    local otherCharList = BestInSlotReduxDB.char[selectedChar][selectedInfo.raidtier][selectedInfo.difficulty][selectedInfo.specialization]
     for i, iteminfo in pairs(otherCharList) do
       self:Print(i .. ": "..iteminfo)
       self:SetItemBestInSlot(selectedInfo.raidtier, selectedInfo.difficulty, selectedInfo.specialization, i, iteminfo)
