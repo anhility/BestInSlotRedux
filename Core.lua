@@ -483,7 +483,7 @@ end
 
 --- Called on initializing the add-on
 function BestInSlot:OnInitialize()
-  self.db = LibStub("AceDB-3.0"):New("BestInSlotReduxDB", defaults)
+  self.db = LibStub("AceDB-3.0"):New("BestInSlotDB", defaults)
   SLASH_BESTINSLOT1, SLASH_BESTINSLOT2 = '/bestinslot', '/bis'
   self:RegisterComm(self.MSGPREFIX)
   self.options.instantAnimation = self.db.global.options.instantAnimation
