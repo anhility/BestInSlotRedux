@@ -1,4 +1,4 @@
-local AntorusTheBurningThrone = LibStub("AceAddon-3.0"):GetAddon("BestInSlot"):NewModule("AntorusTheBurningThrone")
+local AntorusTheBurningThrone = LibStub("AceAddon-3.0"):GetAddon("BestInSlotRedux"):NewModule("AntorusTheBurningThrone")
 local AtBT = "AtBT"
 function AntorusTheBurningThrone:OnEnable()
   --local L = LibStub("AceLocale-3.0"):GetLocale("BestInSlotRedux")
