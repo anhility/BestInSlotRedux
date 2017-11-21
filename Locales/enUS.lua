@@ -1,4 +1,4 @@
-local L = LibStub("AceLocale-3.0"):NewLocale("BestInSlot", "enUS", true)
+local L = LibStub("AceLocale-3.0"):NewLocale("BestInSlotRedux", "enUS", true)
 
 --Common strings
 L["Patch %s"] = true
@@ -23,7 +23,7 @@ L["Credits"] = true
 
 --Core
 L["%s or %s"] = true
-L["Developed by %s"] = true
+L["Created by %s. Currently developed by %s."] = true
 L["This addon requires atleast 1 expansion module! Please enable one!"] = true
 L["Show the GUI"] = true
 L["%1$s from raid tier: %2$s"] = true
