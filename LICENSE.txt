@@ -1,7 +1,9 @@
-BestInSlot (c) by sandervanteinde
-
-BestInSlot is licensed under a
-Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
-
-You should have received a copy of the license along with this
-work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
+All Rights Reserved unless otherwise explicitly stated. 
+1. PERSONAL MODIFICATION 
+Users of BestInSlot may modify code for their personal use. As stated in paragraph 2 however, any forms of redistributing BestInSlot is not allowed. 
+2. REDISTRIBUTION 
+Any form of redistributing BestInSlot is not allowed, unless the host has written permission from the author. 
+3. PERMISSIONS
+Permission has been granted to Anhility (https://wow.curseforge.com/members/anhility) to work on the AddOn and its source code. 
+Anhility is allowed to work under his own license using the original source code of BestInSlot.
+© 2014-2018
