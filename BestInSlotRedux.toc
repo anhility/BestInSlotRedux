@@ -12,8 +12,8 @@ Frames\Include.xml
 Modules\Include.xml
 
 #@do-not-package@
-Utils/ExportRaid.lua
-Utils/ItemInfo.lua
+Utils\ExportRaid.lua
+Utils\ItemInfo.lua
 Modules\LegionModule\LegionLegendaries.lua
 Modules\LegionModule\EmeraldNightmare.lua
 Modules\LegionModule\Nighthold.lua
