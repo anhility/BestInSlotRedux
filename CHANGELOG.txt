@@ -4,6 +4,10 @@
 * Add new Argus "rift boss" loot
 * Code documentation
 
+## Release 7.3.03
+## Bug fixes
+* Changing tabs in .pgkmeta file to spaces... Hopefully this was the last error and that will deploy properly this time
+
 ## Release 7.3.02
 ## Bug fixes
 * Fixed the .pgkmeta and ToC files so the Curse client can correctly deploy the addon
