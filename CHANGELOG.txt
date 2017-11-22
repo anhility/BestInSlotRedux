@@ -4,6 +4,11 @@
 * Add new Argus "rift boss" loot
 * Code documentation
 
+## Release 7.3.04
+## Bug fixes
+* Fixed .pgkmeta and main ToC file so Utils folder is properly excluded
+* Fixed so project revision is properly displayed in Core.lua
+
 ## Release 7.3.03
 ## Bug fixes
 * Changing tabs in .pgkmeta file to spaces... Hopefully this was the last error and that will deploy properly this time
