@@ -12,6 +12,7 @@ Frames\Include.xml
 Modules\Include.xml
 
 #@do-not-package@
+IDEAS.md
 Utils\ExportRaid.lua
 Utils\ItemInfo.lua
 Modules\LegionModule\LegionLegendaries.lua
