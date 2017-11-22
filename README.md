@@ -14,7 +14,7 @@
 * All your old saved lists should be available now.
 
 ### Q: I've encountered a bug! How can I report it?
-#### A: Make a bug report on the [BestInSlotRedux GitHub](https://github.com/anhility/BestInSlotRedux/issues).
+#### A: Capture the bug with an AddOn like Swatter or BugSack and report the output to the [BestInSlotRedux GitHub](https://github.com/anhility/BestInSlotRedux/issues).
 
 ***
 
