@@ -1,5 +1,9 @@
 # BestInSlotRedux Changelog
 
+## Release 7.3.06
+## Bug fixes
+* Update of lib.xml due to change of path in LibDBIcon-1.0
+
 ## Release 7.3.05
 ## Bug fixes
 * Fixed version variable to get a integer from repo substitution and not a hexadecimal string from the packager
