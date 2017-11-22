@@ -1,8 +1,8 @@
 # BestInSlotRedux Changelog
 
-## TODO
-* Add new Argus "rift boss" loot
-* Code documentation
+## Release 7.3.05
+## Bug fixes
+* Fixed version variable to get a integer from repo substitution and not a hexadecimal string from the packager
 
 ## Release 7.3.04
 ## Bug fixes
