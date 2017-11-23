@@ -1,5 +1,10 @@
 # BestInSlotRedux Changelog
 
+## Release 7.3.07
+## Minor additions
+* Re-added the old translations
+* Fixed addon dependencies for Legion_Dungeon module
+
 ## Release 7.3.06
 ## Bug fixes
 * Update of lib.xml due to change of path in LibDBIcon-1.0
