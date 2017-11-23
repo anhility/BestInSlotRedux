@@ -1,5 +1,9 @@
 # BestInSlotRedux Changelog
 
+## Release 7.3.08
+### Bug fixes
+* Fixed the wrongly linked libraries
+
 ## Release 7.3.07
 ### Minor additions
 * Re-added the old translations
