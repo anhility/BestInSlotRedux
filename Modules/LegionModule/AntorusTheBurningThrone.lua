@@ -383,6 +383,7 @@ function AntorusTheBurningThrone:InitializeZoneDetect(ZoneDetect)
   ZoneDetect:RegisterNPCID(122469, AtBT, 9) --Coven of Shivarra (Diima)
   ZoneDetect:RegisterNPCID(122468, AtBT, 9) --Coven of Shivarra (Noura)
   ZoneDetect:RegisterNPCID(122467, AtBT, 9) --Coven of Shivarra (Asara)
+  ZoneDetect:RegisterNPCID(125436, AtBT, 9) --Coven of Shivarra (Thu'raya)
   
   ZoneDetect:RegisterNPCID(124691, AtBT, 10) --Aggramar
   ZoneDetect:RegisterNPCID(124828, AtBT, 11) --Argus the Unmaker
