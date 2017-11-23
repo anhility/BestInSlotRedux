@@ -5,6 +5,7 @@
 ## FAQ
 ### Q: Can I disable the window resizing/make it instant?
 #### A: Go to **Options** -&gt; Animation. Check the boxes to disable or make the animations instant.
+
 ### Q: Can I import my BiS lists from the old AddOn somehow?
 #### A: Yes, in a very simple way.
 * Exit WoW
@@ -12,6 +13,9 @@
 * Find the file "BestInSlot.lua"
 * Rename it to "BestInSlotRedux.lua"
 * All your old saved lists should be available now.
+
+### Q: I can't find [Aman'Thul's Vision](http://www.wowhead.com/item=154172/amanthuls-vision) under trinkets!
+#### A: It's not tied to any specc so you need to click "Show all items" to see it in the list.
 
 ### Q: I've encountered a bug! How can I report it?
 #### A: Capture the bug with an AddOn like Swatter or BugSack and report the output to the [BestInSlotRedux GitHub](https://github.com/anhility/BestInSlotRedux/issues).
@@ -50,5 +54,6 @@ You can export your BiS lists to WoWhead or SimCraft.
 ## Cool. Can this somehow help seeing who needs which item too?
 
 Yes it can! With the **Request BiS** panel can you automatically fetch your raids, guild members or a whisper target's BiS lists and see how many people that need an item from each boss.  
-Under **Guild BiS lists** you can see all your guild members BiS lists that you have requested.
+Under **Guild BiS lists** you can see all your guild members BiS lists that you have requested.  
+And if you have a persons BiS list so can you see that they need that item in the ingame tooltip.
 ###### More pictures coming soon.
