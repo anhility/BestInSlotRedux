@@ -1,67 +1,67 @@
 # BestInSlotRedux Changelog
 
 ## Release 7.3.07
-## Minor additions
+### Minor additions
 * Re-added the old translations
 * Fixed addon dependencies for Legion_Dungeon module
 
 ## Release 7.3.06
-## Bug fixes
+### Bug fixes
 * Update of lib.xml due to change of path in LibDBIcon-1.0
 
 ## Release 7.3.05
-## Bug fixes
+### Bug fixes
 * Fixed version variable to get a integer from repo substitution and not a hexadecimal string from the packager
 
 ## Release 7.3.04
-## Bug fixes
+### Bug fixes
 * Fixed .pgkmeta and main ToC file so Utils folder is properly excluded
 * Fixed so project revision is properly displayed in Core.lua
 
 ## Release 7.3.03
-## Bug fixes
+### Bug fixes
 * Changing tabs in .pgkmeta file to spaces... Hopefully this was the last error and that will deploy properly this time
 
 ## Release 7.3.02
-## Bug fixes
+### Bug fixes
 * Fixed the .pgkmeta and ToC files so the Curse client can correctly deploy the addon
 
 ## Release 7.3.01
-## Major additions
+### Major additions
 * Seat of the Triumvirate loot added
 * Antorus, the Burning Throne loot added
 
-## Bug fixes
+### Bug fixes
 * TOC updated for 7.3
 
-## Other
+### Other
 * Forked and renamed with new developer
 * Credits page updated, new external links to project
 
 #Old BestInSlot Changelog
 
 ##Release 7.2.02
-## Major additions
+### Major additions
 * Added missing items in Tomb of Sargeras
 * Tomb of Sargeras bosses will now be detected
 
-##Bug fixes
+###Bug fixes
 * Simcraft exports should once again work
 * Item levels of the Legion Legendaries are updated to ilvl 970
 * Update LegionDungeons module with Cathedral of Eternal Night and Karazhan
 
 ##Release 7.2.01
-##Major additions
+###Major additions
 * Added Tomb of Sargeras
 
-##Bug fixes
+###Bug fixes
 * Item levels should now be properly shown again
 
 ##Release 7.1.03
-##Major additions
+###Major additions
 * You can now import BiS lists from other characters of the same class and spec, provided they made one
 
-##Bug fixes 
+###Bug fixes 
 * Display issues in the BiS Manager should be fixed
 
 ##Release 7.1.02
