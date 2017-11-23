@@ -1,7 +1,7 @@
 local TombOfSargeras = LibStub("AceAddon-3.0"):GetAddon("BestInSlotRedux"):NewModule("TombOfSargeras")
 local ToS = "ToS"
 function TombOfSargeras:OnEnable()
-  --local L = LibStub("AceLocale-3.0"):GetLocale("BestInSlotRedux")
+  local L = LibStub("AceLocale-3.0"):GetLocale("BestInSlotRedux")
 
   local tombOfSargerasName = GetMapNameByID(1147)
   self:RegisterExpansion("Legion", EXPANSION_NAME6)

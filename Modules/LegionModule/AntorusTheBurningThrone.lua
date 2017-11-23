@@ -1,7 +1,7 @@
 local AntorusTheBurningThrone = LibStub("AceAddon-3.0"):GetAddon("BestInSlotRedux"):NewModule("AntorusTheBurningThrone")
 local AtBT = "AtBT"
 function AntorusTheBurningThrone:OnEnable()
-  --local L = LibStub("AceLocale-3.0"):GetLocale("BestInSlotRedux")
+  local L = LibStub("AceLocale-3.0"):GetLocale("BestInSlotRedux")
 
   local antorusTheBurningThroneName = GetMapNameByID(1188)
   self:RegisterExpansion("Legion", EXPANSION_NAME6)
