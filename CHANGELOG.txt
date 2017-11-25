@@ -1,5 +1,12 @@
 # BestInSlotRedux Changelog
 
+## Release 7.3.09
+### Minor additions
+* The old translations were incorrectly encoded when imported so I'll be re-adding them by hand.
+* The current available translations are:
+    * German (de_DE)
+    * French (fr_FR)
+
 ## Release 7.3.08
 ### Bug fixes
 * Fixed the wrongly linked libraries
