@@ -3,7 +3,8 @@ local unpack, select
 =     unpack, select
 --wow api
 local ConvertRGBtoColorString
-=     ConvertRGBtoColorString 
+=     ConvertRGBtoColorString
+
 local BestInSlot, L, AceGUI = unpack(select(2, ...))
 local AceGUI = LibStub("AceGUI-3.0")
 local L = LibStub("AceLocale-3.0"):GetLocale("BestInSlotRedux")
@@ -11,6 +12,10 @@ local Credits = BestInSlot:GetMenuPrototype(L["Credits"])
 local hordeColor, allianceColor
 Credits.Width = 600
 Credits.Height = 600
+
+-- Name variables for locales since some were weirdly missing
+local sDEDE, sESES, sESMX, sFRFR, sITIT, sKOKR, sPTBR, sRURU, sZHCN, sZHTW
+=     "German", "Spanish", "Spanish (Latin America)", "French", "Italian", "Korean", "Brazilian Portuguese", "Russian", "Simplified Chinese", "Traditional Chinese"
 
 function Credits:CreateTranslatorLabel(language, name)
   local label = AceGUI:Create("Label")
@@ -100,24 +105,22 @@ function Credits:Draw(container)
   -- urls
   scroll:AddChild(self:CreateUneditableTextbox("https://www.curseforge.com/wow/addons/bestinslotredux", "BestInSlotRedux on Curse.com"))
   scroll:AddChild(self:CreateUneditableTextbox("https://github.com/anhility/BestInSlotRedux", "BestInSlotRedux on Github.com"))
-  --scroll:AddChild(self:CreateUneditableTextbox("http://www.curse.com/addons/wow/bestinslot-pvp/", "BestInSlot PvP Module"))
-  --scroll:AddChild(self:CreateUneditableTextbox("http://www.curse.com/addons/wow/bestinslot-warlords-draenor-dung/", "BestInSlot WoD Dungeon Module"))
   
   local header = AceGUI:Create("Heading")
   header:SetText("Translators")
   header:SetFullWidth(true)
   scroll:AddChild(header)
   -- Translators
-  scroll:AddChild(self:CreateTranslatorLabel(DEDE, "Simcat"))
-  scroll:AddChild(self:CreateTranslatorLabel(DEDE, "SpeedsharkX"))
-  scroll:AddChild(self:CreateTranslatorLabel(DEDE, "neo0608"))
-  scroll:AddChild(self:CreateTranslatorLabel(RURU, "KAPMA"))
-  scroll:AddChild(self:CreateTranslatorLabel(RURU, "Je\195\177ka"))
-  scroll:AddChild(self:CreateTranslatorLabel(KOKR, "yuk6196"))
-  scroll:AddChild(self:CreateTranslatorLabel(KOKR, "cyberyahoo"))
-  scroll:AddChild(self:CreateTranslatorLabel(FRFR, "Kalissar"))
-  scroll:AddChild(self:CreateTranslatorLabel(ESES, "Luskaner"))
-  scroll:AddChild(self:CreateTranslatorLabel(ZHCN, "nrg3331"))
+  scroll:AddChild(self:CreateTranslatorLabel(sDEDE, "Simcat, SpeedsharkX & neo0608"))
+  scroll:AddChild(self:CreateTranslatorLabel(sESES, "Luskaner"))
+  --scroll:AddChild(self:CreateTranslatorLabel(sESMX, "to be added"))
+  scroll:AddChild(self:CreateTranslatorLabel(sFRFR, "Meivyn"))
+  --scroll:AddChild(self:CreateTranslatorLabel(sITIT, "to be added"))
+  scroll:AddChild(self:CreateTranslatorLabel(sKOKR, "yuk6196 & cyberyahoo"))
+  --scroll:AddChild(self:CreateTranslatorLabel(sPTBR, "to be added"))
+  scroll:AddChild(self:CreateTranslatorLabel(sRURU, "KAPMA & Je\195\177ka"))
+  scroll:AddChild(self:CreateTranslatorLabel(sZHCN, "nrg3331"))
+  --scroll:AddChild(self:CreateTranslatorLabel(sZHTW, "to be added"))
   -- Translation help
   scroll:AddChild(self:CreateUneditableTextbox("https://wow.curseforge.com/projects/bestinslotredux/localization", "Want to help translate BestInSlotRedux?"))
   
