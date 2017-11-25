@@ -1,7 +1,7 @@
 local EmeraldNightmare = LibStub("AceAddon-3.0"):GetAddon("BestInSlotRedux"):NewModule("EmeraldNightmare")
 local EN = "EN"
 function EmeraldNightmare:OnEnable()
-  local L = LibStub("AceLocale-3.0"):GetLocale("BestInSlot")
+  local L = LibStub("AceLocale-3.0"):GetLocale("BestInSlotRedux")
   
   local emeraldNightmareName = GetMapNameByID(1094)
   self:RegisterExpansion("Legion", EXPANSION_NAME6)
