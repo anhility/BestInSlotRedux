@@ -115,7 +115,7 @@ function Credits:Draw(container)
   scroll:AddChild(self:CreateTranslatorLabel(RURU, "Je\195\177ka"))
   scroll:AddChild(self:CreateTranslatorLabel(KOKR, "yuk6196"))
   scroll:AddChild(self:CreateTranslatorLabel(KOKR, "cyberyahoo"))
-  scroll:AddChild(self:CreateTranslatorLabel(FRFR, "Kalissar"))
+  scroll:AddChild(self:CreateTranslatorLabel(FRFR, "Meivyn"))
   scroll:AddChild(self:CreateTranslatorLabel(ESES, "Luskaner"))
   scroll:AddChild(self:CreateTranslatorLabel(ZHCN, "nrg3331"))
   -- Translation help
