@@ -1,5 +1,9 @@
 # BestInSlotRedux Changelog
 
+## Release 7.3.12
+### Bug fixes
+* Fixed /bis help command to work once more
+
 ## Release 7.3.11
 ### Minor additions
 * All languages are enabled for localization once more
