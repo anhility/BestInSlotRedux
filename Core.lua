@@ -25,7 +25,7 @@ BestInSlot.version = @project-date-integer@
 --@end-non-debug@]===]
 BestInSlot.AlphaVersion = not (GetAddOnMetadata("BestInSlotRedux", "Version"):find("Release") and true or false)
 --@do-not-package@
-BestInSlot.version = 354
+BestInSlot.version = 1337
 BestInSlot.options.DEBUG = true
 --@end-do-not-package@
 local slashCommands = {}
@@ -698,7 +698,7 @@ function BestInSlot:RegisterSlashCmd(cmd, descr, func, prefOrder)
   if type(descr) ~= "string"  then error("Slashcommand should provide a description as third parameter") end
   if prefOrder and type(prefOrder) ~= "number" then error("If provided, prefOrder should be a number") end
   cmd = (cmd):lower()
-  if slashCommands[cmd] then error("Slash command "..cmd.." is allready registered!") end
+  if slashCommands[cmd] then error("Slash command "..cmd.." is already registered!") end
   slashCommands[cmd] = {func = func, descr = descr, prefOrder = prefOrder}
 end
                   
@@ -738,12 +738,14 @@ BestInSlot:RegisterSlashCmd("help", (L["%s - this dialog"]):format("/bis help"),
       tremove(orderedList, i + 1)
     end
   end
-  DEFAULT_CHAT_FRAME:AddMessage(printString)(BestInSlot.colorHighlight..("-"):rep(5)..BestInSlot.colorNormal.."BestInSlotRedux "..L["commands"]..BestInSlot.colorHighlight..("-"):rep(5).."|r")
+  --DEFAULT_CHAT_FRAME:AddMessage(printString)(BestInSlot.colorHighlight..("-"):rep(5)..BestInSlot.colorNormal.."BestInSlotRedux "..L["commands"]..BestInSlot.colorHighlight..("-"):rep(5).."|r")
+  DEFAULT_CHAT_FRAME:AddMessage(BestInSlot.colorHighlight..("-"):rep(5)..BestInSlot.colorNormal.."BestInSlotRedux "..L["commands"]..BestInSlot.colorHighlight..("-"):rep(5).."|r")
   BestInSlot:Print(("%s: %s (%s)"):format(GAME_VERSION_LABEL, GetAddOnMetadata("BestInSlotRedux", "Version"), BestInSlot.version))
   for i=1,#orderedList do
     BestInSlot:Print(slashCommands[orderedList[i]].descr, true)
   end
-  DEFAULT_CHAT_FRAME:AddMessage(printString)(BestInSlot.colorHighlight..("-"):rep(36).."|r")
+  --DEFAULT_CHAT_FRAME:AddMessage(printString)(BestInSlot.colorHighlight..("-"):rep(36).."|r")
+  DEFAULT_CHAT_FRAME:AddMessage(BestInSlot.colorHighlight..("-"):rep(36).."|r")
 end)
 
 BestInSlot:RegisterSlashCmd("debug", (L["%s - enable/disable debug messages"]):format("/bis debug"), function()
