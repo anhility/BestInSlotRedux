@@ -1,5 +1,10 @@
 # BestInSlotRedux Changelog
 
+## Release 7.3.11
+### Minor additions
+* All languages are enabled for localization once more
+* Russian, Korean, Simplified and Traditional Chinese needs to be translated once more as decoding the old lua files is too much work
+
 ## Release 7.3.10
 ### Minor additions
 * Readded the translation for the rest of the Latin based languages:
