@@ -20,8 +20,8 @@
 ### Q: I've encountered a bug! How can I report it?
 #### A: Capture the bug with an AddOn like Swatter or BugSack and report the output to the [BestInSlotRedux GitHub](https://github.com/anhility/BestInSlotRedux/issues).
 
-### Q: These localization's are really weird and/or wrong.
-#### A: When I took over the project so were the original translation files lost and I had to copy from the lua files. Please help correct them at the project's [localization page](https://wow.curseforge.com/projects/bestinslotredux/localization).
+### Q: These localization's are really weird, wrong or missing.
+#### A: When I took over the project so were the original translation files lost and I had to copy from the lua files. Unfortunately were the non-Latin languages (Russian, Korean and both Chinese) completely encoded and it would be too much work to decode each character back by hand so those languages have to be retranslated. Please help at the project's [localization page](https://wow.curseforge.com/projects/bestinslotredux/localization).
 
 ***
 
