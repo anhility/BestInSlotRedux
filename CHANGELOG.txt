@@ -1,5 +1,13 @@
 # BestInSlotRedux Changelog
 
+## Release 7.3.10
+### Minor additions
+* Readded the translation for the rest of the Latin based languages:
+    * Spanish (es_ES)
+    * Portuguese (pt_BR)
+    * Italian (it_IT)
+* Re-enabled Latin American Spanish (es_MX) even though translation is missing
+
 ## Release 7.3.09
 ### Minor additions
 * The old translations were incorrectly encoded when imported so I'll be re-adding them by hand.
