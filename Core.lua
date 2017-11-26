@@ -738,13 +738,11 @@ BestInSlot:RegisterSlashCmd("help", (L["%s - this dialog"]):format("/bis help"),
       tremove(orderedList, i + 1)
     end
   end
-  --DEFAULT_CHAT_FRAME:AddMessage(printString)(BestInSlot.colorHighlight..("-"):rep(5)..BestInSlot.colorNormal.."BestInSlotRedux "..L["commands"]..BestInSlot.colorHighlight..("-"):rep(5).."|r")
   DEFAULT_CHAT_FRAME:AddMessage(BestInSlot.colorHighlight..("-"):rep(5)..BestInSlot.colorNormal.."BestInSlotRedux "..L["commands"]..BestInSlot.colorHighlight..("-"):rep(5).."|r")
   BestInSlot:Print(("%s: %s (%s)"):format(GAME_VERSION_LABEL, GetAddOnMetadata("BestInSlotRedux", "Version"), BestInSlot.version))
   for i=1,#orderedList do
     BestInSlot:Print(slashCommands[orderedList[i]].descr, true)
   end
-  --DEFAULT_CHAT_FRAME:AddMessage(printString)(BestInSlot.colorHighlight..("-"):rep(36).."|r")
   DEFAULT_CHAT_FRAME:AddMessage(BestInSlot.colorHighlight..("-"):rep(36).."|r")
 end)
 
