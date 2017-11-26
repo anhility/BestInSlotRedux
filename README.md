@@ -32,7 +32,7 @@ The intention of this page is to quickly get you started with Best In Slot Redux
 ## Accessing the AddOn
 
 By default there's a mini-map button which looks like this: ![](https://i.imgur.com/UHOQkJ6.png)  
-You can also access the AddOn by using the chat commands: **/bis** or **/bestinslot**  
+You can also access the AddOn by using the chat commands: **/bis** or **/bestinslot**. Try **/bis help** for additional commands.  
 There's also support for data broker AddOns like Titan Panel or similar.
 
 ## The Manager
