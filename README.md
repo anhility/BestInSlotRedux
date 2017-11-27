@@ -6,14 +6,6 @@
 ### Q: Can I disable the window resizing/make it instant?
 #### A: Go to **Options** -&gt; Animation. Check the boxes to disable or make the animations instant.
 
-### Q: Can I import my BiS lists from the old AddOn somehow?
-#### A: Yes, in a very simple way.
-* Exit WoW
-* Go to the saved variables folder (World of Warcraft\WTF\Account\\**AccountName**\SavedVariables)
-* Find the file "BestInSlot.lua"
-* Rename it to "BestInSlotRedux.lua"
-* All your old saved lists should be available now.
-
 ### Q: I can't find [Aman'Thul's Vision](http://www.wowhead.com/item=154172/amanthuls-vision) under trinkets!
 #### A: It's not tied to any specc so you need to click "Show all items" to see it in the list.
 
@@ -21,7 +13,7 @@
 #### A: Capture the bug with an AddOn like Swatter or BugSack and report the output to the [BestInSlotRedux GitHub](https://github.com/anhility/BestInSlotRedux/issues).
 
 ### Q: These localization's are really weird, wrong or missing.
-#### A: When I took over the project so were the original translation files lost and I had to copy from the lua files. Unfortunately were the non-Latin languages (Russian, Korean and both Chinese) completely encoded and it would be too much work to decode each character back by hand so those languages have to be retranslated. Please help at the project's [localization page](https://wow.curseforge.com/projects/bestinslotredux/localization).
+#### A: When I took over the project so were the original translation files unfortunately lost. Please help at the project's [localization page](https://wow.curseforge.com/projects/bestinslotredux/localization).
 
 ***
 
