@@ -7,3 +7,6 @@ Libs/*
 
 # Scripts
 *.sh
+
+# Misc files
+*.ini
