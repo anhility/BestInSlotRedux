@@ -1,5 +1,16 @@
 # BestInSlotRedux Changelog
 
+## Release 7.3.13
+### Minor additions
+* Added missing BoE trash loot to ToS & Antorus
+* Added Argus greater rift boss loot
+
+### Other
+* Commented out all unused strings from enUS.lua
+* Removed all unused strings from localization page on CurseForge
+* Added new translators to credist page
+* Added acknowledgment to the previous translators in the credits page
+
 ## Release 7.3.12
 ### Bug fixes
 * Fixed /bis help command to work once more
