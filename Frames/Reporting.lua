@@ -27,7 +27,7 @@ end
 
 function Reporting:CreateReport(reportType, text)
   local window = self:QuickCreate("Window")
-  window:AddChild(self:CreateUneditableTextbox("http://wow.curseforge.com/addons/bestinslot/create-ticket/", L["Please navigate to the issue tracker."] .. " " .. (L["Please select the type: %s"]):format(reportType)))
+  window:AddChild(self:CreateUneditableTextbox("https://github.com/anhility/BestInSlotRedux/issues/", L["Please navigate to the issue tracker."] .. " " .. (L["Please select the type: %s"]):format(reportType)))
   --self:QuickCreate("Label", {SetText = (L["Please select the type: %s"]):format(reportType)}, window)
   local editbox = self:CreateUneditableTextbox(text, L["Copy paste underlying information in the description field."], "MultiLineEditBox")
   editbox:SetNumLines(20)
@@ -57,7 +57,7 @@ local function renderBugSectionDump()
     select(2, UnitClass("player")), --2 the class of the player
     select(2, UnitRace("player")), --3 the race of the player
     GetLocale(), --4 the locale of the player
-    GetAddOnMetadata("BestInSlot", "Version"), --5 the version the player is using
+    GetAddOnMetadata("BestInSlotRedux", "Version"), --5 the version the player is using
     Reporting:GetActiveModules(), --6 the active modules
     GetSpecializationInfo(GetSpecialization()), --7 Active specialization
     selected.expansion, -- 8 Selected expansion
