@@ -111,19 +111,31 @@ function Credits:Draw(container)
   header:SetFullWidth(true)
   scroll:AddChild(header)
   -- Translators
-  scroll:AddChild(self:CreateTranslatorLabel(sDEDE, "Simcat, SpeedsharkX & neo0608"))
-  scroll:AddChild(self:CreateTranslatorLabel(sESES, "Luskaner"))
+  scroll:AddChild(self:CreateTranslatorLabel(sDEDE, "SpeedsharkX"))
+  --scroll:AddChild(self:CreateTranslatorLabel(sESES, "to be added"))
   --scroll:AddChild(self:CreateTranslatorLabel(sESMX, "to be added"))
-  scroll:AddChild(self:CreateTranslatorLabel(sFRFR, "Meivyn"))
+  scroll:AddChild(self:CreateTranslatorLabel(sFRFR, "Meivyn & nitrodroki"))
   --scroll:AddChild(self:CreateTranslatorLabel(sITIT, "to be added"))
   --scroll:AddChild(self:CreateTranslatorLabel(sKOKR, "to be added"))
-  scroll:AddChild(self:CreateTranslatorLabel(sKOKR, "yuk6196 & cyberyahoo for the old translation that was lost."))
   --scroll:AddChild(self:CreateTranslatorLabel(sPTBR, "to be added"))
-  --scroll:AddChild(self:CreateTranslatorLabel(sRURU, "to be added"))
-  scroll:AddChild(self:CreateTranslatorLabel(sRURU, "KAPMA & Je\195\177ka for the old translation that was lost."))
+  scroll:AddChild(self:CreateTranslatorLabel(sRURU, "Hubbotu & SintlKun"))
   --scroll:AddChild(self:CreateTranslatorLabel(sZHCN, "to be added"))
-  scroll:AddChild(self:CreateTranslatorLabel(sZHCN, "nrg3331 for the old translation that was lost."))
   --scroll:AddChild(self:CreateTranslatorLabel(sZHTW, "to be added"))
+  
+  -- Old translators
+  local label=AceGUI:Create("Label")
+  label:SetFullWidth(true)
+  label:SetText(
+    "\n\n"..
+    "I want to acknowledge the following people who did the previous translation that unfortunately was lost:\n"..
+    sDEDE..": Simcat & neo0608\n"..
+    sESES..": Luskaner\n"..
+    sKOKR..": yuk6196 & cyberyahoo\n"..
+    sRURU..": KAPMA & Je\195\177ka\n"..
+    sZHCN..": nrg3331"
+  )
+  scroll:AddChild(label)
+  
   -- Translation help
   scroll:AddChild(self:CreateUneditableTextbox("https://wow.curseforge.com/projects/bestinslotredux/localization", "Want to help translate BestInSlotRedux?"))
   
