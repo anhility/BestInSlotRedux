@@ -90,8 +90,8 @@ function TrialOfValor:OnEnable()
     local misc = {
       LOOT_JOURNAL_LEGENDARIES = self.LegionLegendaries:GetList()
     }
+    self:RegisterMiscItems(ToV, misc)
   end
-  self:RegisterMiscItems(ToV, misc)
 end
 
 function TrialOfValor:InitializeZoneDetect(ZoneDetect)

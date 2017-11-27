@@ -342,6 +342,7 @@ function EmeraldNightmare:OnEnable()
   end
   self:RegisterMiscItems(EN, misc)
 end
+
 function EmeraldNightmare:InitializeZoneDetect(ZoneDetect)
   ZoneDetect:RegisterMapID(1094, EN)
   

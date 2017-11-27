@@ -326,8 +326,8 @@ function Nighthold:OnEnable()
     local misc = {
       LOOT_JOURNAL_LEGENDARIES = self.LegionLegendaries:GetList()
     }
+    self:RegisterMiscItems(NH, misc)
   end
-  self:RegisterMiscItems(NH, misc)
 end
 
 function Nighthold:InitializeZoneDetect(ZoneDetect)

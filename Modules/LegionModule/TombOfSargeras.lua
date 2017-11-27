@@ -326,8 +326,8 @@ function TombOfSargeras:OnEnable()
     local misc = {
       LOOT_JOURNAL_LEGENDARIES = self.LegionLegendaries:GetList()
     }
+    self:RegisterMiscItems(ToS, misc)
   end
-  self:RegisterMiscItems(ToS, misc)
 end
 function TombOfSargeras:InitializeZoneDetect(ZoneDetect)
   ZoneDetect:RegisterMapID(1147, ToS)
