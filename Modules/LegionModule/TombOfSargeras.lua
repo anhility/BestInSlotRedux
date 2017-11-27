@@ -297,13 +297,37 @@ function TombOfSargeras:OnEnable()
   }
   self:RegisterBossLoot(ToS, lootTable, bossName)
   
+  -----------------------------------
+  ----- Trash loot
+  -----------------------------------
+  local bossName = L["Trash Loot"]
+  local lootTable = {
+    -- Cloth
+    147423, --Sash of the Unredeemed
+    147422, --Acolyte's Abandoned Footwraps
+    146989, --Fel-Flecked Grips
+    -- Leather
+    147425, --Cord of Pilfered Rosaries
+    147424, --Treads of Violent Intrusion
+    147038, --Wakening Horror Spaulders
+    -- Mail
+    147427, --Pristine Moon-Wrought Clasp
+    147426, --Treads of Panicked Escape
+    147044, --Soul-Rattle Ribcage
+    -- Plate
+    147429, --Girdle of the Crumbling Sanctum
+    147428, --Spiked Terrorwake Greatboots
+    147064, --Diadem of the Highborne
+  }
+  
+  self:RegisterBossLoot(ToS, lootTable, bossName)
+  
   if self.LegionLegendaries then
     local misc = {
       LOOT_JOURNAL_LEGENDARIES = self.LegionLegendaries:GetList()
     }
-    self:RegisterMiscItems(ToS, misc)
   end
-  
+  self:RegisterMiscItems(ToS, misc)
 end
 function TombOfSargeras:InitializeZoneDetect(ZoneDetect)
   ZoneDetect:RegisterMapID(1147, ToS)

@@ -299,14 +299,35 @@ function Nighthold:OnEnable()
     140809, --Whispers in the Dark
   }
   self:RegisterBossLoot(NH, lootTable, bossName)
-  
+
+
+  -----------------------------------
+  ----- Trash Loot
+  -----------------------------------
+  local bossName = L["Trash Loot"]
+  local lootTable = {
+    -- Cloth
+    144404, --Mana-Cord of Deception
+    -- Leather
+    144405, --Waistclasp of Unethical Power
+    -- Mail
+    144406, --Vintage Duskwatch Cinch
+    -- Plate
+    144407, --Gleaming Celestial Waistguard
+    -- Cloak
+    144399, --Aristocrat's Winter Drape
+    144400, --Feathermane Feather Cloak
+    144401, --Cloak of Multitudinous Sheaths
+    144403, --Fashionable Autumn Cloak
+  }
+  self:RegisterBossLoot(NH, lootTable, bossName)
+
   if self.LegionLegendaries then
     local misc = {
       LOOT_JOURNAL_LEGENDARIES = self.LegionLegendaries:GetList()
     }
-    self:RegisterMiscItems(NH, misc)
   end
-  
+  self:RegisterMiscItems(NH, misc)
 end
 
 function Nighthold:InitializeZoneDetect(ZoneDetect)
