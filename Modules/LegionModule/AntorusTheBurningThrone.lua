@@ -354,6 +354,32 @@ function AntorusTheBurningThrone:OnEnable()
   }
   self:RegisterBossLoot(AtBT, lootTable, bossName)
   
+  
+  -----------------------------------
+  ----- Trash loot
+  -----------------------------------
+  local bossName = "Trash Loot"
+  local lootTable = {
+    -- Cloth
+    152084, --Gloves of Abhorrent Strategies
+    152085, --Cuffs of the Viridian Flameweavers
+    153018, --Corrupted Mantle of the Felseekers
+    -- Leather
+    151993, --Leggings of the Sable Stalkers
+    152087, --Sinuous Kerapteron Bindings
+    152413, --Felflame Inferno Shoulderpads
+    -- Mail
+    152088, --Horror Fiend-Scale Breastplate
+    152089, --Wristguards of Ominous Forging
+    152682, --Greaves of the Felblade Defenders
+    -- Plate
+    153019, --Hulking Demolisher Legplates
+    152091, --Wristguards of the Dark Keepers
+    152090, --Impenetrable Garothi Breastplate
+  }
+  
+  self:RegisterBossLoot(AtBT, lootTable, bossName)
+  
   if self.LegionLegendaries then
     local misc = {
       LOOT_JOURNAL_LEGENDARIES = self.LegionLegendaries:GetList()
