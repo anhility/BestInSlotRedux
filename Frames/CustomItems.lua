@@ -495,5 +495,5 @@ StaticPopupDialogs["BESTINSLOT_CONFIRMDELETECUSTOMITEM"] = {
 CustomItems:RegisterTutorials(L["Custom Items"],{
   [1] = {text = L["In this menu you can add custom items. Use this edit box to submit your item."], text2 = L["You can only use the item name if you have the item in your inventory!"], xOffset = 0, yOffset = -20, container = "content", UpArrow = true, element = "input"},
   [2] = {text = L["You can edit previously made custom items by selecting them with this dropdown box."], xOffset = 0, yOffset = -20, container = "content", UpArrow = true, element = "customitem"},
-  [3] = {text = L["When adding crafted items, you can select the random stats and the stage of the item with these dropdown boxes."], xOffset = 0, yOffset = -20, container = "content", Uparrow = true, element = "stage", UpArrow = true, onRequest = true}
+  --[3] = {text = L["When adding crafted items, you can select the random stats and the stage of the item with these dropdown boxes."], xOffset = 0, yOffset = -20, container = "content", Uparrow = true, element = "stage", UpArrow = true, onRequest = true}
 })

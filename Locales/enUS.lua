@@ -235,7 +235,7 @@ L["There are no custom items present"] = true
 L["In this menu you can add custom items. Use this edit box to submit your item."] = true
 L["You can only use the item name if you have the item in your inventory!"] = true
 L["You can edit previously made custom items by selecting them with this dropdown box."] = true
-L["When adding crafted items, you can select the random stats and the stage of the item with these dropdown boxes."] = true
+--L["When adding crafted items, you can select the random stats and the stage of the item with these dropdown boxes."] = true
 
 --Export/Import
 L["Export"] = true
