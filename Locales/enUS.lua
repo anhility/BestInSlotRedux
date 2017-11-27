@@ -1,29 +1,31 @@
 local L = LibStub("AceLocale-3.0"):NewLocale("BestInSlotRedux", "enUS", true)
 
+-- Unused strings commented out
+
 --Common strings
-L["Patch %s"] = true
+--L["Patch %s"] = true
 L["Raid Tier"] = true
 L["Difficulty"] = true
 L["Specialization"] = true
 L["Raid Instance"] = true
-L["Selection"] = true
+--L["Selection"] = true
 L["Overview"] = true
-L["Shared Boss Loot"] = true
+--L["Shared Boss Loot"] = true
 L["commands"] = true
 L["Select all"] = true
 L["VANQUISHER"] = "Vanquisher"
 L["PROTECTOR"] = "Protector"
 L["CONQUEROR"] = "Conqueror"
 L["Trash Loot"] = true
-L["Warlords Season %d"] = true
-L["PvP Vendor"] = true
+--L["Warlords Season %d"] = true
+--L["PvP Vendor"] = true
 L["Custom Items"] = true
 L["Tooltip"] = true
 L["Credits"] = true
 
 --Core
 L["%s or %s"] = true
-L["Developed by %s"] = true
+--L["Developed by %s"] = true
 L["Created by %s. Currently developed by %s."] = true
 L["This addon requires atleast 1 expansion module! Please enable one!"] = true
 L["Show the GUI"] = true
@@ -41,20 +43,20 @@ L["The following people in your guild already obtained this item"] = true
 L["Resets the window to it's original position"] = true
 
 --Tips
-L["In the BiS manager you can compare items with your selected item!"] = true
-L["Don't like the animating screens? Disable the animations in the options!"] = true
-L["Miss a feature that you would like to see? Suggest it on %s"] = true
-L["Do you want this add-on to be available in your language? Help translate at %s"] = true
-L["Put your mouse over this text!"] = true
-L["This way you can often get more info about this tip!"] = true
-L["%1$s translation by %2$s"] = true
+--L["In the BiS manager you can compare items with your selected item!"] = true
+--L["Don't like the animating screens? Disable the animations in the options!"] = true
+--L["Miss a feature that you would like to see? Suggest it on %s"] = true
+--L["Do you want this add-on to be available in your language? Help translate at %s"] = true
+--L["Put your mouse over this text!"] = true
+--L["This way you can often get more info about this tip!"] = true
+--L["%1$s translation by %2$s"] = true
 
-L["Wanna know how to use the manager?"] = "Want to know how to use the manager?"
-L["You can use this window to edit your BestInSlot list."] = true
-L["The data in the following dropdown menus are defined by the modules you have activated."] = true
-L["You can either select an icon or a 'Select an Item' button to select an item for that slot."] = true
-L["You can shift-click icons or items to link them in the chat."] = true
-L["After selecting an item, hovering over a different item will popup a compare window."] = true
+--L["Wanna know how to use the manager?"] = true
+--L["You can use this window to edit your BestInSlot list."] = true
+--L["The data in the following dropdown menus are defined by the modules you have activated."] = true
+--L["You can either select an icon or a 'Select an Item' button to select an item for that slot."] = true
+--L["You can shift-click icons or items to link them in the chat."] = true
+--L["After selecting an item, hovering over a different item will popup a compare window."] = true
 
 -- Manager Frame
 L["%s manager"] = true
@@ -119,12 +121,12 @@ L["%1$s needs nothing from %2$s %3$s"] = true
 --Request BestInSlots
 L["Request"] = true
 L["Request BiS"] = true
-L["Request type"] = true
+--L["Request type"] = true
 L["Request from"] = true
-L["BestInSlot per Player"] = true
-L["Instance Overview"] = true
-L["Select a request type"] = true
-L["Select a type first!"] = true
+--L["BestInSlot per Player"] = true
+--L["Instance Overview"] = true
+--L["Select a request type"] = true
+--L["Select a type first!"] = true
 L["Select a channel"] = true
 L["Whisper target"] = true
 L["Select all"] = true
@@ -133,7 +135,7 @@ L["Class filter"] = true
 L["Token filter"] = true
 L["Armor filter"] = true
 L["Show obtained items"] = true
-L["Show Guild BiS lists"] = true
+--L["Show Guild BiS lists"] = true
 L["Not enough data to filter"] = true
 
 --Overview window
@@ -144,13 +146,13 @@ L["You have this item on '%s'"] = true
 L["Report BestInSlot"] = true
 
 --Mists of Pandaria locale
-L["Legendary Cloak Quest"] = true
+--L["Legendary Cloak Quest"] = true
 
 --Warlords of Draenor locale
-L["Legenday Ring Quest"] = true
+--L["Legenday Ring Quest"] = true
 
 --Communication
-L["This function requires a channel."] = true
+--L["This function requires a channel."] = true
 L["This function requires a target."] = true
 L["Usage: %s"] = true
 L["Queries the specified channels for versions."] = true
@@ -177,7 +179,7 @@ L["%s - Shows a debugging console"] = true
 
 --Tutorials
 L["In this menu you can select different parts of the AddOn. The selected menu is displayed in white."] = true
-L["In the bottom of the window you can view tips and credits. These will update based on the page you're viewing"] = true
+--L["In the bottom of the window you can view tips and credits. These will update based on the page you're viewing"] = true
 L["On most pages you can set your instance, difficulty and specialization in the top of the page. These settings are saved across all pages."] = true
 L["On this page you can set your BestInSlot list. You can use the '%s' buttons to select your item for that slot"] = true
 L["You can right-click icons to quickly remove them from your list."] = true
@@ -257,21 +259,21 @@ L["Are you sure you want to delete ALL history?"] = true
 L["Mastery tooltips are not supported due to technical limitations"] = true
 
 --Bugs and Reporting
-L["Bugs and recommendations"] = true
-L["Submit Missing item"] = true
-L["Please choose what you would like to submit"] = true
-L["Describe what you were doing when the bug occured"] = true
-L["What is the item ID for the item you miss in BestInSlot?"] = true
-L["Should this item be added to an instance? If so which one, and which boss."] = true
-L["Is the item missing for a particular class or slot? If so, which one."] = true
-L["Describe what you would like to see implemented"] = true
-L["Additional Information"] = true
-L["Please navigate to the issue tracker."] = true
-L["Please select the type: %s"] = true
-L["Copy paste underlying information in the description field."] = true
-L["Paste any LUA errors in this field"] = true
-L["%s - Shows the report bug window"] = true
-L["This window is intended for when the normal BestInSlot window won't open!"] = true
+--L["Bugs and recommendations"] = true
+--L["Submit Missing item"] = true
+--L["Please choose what you would like to submit"] = true
+--L["Describe what you were doing when the bug occured"] = true
+--L["What is the item ID for the item you miss in BestInSlot?"] = true
+--L["Should this item be added to an instance? If so which one, and which boss."] = true
+--L["Is the item missing for a particular class or slot? If so, which one."] = true
+--L["Describe what you would like to see implemented"] = true
+--L["Additional Information"] = true
+--L["Please navigate to the issue tracker."] = true
+--L["Please select the type: %s"] = true
+--L["Copy paste underlying information in the description field."] = true
+--L["Paste any LUA errors in this field"] = true
+--L["%s - Shows the report bug window"] = true
+--L["This window is intended for when the normal BestInSlot window won't open!"] = true
 
 --Custom Lists
 L["Custom Lists"] = true
