@@ -358,7 +358,7 @@ function AntorusTheBurningThrone:OnEnable()
   -----------------------------------
   ----- Trash loot
   -----------------------------------
-  local bossName = "Trash Loot"
+  local bossName = L["Trash Loot"]
   local lootTable = {
     -- Cloth
     152084, --Gloves of Abhorrent Strategies
@@ -379,14 +379,137 @@ function AntorusTheBurningThrone:OnEnable()
   }
   
   self:RegisterBossLoot(AtBT, lootTable, bossName)
+  --------------------------------------------------
+  ----- Invasion Points
+  --------------------------------------------------
+
+  local worldDropDifficulty = {1,2}
+  local misc = {
+    -----------------------------------
+    ----- Matron Folnuna
+    -----------------------------------
+    [EJ_GetEncounterInfo(2010)] = {
+      152053, --Essence of the Burgeoning Brood
+      152346, --Frigid Earring
+      152376, --Crown of Burning Resolve
+      152369, --Helm of the Vigilant Eye
+      152354, --Accursed Defiler's Mantle
+      152371, --Shoulderguards of the Despondent Masses
+      152358, --Imp-Overseer's Vest
+      152356, --Fel-Absorbant Wristbands
+      152375, --Gauntlets of Barbaric Cruelty
+      152360, --Gloves of Barbarous Feats
+      152372, --Waistguard of Devilish Deeds
+      152380, --Waistguard of Fel Magics
+      152349, --Nefarious Light-Step Slippers
+      152359, --Vile Drifter's Footpads
+      difficulty = worldDropDifficulty
+    },
+    -----------------------------------
+    ----- Mistress Alluradel
+    -----------------------------------
+    [EJ_GetEncounterInfo(2011)] = {
+      152294, --Fel Mistress' Brand
+      152030, --Scourge of Perverse Desire
+      152351, --Mesmerizing Soul Hood
+      152354, --Accursed Defiler's Mantle
+      152363, --Fel-Spike Shoulderpads
+      152379, --Spaulders of Vile Determination
+      152378, --Breastplate of Terminal End
+      152366, --Enthralling Chain Armor
+      152373, --Poison-Barbed Bracers
+      152364, --Cinch of Detestable Guile
+      152372, --Waistguard of Devilish Deeds
+      152362, --Leggings of Heinous Acts
+      152349, --Nefarious Light-Step Slippers
+      152374, --Soul Crushing Stompers
+      difficulty = worldDropDifficulty
+    },
+    -----------------------------------
+    ----- Inquisitor Meto
+    -----------------------------------
+    [EJ_GetEncounterInfo(2012)] = {
+      152290, --Censer of Dark Intent
+      152344, --Meto's Orb of Entropy
+      152361, --Horned Hood of Retaliation
+      152371, --Shoulderguards of the Despondent Masses
+      152378, --Breastplate of Terminal End
+      152353, --Robes of Demonic Purpose
+      152381, --Tainted Corruptor's Vambraces
+      152368, --Fel-Linked Crushers
+      152350, --Gloves of Grim Direction
+      152364, --Cinch of Detestable Guile
+      152380, --Waistguard of Fel Magics
+      152370, --Legguards of Doomed Chattel
+      152349, --Nefarious Light-Step Slippers
+      152359, --Vile Drifter's Footpads
+      difficulty = worldDropDifficulty
+    },
+    -----------------------------------
+    ----- Occularus
+    -----------------------------------
+    [EJ_GetEncounterInfo(2013)] = {
+      152347, --Occularus' Unblemished Lens
+      152369, --Helm of the Vigilant Eye
+      152351, --Mesmerizing Soul Hood
+      152354, --Accursed Defiler's Mantle
+      152358, --Imp-Overseer's Vest
+      152373, --Poison-Barbed Bracers
+      152381, --Tainted Corruptor's Vambraces
+      152360, --Gloves of Barbarous Feats
+      152355, --Sash of Diabolic Preparation
+      152377, --Gore-Soaked Legplates
+      152367, --Sabatons of Ceaseless Assault
+      152374, --Soul Crushing Stompers
+      difficulty = worldDropDifficulty
+    },
+    -----------------------------------
+    ----- Sotanathor
+    -----------------------------------
+    [EJ_GetEncounterInfo(2014)] = {
+      152348, --Sotanathor's Thundering Hoof
+      152292, --Spike of Immortal Command
+      152361, --Horned Hood of Retaliation
+      152379, --Spaulders of Vile Determination
+      152366, --Enthralling Chain Armor
+      152353, --Robes of Demonic Purpose
+      152365, --Bracers of Diabolic Fury
+      152368, --Fel-Linked Crushers
+      152375, --Gauntlets of Barbaric Cruelty
+      152350, --Gloves of Grim Direction
+      152372, --Waistguard of Devilish Deeds
+      152377, --Gore-Soaked Legplates
+      152362, --Leggings of Heinous Acts
+      152352, --Subjugated Drudge's Leggings
+      difficulty = worldDropDifficulty
+    },
+    -----------------------------------
+    ----- Pit Lord Vilemus
+    -----------------------------------
+    [EJ_GetEncounterInfo(2015)] = {
+      152345, --Vilemus' Bile
+      152376, --Crown of Burning Resolve
+      152363, --Fel-Spike Shoulderpads
+      152378, --Breastplate of Terminal End
+      152365, --Bracers of Diabolic Fury
+      152356, --Fel-Absorbant Wristbands
+      152368, --Fel-Linked Crushers
+      152360, --Gloves of Barbarous Feats
+      152355, --Sash of Diabolic Preparation
+      152370, --Legguards of Doomed Chattel
+      152352, --Subjugated Drudge's Leggings
+      152367, --Sabatons of Ceaseless Assault
+      152374, --Soul Crushing Stompers
+      difficulty = worldDropDifficulty
+    },
+  } 
   
   if self.LegionLegendaries then
     local misc = {
       LOOT_JOURNAL_LEGENDARIES = self.LegionLegendaries:GetList()
     }
-    self:RegisterMiscItems(AtBT, misc)
   end
-  
+  self:RegisterMiscItems(AtBT, misc)
 end
 
 function AntorusTheBurningThrone:InitializeZoneDetect(ZoneDetect)
