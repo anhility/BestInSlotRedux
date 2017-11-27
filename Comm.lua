@@ -23,7 +23,7 @@ local function OnCommReceived(prefix, msg, channel, source)
         return
       end
       if printUpdateReminder and BestInSlot.version < version and not msg.Alpha and version > 136 then
-        BestInSlot:Print((L["Your version of BestInSlot is outdated! You can download the newest version at %s%s"]):format(BestInSlot.colorHighlight, "http://bit.ly/bisaddon"), true)
+        BestInSlot:Print((L["Your version of BestInSlot is outdated! You can download the newest version at %s%s"]):format(BestInSlot.colorHighlight, "https://www.curseforge.com/wow/addons/bestinslotredux"), true)
         BestInSlot:Print(source..":"..version)
         printUpdateReminder = false
       end
