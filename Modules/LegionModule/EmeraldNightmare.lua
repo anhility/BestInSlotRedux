@@ -345,7 +345,7 @@ end
 function EmeraldNightmare:InitializeZoneDetect(ZoneDetect)
   ZoneDetect:RegisterMapID(1094, EN)
   
-  ZoneDetect:RegisterNPCID(102672, EN, 1) --Nythemdra
+  ZoneDetect:RegisterNPCID(102672, EN, 1) --Nythendra
   ZoneDetect:RegisterNPCID(105393, EN, 2) --Il'gynoth
   ZoneDetect:RegisterNPCID(106087, EN, 3) --Elerethe
   ZoneDetect:RegisterNPCID(100497, EN, 4) --Ursoc
