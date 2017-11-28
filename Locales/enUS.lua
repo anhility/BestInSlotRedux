@@ -239,7 +239,7 @@ L["You can edit previously made custom items by selecting them with this dropdow
 
 --Export/Import
 L["Export"] = true
-L["%1$s's %2$s list for %3$s %4$s"] = true
+--L["%1$s's %2$s list for %3$s %4$s"] = true
 L["Failed to get info from %s"] = true
 
 --History
@@ -256,7 +256,7 @@ L["Wipe history"] = true
 L["Are you sure you want to delete ALL history?"] = true
 
 --Preview window
-L["Mastery tooltips are not supported due to technical limitations"] = true
+--L["Mastery tooltips are not supported due to technical limitations"] = true
 
 --Bugs and Reporting
 --L["Bugs and recommendations"] = true
