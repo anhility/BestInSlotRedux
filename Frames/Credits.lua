@@ -111,7 +111,7 @@ function Credits:Draw(container)
   header:SetFullWidth(true)
   scroll:AddChild(header)
   -- Translators
-  scroll:AddChild(self:CreateTranslatorLabel(sDEDE, "SpeedsharkX"))
+  scroll:AddChild(self:CreateTranslatorLabel(sDEDE, "Rushgarroth1337 & SpeedsharkX"))
   --scroll:AddChild(self:CreateTranslatorLabel(sESES, "to be added"))
   --scroll:AddChild(self:CreateTranslatorLabel(sESMX, "to be added"))
   scroll:AddChild(self:CreateTranslatorLabel(sFRFR, "Meivyn & nitrodroki"))
@@ -120,7 +120,7 @@ function Credits:Draw(container)
   --scroll:AddChild(self:CreateTranslatorLabel(sPTBR, "to be added"))
   scroll:AddChild(self:CreateTranslatorLabel(sRURU, "Hubbotu & SintlKun"))
   --scroll:AddChild(self:CreateTranslatorLabel(sZHCN, "to be added"))
-  --scroll:AddChild(self:CreateTranslatorLabel(sZHTW, "to be added"))
+  scroll:AddChild(self:CreateTranslatorLabel(sZHTW, "gaspy10"))
   
   -- Old translators
   local label=AceGUI:Create("Label")
