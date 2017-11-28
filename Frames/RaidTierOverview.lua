@@ -54,7 +54,7 @@ function Overview:ReportRequiredItems()
           if not notAcquiredItems[i] then
             notAcquiredItems[i] = {}
           end
-          tinsert(notAcquiredItems[i], self:GetItem(GetItemInfoFromHyperlink(requiredItems[i][j]), selectedDifficulty).link)
+          tinsert(notAcquiredItems[i], self:GetItem(GetItemInfoFromHyperlink(requiredItems[i][j]), id, selectedDifficulty).link)
         end
       end
     end
