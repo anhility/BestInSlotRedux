@@ -25,11 +25,14 @@ Overview.Height = 600
 
 --TODO: Protected function since 7.3. Put to false until workaround.
 function Overview:IsOfficer()
-  --local rank = select(3, GetGuildInfo("player"))
-  --rank = rank + 1
-  --GuildControlSetRank(rank)
-  --local officer = select(3, GuildControlGetRankFlags())
-  local officer = false
+  local function IsPlayerInGuild()
+    return IsInGuild() and GetGuildInfo("player")
+  end
+  local rank = select(3, GetGuildInfo("player"))
+  rank = rank + 1
+  GuildControlSetRank(rank)
+  local officer = select(3, GuildControlGetRankFlags())
+  local officer = true
   return officer
 end
 
