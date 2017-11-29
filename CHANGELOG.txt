@@ -1,5 +1,13 @@
 # BestInSlotRedux Changelog
 
+## Release 7.3.15
+### Minor additions
+* Added clickable links when reporting BiS list to chat (Thanks Meivyn)
+* Added additional translator to credits page (Brazilian Portuguese)
+
+### Bug fixes
+* Fixed a minor translation string error that bricked the addon for Russian locale. Sorry Ruskies!
+
 ## Release 7.3.14
 ### Other
 * Fixed the localization issues for Russian
