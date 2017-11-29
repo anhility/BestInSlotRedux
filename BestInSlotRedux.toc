@@ -14,6 +14,8 @@ Modules\Include.xml
 #@do-not-package@
 Utils\ExportRaid.lua
 Utils\ItemInfo.lua
+Modules\BisLink.lua
+Modules\PreviewWindow.lua
 Modules\LegionModule\LegionLegendaries.lua
 Modules\LegionModule\EmeraldNightmare.lua
 Modules\LegionModule\Nighthold.lua
