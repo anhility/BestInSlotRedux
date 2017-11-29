@@ -7,6 +7,7 @@
 
 ### Bug fixes
 * Fixed a minor translation string error that bricked the addon for Russian locale. Sorry Ruskies!
+* Fixed small error that made so Leggo's didn't show up with Antorus items
 
 ## Release 7.3.14
 ### Other
