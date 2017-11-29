@@ -508,8 +508,8 @@ function AntorusTheBurningThrone:OnEnable()
     local misc = {
       LOOT_JOURNAL_LEGENDARIES = self.LegionLegendaries:GetList()
     }
+    self:RegisterMiscItems(AtBT, misc)
   end
-  self:RegisterMiscItems(AtBT, misc)
 end
 
 function AntorusTheBurningThrone:InitializeZoneDetect(ZoneDetect)
