@@ -139,7 +139,7 @@ L["Show obtained items"] = true
 L["Not enough data to filter"] = true
 
 --Overview window
-L["Show all"] = true
+--L["Show all"] = true
 L["You have this item"] = true
 L["Only show missing items"] = true
 L["You have this item on '%s'"] = true
@@ -240,7 +240,7 @@ L["You can edit previously made custom items by selecting them with this dropdow
 --Export/Import
 L["Export"] = true
 --L["%1$s's %2$s list for %3$s %4$s"] = true
-L["Failed to get info from %s"] = true
+--L["Failed to get info from %s"] = true
 
 --History
 L["Show history for %s"] = true
