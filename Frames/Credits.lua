@@ -127,7 +127,7 @@ function Credits:Draw(container)
   label:SetFullWidth(true)
   label:SetText(
     "\n\n"..
-    "I want to acknowledge the following people who did the previous translation that unfortunately was lost:\n"..
+    "I want to acknowledge the following people who did the previous translations that unfortunately were lost:\n"..
     sDEDE..": Simcat & neo0608\n"..
     sESES..": Luskaner\n"..
     sKOKR..": yuk6196 & cyberyahoo\n"..
