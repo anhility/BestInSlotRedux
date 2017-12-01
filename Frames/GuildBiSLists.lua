@@ -65,17 +65,17 @@ function GuildLists:GetContextMenu(character, spec)
   local raidTier = dropdownRaidTier:GetValue()
   local difficulty = dropdownDifficulty:GetValue()
   if self.History:HasHistory(character, raidTier, difficulty) then
-    tinsert(menu, {text = L["Show history for %s"]:format(character),             func = showHistory, arg1 = character, arg2 = {raidtier = raidTier, difficulty = difficulty}})   
+    tinsert(menu, {text = L["Show history for %s"]:format(character),           func = showHistory,     arg1 = character, arg2 = {raidtier = raidTier, difficulty = difficulty}})   
   else
     tinsert(menu, {text = L["There is no history available for %s"]:format(character), disabled = true})
   end
   tinsert(menu, {text = L["Delete options"], isTitle = true})
   if spec ~= nil then
-    tinsert(menu, { text = L["Delete this specialization from this raid tier"],    func = confirmDeletion, arg1 = character, arg2 = {raidtier = raidTier, difficulty = difficulty, spec = spec} })
+    tinsert(menu, { text = L["Delete this specialization from this raid tier"], func = confirmDeletion, arg1 = character, arg2 = {raidtier = raidTier, difficulty = difficulty, spec = spec} })
   end
-  tinsert(menu, {text = L["Delete %s from this difficulty"]:format(character),     func = confirmDeletion, arg1 = character, arg2 = {raidtier = raidTier, difficulty = difficulty}})
-  tinsert(menu, { text = L["Delete %s from this raidtier"]:format(character),    func = confirmDeletion, arg1 = character, arg2 = {raidtier = raidTier}})
-  tinsert(menu, { text = L["Delete %s completely."]:format(character),           func = confirmDeletion, arg1 = character, arg2 = {all = true}})
+  tinsert(menu, {text = L["Delete %s from this difficulty"]:format(character),  func = confirmDeletion, arg1 = character, arg2 = {raidtier = raidTier, difficulty = difficulty}})
+  tinsert(menu, { text = L["Delete %s from this raidtier"]:format(character),   func = confirmDeletion, arg1 = character, arg2 = {raidtier = raidTier}})
+  tinsert(menu, { text = L["Delete %s completely."]:format(character),          func = confirmDeletion, arg1 = character, arg2 = {all = true}})
 
   tinsert(menu, { text = CLOSE})
   if not self.dialog then
