@@ -113,7 +113,7 @@ function Credits:Draw(container)
   -- Translators
   scroll:AddChild(self:CreateTranslatorLabel(sDEDE, "Rushgarroth1337 & SpeedsharkX"))
   --scroll:AddChild(self:CreateTranslatorLabel(sESES, "to be added"))
-  --scroll:AddChild(self:CreateTranslatorLabel(sESMX, "to be added"))
+  scroll:AddChild(self:CreateTranslatorLabel(sESMX, "xylons"))
   scroll:AddChild(self:CreateTranslatorLabel(sFRFR, "Meivyn & nitrodroki"))
   --scroll:AddChild(self:CreateTranslatorLabel(sITIT, "to be added"))
   --scroll:AddChild(self:CreateTranslatorLabel(sKOKR, "to be added"))
