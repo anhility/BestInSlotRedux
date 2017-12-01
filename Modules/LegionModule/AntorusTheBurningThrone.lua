@@ -514,26 +514,48 @@ end
 
 function AntorusTheBurningThrone:InitializeZoneDetect(ZoneDetect)
   ZoneDetect:RegisterMapID(1188, AtBT)
+  -- Multiple boss ID's for some reason on most bosses
+  ZoneDetect:RegisterNPCID(122450, AtBT, 1) --Garothi Worldbreaker
   ZoneDetect:RegisterNPCID(123371, AtBT, 1) --Garothi Worldbreaker
   
-  ZoneDetect:RegisterNPCID(126915, AtBT, 2) --Felhounds of Sargeras (Shatug)
-  ZoneDetect:RegisterNPCID(126916, AtBT, 2) --Felhounds of Sargeras (F'harg)
+  ZoneDetect:RegisterNPCID(122135, AtBT, 2) --Felhounds of Sargeras (Shatug)
+  ZoneDetect:RegisterNPCID(122477, AtBT, 2) --Felhounds of Sargeras (F'harg)
   
+  ZoneDetect:RegisterNPCID(122369, AtBT, 3) --Antoran High Command (Ishkar)
   ZoneDetect:RegisterNPCID(125012, AtBT, 3) --Antoran High Command (Ishkar)
+  ZoneDetect:RegisterNPCID(122333, AtBT, 3) --Antoran High Command (Erodus)
   ZoneDetect:RegisterNPCID(125014, AtBT, 3) --Antoran High Command (Erodus)
   ZoneDetect:RegisterNPCID(122367, AtBT, 3) --Antoran High Command (Svirax)
+  ZoneDetect:RegisterNPCID(125013, AtBT, 3) --Antoran High Command (Svirax)
   
+  ZoneDetect:RegisterNPCID(122104, AtBT, 4) --Portal Keeper Hasabel
   ZoneDetect:RegisterNPCID(124393, AtBT, 4) --Portal Keeper Hasabel
-  ZoneDetect:RegisterNPCID(125562, AtBT, 5) --Essence of Eonar
+  
+  ZoneDetect:RegisterNPCID(122500, AtBT, 5) --Essence of Eonar
+  ZoneDetect:RegisterNPCID(131561, AtBT, 5) --Essence of Eonar
+  
+  ZoneDetect:RegisterNPCID(124158, AtBT, 6) --Imonar the Soulhunter
   ZoneDetect:RegisterNPCID(125055, AtBT, 6) --Imonar the Soulhunter
+  
+  ZoneDetect:RegisterNPCID(122578, AtBT, 7) --Kin'garoth
   ZoneDetect:RegisterNPCID(125050, AtBT, 7) --Kin'garoth
+  
+  ZoneDetect:RegisterNPCID(122366, AtBT, 8) --Varimathras  
   ZoneDetect:RegisterNPCID(125075, AtBT, 8) --Varimathras
   
   ZoneDetect:RegisterNPCID(122469, AtBT, 9) --Coven of Shivarra (Diima)
+  ZoneDetect:RegisterNPCID(125083, AtBT, 9) --Coven of Shivarra (Diima)
   ZoneDetect:RegisterNPCID(122468, AtBT, 9) --Coven of Shivarra (Noura)
+  ZoneDetect:RegisterNPCID(125084, AtBT, 9) --Coven of Shivarra (Noura)
   ZoneDetect:RegisterNPCID(122467, AtBT, 9) --Coven of Shivarra (Asara)
+  ZoneDetect:RegisterNPCID(125085, AtBT, 9) --Coven of Shivarra (Asara)
   ZoneDetect:RegisterNPCID(125436, AtBT, 9) --Coven of Shivarra (Thu'raya)
+  ZoneDetect:RegisterNPCID(125723, AtBT, 9) --Coven of Shivarra (Thu'raya)
   
+  ZoneDetect:RegisterNPCID(121594, AtBT, 10) --Aggramar  -- One of these is from the pre-quest IGC
+  ZoneDetect:RegisterNPCID(121975, AtBT, 10) --Aggramar
   ZoneDetect:RegisterNPCID(124691, AtBT, 10) --Aggramar
+  
   ZoneDetect:RegisterNPCID(124828, AtBT, 11) --Argus the Unmaker
+  ZoneDetect:RegisterNPCID(130352, AtBT, 11) --Argus the Unmaker
 end
