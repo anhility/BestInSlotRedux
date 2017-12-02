@@ -1,5 +1,13 @@
 # BestInSlotRedux Changelog
 
+## Release 7.3.16
+### Minor additions
+* Updated Legion Dungeon loot to new item levels
+* Added additional translator to credits page (Latin American Spanish)
+
+### Bug fixes
+* Fixed so the BiS tooltip correctly show on Antorus bosses
+
 ## Release 7.3.15
 ### Minor additions
 * Added clickable links when reporting BiS list to chat (Thanks Meivyn)
