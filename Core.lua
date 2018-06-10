@@ -155,14 +155,14 @@ local data = {
     difficultyconversion = {
       [1] = 3, --default conversion of difficulties, normal -> 0
       [2] = 5, --Heroic -> 5
-      [3] = 6,  --Mythic -> 6
-      --[4] = 0 
+      [3] = 6, --Mythic -> 6
+      [4] = 17 --LFR
     },
     bonusids = {
       [1] = 0,
       [2] = 1798,
       [3] = 1799,
-      --[4] = 0
+      [4] = 0
     },
   }},
   expansions = {},
@@ -355,7 +355,7 @@ function BestInSlot:RegisterTierTokens(raidTier, tierTokens)
   end
 end
 ---Adds the named difficulty to the available difficulty
---@param #number raidtier The Raidtier to append the difficculty to
+--@param #number raidtier The Raidtier to append the difficulty to
 --@param #string difficulty The name of the difficulty
 function BestInSlot:AddDifficultyToRaidTier(raidtier, difficulty)
   if not data.raidTiers[raidtier] then error("Raidtier '"..tostring(raidtier).."' does not exist!") end
@@ -366,7 +366,8 @@ end
 --- Register Miscelaneous items
 -- @param #number raidTier The Raid tier to add the misc items to
 -- @param #table miscItems A table containing the miscelaneous items, should be formatted in the following format: {["Legendary Cloak Quest"] = {idCloak1, idCloak2, ...}, ["Ordos"] = {idOrdos1, idOrdos2, ...}}
-function BestInSlot:RegisterMiscItems(instance, miscItems)
+-- @param #bool legionLegendary
+function BestInSlot:RegisterMiscItems(instance, miscItems, legionLegendary)
   if not data.instances[instance] then error("This instance is not registered yet") end
   local misc = {}
   for miscName,miscLootTable in pairs(miscItems) do
@@ -380,10 +381,10 @@ function BestInSlot:RegisterMiscItems(instance, miscItems)
         if not itemid then self.console:AddError("ItemTable didn't provide id", itemid) end
       end
       local link, equipSlot
-      if miscName == LOOT_JOURNAL_LEGENDARIES then --fix for Legion Legendaries itemlevel
-        _, link, _, _, _, _, _, _, equipSlot = GetItemInfo(("item:%d::::::::::::2:1502:3530"):format(itemid))
+      if legionLegendary == true then --fix for Legion Legendaries itemlevel
+        _, link, _, _, _, _, _, _, equipSlot = GetItemInfo(("item:%d::::::::::::1:3630"):format(itemid))
       else
-        _, link, _, _, _, _, _, _, equipSlot = GetItemInfo(itemid)
+        _, link, _, _, _, _, _, _, equipSlot = GetItemInfo(("item:%d::::::::::::1:3630"):format(itemid))
       end
       if not link then self.unsafeIDs[itemid] = true end
       misc[itemid] = {
@@ -412,7 +413,7 @@ local  bossNewIndexMetatable = {
 -- @param #string unlocalizedInstanceName The unlocalized name of the instance to add the loot to.
 -- @param #table lootTable The table containing the loot for the boss, must be formatted as follows: {["Normal"] = {itemId1, itemId2}, ["Heroic"] = {itemId1, itemId2}}
 -- @param #string bossName Localized name of the boss, you can use LibBabbleBoss-3.0 for this.
--- @param #number tierToken If supplied, registers this item as a boss that drops the supplied tiertoken. 10 = Handslot, 5 = ChestSlot, 1 = HeadSlot, 3 = ShoulderSlot, 7 = LegsSlot
+-- @param #number tierToken If supplied, registers this item as a boss that drops the supplied tiertoken. 1 = HeadSlot, 3 = ShoulderSlot, 5 = ChestSlot, 7 = LegsSlot, 10 = Handslot, 15 = BackSlot.
 function BestInSlot:RegisterBossLoot(unlocalizedInstanceName, lootTable, bossName, tierToken, bossId) 
   local instance = data.instances[unlocalizedInstanceName]                                                                                                 
   if not instance then error("The instance \""..unlocalizedInstanceName.."\" has not yet been registered!") end

@@ -86,12 +86,12 @@ function TrialOfValor:OnEnable()
   }
   self:RegisterBossLoot(ToV, lootTable, bossName)
   
-  if self.LegionLegendaries then
-    local misc = {
-      LOOT_JOURNAL_LEGENDARIES = self.LegionLegendaries:GetList()
-    }
-    self:RegisterMiscItems(ToV, misc)
-  end
+--  if self.LegionLegendaries then
+--    local misc = {
+--      LOOT_JOURNAL_LEGENDARIES = self.LegionLegendaries:GetList()
+--    }
+--    self:RegisterMiscItems(ToV, misc)
+--  end
 end
 
 function TrialOfValor:InitializeZoneDetect(ZoneDetect)
