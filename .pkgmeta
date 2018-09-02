@@ -32,6 +32,8 @@ ignore:
 move-folders:
     BestInSlotRedux/Modules/LegionModule: BestInSlotRedux_Legion
     BestInSlotRedux/Modules/LegionDungeon: BestInSlotRedux_LegionDungeons
+    BestInSlotRedux/Modules/BfaRaids: BestInSlotRedux_BfaRaids
+    BestInSlotRedux/Modules/BfaDungeons: BestInSlotRedux_BfaDungeons
 
 license-output: LICENSE.html
 
