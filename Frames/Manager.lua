@@ -265,7 +265,6 @@ function Manager:FillSelectContainer(itemGroup, raidTier, difficulty, slotid)
     scroll:AddChild(lowerRaidTierLabel)    
   end
 end
-
 function Manager:HideItemList(callback, ...)
   local raidtier = self:GetSelected(self.RAIDTIER)
   for i=1,#itemSelectionMode do
@@ -395,9 +394,7 @@ local function iconOnEnter(icon)
     Manager:GetItemTooltip(itemid, Manager:GetSelected(Manager.DIFFICULTY), Manager.frame, itemLink)
   end
 end
-
 local function iconOnLeave() Manager:HideItemTooltip()  end
-
 local function iconOnClick(widget, _, button)
   local itemid = widget:GetUserData("itemid")
   local shift, ctrl = IsShiftKeyDown(), IsControlKeyDown()
@@ -436,6 +433,7 @@ end
 local function selectItemButtonOnClick(widget)
   Manager:ShowItemList(widget)
 end
+
 
 function Manager:SetLegionRelics(enabled, container, specialization, bis)
   if enabled then
@@ -482,17 +480,19 @@ function Manager:PopulateSlots(slotContainer)
     local label = itemGroup:GetUserData("label")
     local itemid = BiSList[slotId] and BiSList[slotId].item
     local isLegionWeapon = false
-    if (slotId == 16 or slotId == 17) and self:GetSelected(self.RAIDTIER) >= 70000 then
+    if (slotId == 16 or slotId == 17) and (self:GetSelected(self.RAIDTIER) >= 70000 and self:GetSelected(self.RAIDTIER) < 80000) then
       --Artifact weapons
       icon:SetUserData("disabled", true)
       button:SetDisabled(true)
-      local artifactInfo = select(slotId == 16 and 1 or 2, self.Artifacts:ForSpecialization(specialization))
-      if artifactInfo then
-        icon:SetImage(artifactInfo.texture)
-        icon:SetUserData("itemid", artifactInfo.id)
-        icon:SetUserData("itemlink", artifactInfo.link)
-        label:SetText(artifactInfo.link)
-        isLegionWeapon = true
+      if self.Artifacts then
+        local artifactInfo = select(slotId == 16 and 1 or 2, self.Artifacts:ForSpecialization(specialization))
+        if artifactInfo then
+          icon:SetImage(artifactInfo.texture)
+          icon:SetUserData("itemid", artifactInfo.id)
+          icon:SetUserData("itemlink", artifactInfo.link)
+          label:SetText(artifactInfo.link)
+          isLegionWeapon = true
+        end
       end
     --Code for disabling the off-hand slot in Two-handed cases
     elseif slotId == 17 and isTwoHander and select(2, self:GetSelected(self.SPECIALIZATION)) ~= 72 then --72 is a fury warrior
@@ -536,7 +536,6 @@ function Manager:PopulateSlots(slotContainer)
   
   self:SetLegionRelics(raidTier >= 70000 and raidTier < 80000, container, specialization, BiSList)
 end
-
 function Manager:GetItemSelectionGroup(slotId, textureName, bisIndex)
   local itemGroup = AceGUI:Create("SimpleGroup")
   itemGroup:SetHeight(45)
@@ -578,7 +577,6 @@ function Manager:GetItemSelectionGroup(slotId, textureName, bisIndex)
   itemGroup:SetRelativeWidth(0.48)
   return itemGroup
 end
-
 function Manager:GetSlotContainer(raidTier, difficulty)
   local container = AceGUI:Create("SimpleGroup")
   itemGroups = {}
@@ -754,11 +752,9 @@ Manager:RegisterTutorials(frameName,{
   [4] = {text = L["When you've set a difficulty before, you can easily import a previously set list."], onRequest = true, xOffset = 0, yOffset = 0, container="content", element="importButton", DownArrow = true},
   [5] = {text = L["When selecting rings or trinkets, you can see both items at once."], text2 = L["Use left-click to (de)select the left one, and right-click to select the right one"], xOffset = -200, yOffset = -50, container = "content", element = "selectedItem", onRequest = true, UpArrow = true},
 })
-
 local function cancel()
  dropdownImport:SetValue(nil)
 end
-
 local function doImport()
   Manager:DoImport()
   cancel()

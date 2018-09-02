@@ -20,14 +20,11 @@ BestInSlot.options.DEBUG = false
 -- Authors
 BestInSlot.Author1 = ("%s%s @ %s"):format("|c"..RAID_CLASS_COLORS.DEMONHUNTER.colorStr, "Beleria".."|r",ConvertRGBtoColorString(PLAYER_FACTION_COLORS[1]).."Argent Dawn-EU|r")
 BestInSlot.Author2 = ("%s%s @ %s"):format("|c"..RAID_CLASS_COLORS.PALADIN.colorStr, "Anhility".."|r",ConvertRGBtoColorString(PLAYER_FACTION_COLORS[1]).."Ravencrest-EU|r")
---[===[@non-debug@ 
-BestInSlot.version = @project-date-integer@
---@end-non-debug@]===]
+BestInSlot.Author3 = ("%s%s @ %s"):format("|c"..RAID_CLASS_COLORS.ROGUE.colorStr, "Saríth".."|r",ConvertRGBtoColorString(PLAYER_FACTION_COLORS[1]).."Tarren Mill-EU|r")
+--@non-debug@ 
+BestInSlot.version = 20180828204050
+--@end-non-debug@
 BestInSlot.AlphaVersion = not (GetAddOnMetadata("BestInSlotRedux", "Version"):find("Release") and true or false)
---@do-not-package@
-BestInSlot.version = 1337
-BestInSlot.options.DEBUG = true
---@end-do-not-package@
 local slashCommands = {}
 local defaults = {
   char = {
@@ -153,16 +150,26 @@ local data = {
   raidTiers = {},
   instances = {__default={
     difficultyconversion = {
-      [1] = 3, --default conversion of difficulties, normal -> 0
-      [2] = 5, --Heroic -> 5
-      [3] = 6, --Mythic -> 6
-      [4] = 17 --LFR
+      -- [1] = 3, --default conversion of difficulties, normal -> 0
+      -- [2] = 5, --Heroic -> 5
+      -- [3] = 6,  --Mythic -> 6
+      -- [4] = 23,  --Mythic -> 6
+      [3] = 1, --default conversion of difficulties, normal -> 0
+      [2] = 2, --"Heroic" (Dungeons)
+      [5] = 2, --"10 Player (Heroic)"
+      [6] = 3,  --Mythic
+      [14] = 1, --Raid Normal
+      [15] = 2, --Raid Heroic
+      [16] = 3, --Raid Mythic
+      [23] = 3, --Dungeon Mythic
+
+      --[4] = 0 
     },
     bonusids = {
       [1] = 0,
       [2] = 1798,
       [3] = 1799,
-      [4] = 0
+      --[4] = 0
     },
   }},
   expansions = {},
@@ -355,7 +362,7 @@ function BestInSlot:RegisterTierTokens(raidTier, tierTokens)
   end
 end
 ---Adds the named difficulty to the available difficulty
---@param #number raidtier The Raidtier to append the difficulty to
+--@param #number raidtier The Raidtier to append the difficculty to
 --@param #string difficulty The name of the difficulty
 function BestInSlot:AddDifficultyToRaidTier(raidtier, difficulty)
   if not data.raidTiers[raidtier] then error("Raidtier '"..tostring(raidtier).."' does not exist!") end
@@ -366,8 +373,7 @@ end
 --- Register Miscelaneous items
 -- @param #number raidTier The Raid tier to add the misc items to
 -- @param #table miscItems A table containing the miscelaneous items, should be formatted in the following format: {["Legendary Cloak Quest"] = {idCloak1, idCloak2, ...}, ["Ordos"] = {idOrdos1, idOrdos2, ...}}
--- @param #bool legionLegendary
-function BestInSlot:RegisterMiscItems(instance, miscItems, legionLegendary)
+function BestInSlot:RegisterMiscItems(instance, miscItems)
   if not data.instances[instance] then error("This instance is not registered yet") end
   local misc = {}
   for miscName,miscLootTable in pairs(miscItems) do
@@ -381,10 +387,10 @@ function BestInSlot:RegisterMiscItems(instance, miscItems, legionLegendary)
         if not itemid then self.console:AddError("ItemTable didn't provide id", itemid) end
       end
       local link, equipSlot
-      if legionLegendary == true then --fix for Legion Legendaries itemlevel
-        _, link, _, _, _, _, _, _, equipSlot = GetItemInfo(("item:%d::::::::::::1:3630"):format(itemid))
+      if miscName == LOOT_JOURNAL_LEGENDARIES then --fix for Legion Legendaries itemlevel
+        _, link, _, _, _, _, _, _, equipSlot = GetItemInfo(("item:%d::::::::::::2:1502:3530"):format(itemid))
       else
-        _, link, _, _, _, _, _, _, equipSlot = GetItemInfo(("item:%d::::::::::::1:3630"):format(itemid))
+        _, link, _, _, _, _, _, _, equipSlot = GetItemInfo(itemid)
       end
       if not link then self.unsafeIDs[itemid] = true end
       misc[itemid] = {
@@ -413,7 +419,7 @@ local  bossNewIndexMetatable = {
 -- @param #string unlocalizedInstanceName The unlocalized name of the instance to add the loot to.
 -- @param #table lootTable The table containing the loot for the boss, must be formatted as follows: {["Normal"] = {itemId1, itemId2}, ["Heroic"] = {itemId1, itemId2}}
 -- @param #string bossName Localized name of the boss, you can use LibBabbleBoss-3.0 for this.
--- @param #number tierToken If supplied, registers this item as a boss that drops the supplied tiertoken. 1 = HeadSlot, 3 = ShoulderSlot, 5 = ChestSlot, 7 = LegsSlot, 10 = Handslot, 15 = BackSlot.
+-- @param #number tierToken If supplied, registers this item as a boss that drops the supplied tiertoken. 10 = Handslot, 5 = ChestSlot, 1 = HeadSlot, 3 = ShoulderSlot, 7 = LegsSlot
 function BestInSlot:RegisterBossLoot(unlocalizedInstanceName, lootTable, bossName, tierToken, bossId) 
   local instance = data.instances[unlocalizedInstanceName]                                                                                                 
   if not instance then error("The instance \""..unlocalizedInstanceName.."\" has not yet been registered!") end
@@ -444,6 +450,7 @@ function BestInSlot:RegisterBossLoot(unlocalizedInstanceName, lootTable, bossNam
       item.multiplesources[unlocalizedInstanceName] = item.multiplesources[unlocalizedInstanceName] or {}
       item.multiplesources[unlocalizedInstanceName][bossId] = true
       bossLootTable[itemid] = item
+
     else
       if item and item.customitem then
         self:Print("You have added a custom item that is being registered as a module. This is being removed from your custom items.", true)
@@ -563,10 +570,11 @@ function BestInSlot:GetDifficultyIdForDungeon(bisId, dungeon, toBiS)
       returnId, bonusIds = data.instances.__default.difficultyconversion[bisId], data.instances.__default.bonusids[bisId]
     end
   else
+    --print(bisId)
     local tbl = data.instances[dungeon] or data.instances.__default
     for BiSId, WoWId in pairs(tbl.difficultyconversion) do
-      if bisId == WoWId then
-        returnId, bonusIds = BiSId, tbl.bonusids[BiSId]
+      if bisId == BiSId then
+        returnId, bonusIds = WoWId, tbl.bonusids[WoWId]
       end
     end
   end
@@ -582,7 +590,7 @@ end
 -- @param #number itemid The item ID to check if it's equipped
 -- @return #boolean True if item equipped, otherwise false
 function BestInSlot:HasItemEquipped(itemid, difficulty)
-  local item = self:GetItem(itemid, difficulty)
+  local item = self:GetItem(itemid, difficulty)  
   if not item then return end
   for i=1,#self.slots do
     local slotID = GetInventorySlotInfo(self.slots[i])
@@ -608,7 +616,7 @@ function BestInSlot:HasItemEquipped(itemid, difficulty)
 end
 
 function BestInSlot:GetItemInfoFromLink(itemlink)
-  local _,itemid, enchantId, gemId1, gemId2, gemId3, gemId4, suffixId, uniqueId, linkLevel, specId, upgradeId, instanceDifficultyID, numBonusId, bonusId1, bonusId2, upgradeVal = (":"):split(itemlink)
+  local _,itemid, enchantId, gemId1, gemId2, gemId3, gemId4, suffixId, uniqueId, linkLevel, specId, upgradeId, instanceDifficultyID, numBonusId, bonusId1, bonusId2, bonusId3, upgradeVal = (":"):split(itemlink)
   return tonumber(itemid), tonumber(instanceDifficultyID), bonusId1, bonusId2
 end
 
@@ -668,8 +676,9 @@ function BestInSlot:HasItem(itemid, difficulty, checkHigherDifficulties)
   if not difficulty or not checkHigherDifficulties then
     return self:HasItemEquipped(itemid, difficulty) or self:HasItemInBag(itemid, difficulty)
   else
+    --print(itemid,difficulty,checkHigherDifficulties)
     local equippedResult = self:HasItemEquipped(itemid)
-    local result = self:HasItemInBag(itemid) or {}
+    local result = self:HasItemInBag(itemid) or {}        
     if equippedResult then
       if not tContains(result, equippedResult[1]) then
         tinsert(result, equippedResult[1])
@@ -914,10 +923,12 @@ function BestInSlot:GetPersonalizedLootTableBySlot(raidTier, slotId, difficulty,
 end
 
 local function addLootToTableByFilter(tbl, itemlist, slotId, difficulty)
-  for id in pairs(itemlist) do
+  for id,val in pairs(itemlist) do
     local item = BestInSlot:GetItem(id, difficulty)
-    if (not slotId) or (type(BestInSlot.invSlots[slotId]) == "string" and BestInSlot.invSlots[slotId] == item.equipSlot) or tContains(BestInSlot.invSlots[slotId], item.equipSlot) then
-      if difficulty == 4 and (item.difficulty == -1) then --do nothing
+    --if (not slotId) or (type(BestInSlot.invSlots[slotId]) == "string" and BestInSlot.invSlots[slotId] == item.equipSlot) or BestInSlot.invSlots[slotId] == item.equipSlot then
+    if (not slotId) or (type(BestInSlot.invSlots[slotId]) == "string" and BestInSlot.invSlots[slotId] == item.equipSlot) or (type(BestInSlot.invSlots[slotId]) == "table" and tContains(BestInSlot.invSlots[slotId],item.equipSlot)) then
+      if difficulty == 4 and (item.difficulty == -1) then 
+        --do nothing
       elseif (not difficulty) or (not item.difficulty or (item.difficulty == -1 or item.difficulty == difficulty or (type(item.difficulty) == "table") and tContains(item.difficulty, difficulty)) ) then
         tbl[id] = item
       end
@@ -985,7 +996,7 @@ end
 -- @return #table The loot table
 function BestInSlot:GetLootTableBySlot(raidTier, slotId, difficulty, lowerRaidTiers)  
   local items = {}
-  local dungeons = data.raidTiers[raidTier].instances
+  local dungeons = data.raidTiers[raidTier].instances  
   for i=1,#dungeons do
     for id, item in pairs(self:GetLootTableByDungeon(dungeons[i], slotId, difficulty)) do
       items[id] = item
@@ -1022,10 +1033,10 @@ end
 function BestInSlot:GetItemString(itemid, difficulty)
   if not itemid then error("You should provide an itemid!") end
   difficulty = difficulty or 1
-  local instanceDifficulty, bonusID1, bonusID2 = self:GetDifficultyIdForDungeon(difficulty, itemData[itemid] and itemData[itemid].dungeon)
-  numBonusIDs = (bonusID2 ~= 0 and 2) or (bonusID1 ~= 0 and 1) or 0
+  local instanceDifficulty, bonusID1, bonusID2, bonusID3 = self:GetDifficultyIdForDungeon(difficulty, itemData[itemid] and itemData[itemid].dungeon)
+  numBonusIDs = (bonusID3 ~= 0 and 3) or (bonusID2 ~= 0 and 2) or (bonusID1 ~= 0 and 1) or 0
   --item:itemId:enchantId:gemId1:gemId2:gemId3:gemId4:suffixId:uniqueId:linkLevel:specializationID:upgradeId:instanceDifficultyId:numBonusIds:bonusId1:bonusId2:upgradeValue
-  return ("item:%d:::::::::::%d:%d:%d:%d:"):format(itemid, instanceDifficulty, numBonusIDs, bonusID1, bonusID2)
+  return ("item:%d:::::::::::%d:%d:%d:%d:%d:"):format(itemid, instanceDifficulty, numBonusIDs, bonusID1, bonusID2, bonusID3)
 end
 
 --- Gets the internal item table for the specified itemid
@@ -1044,7 +1055,7 @@ function BestInSlot:GetItem(itemid, difficulty)
     if itemData[itemid] then
       local newItemTable = setmetatable({}, {__index=itemData[itemid]})
       if difficulty and difficulty ~= 4 and newItemTable.difficulty == -1 then --This is an item that has multiple states and not LFR, therefore we need to set it's state
-        newItemTable.itemstr = self:GetItemString(itemid, difficulty)
+        newItemTable.itemstr = self:GetItemString(itemid, difficulty)            
         local link = select(2,GetItemInfo(newItemTable.itemstr))
         newItemTable.link = link
         newItemTable.difficulty = difficulty
@@ -1881,11 +1892,3 @@ end
 function BestInSlot:GetPlayerInfo()
   return {race = select(2, UnitRace("player")), sex = UnitSex("player") - 2, name = UnitName("player"), class  = select(2, UnitClass("player"))}
 end
---@do-not-package@
-_G.BestInSlot = BestInSlot
-_G.data = data
-_G.itemData = itemData
-_G.itemDataCache = itemDataCache
-_G.tierTokenData = tierTokenData
-_G.customItems = customItems
---@end-do-not-package@

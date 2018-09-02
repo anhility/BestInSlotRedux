@@ -2,9 +2,9 @@ local Dungeons = LibStub("AceAddon-3.0"):GetAddon("BestInSlotRedux"):NewModule("
 local dungeonTierId = 70003
 local bonusIds = {
   bonusids = {
-    [1] = {1826, 1462}, -- Normal ids
-    [2] = {1726, 1482}, -- Heroic ids
-    [3] = {1727, 1502}  -- Mythic ids
+    [1] = {1826, 1497},
+    [2] = {1726, 1517},
+    [3] = {1727, 1537}
   }
 }
 

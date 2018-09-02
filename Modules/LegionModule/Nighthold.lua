@@ -322,12 +322,12 @@ function Nighthold:OnEnable()
   }
   self:RegisterBossLoot(NH, lootTable, bossName)
 
---  if self.LegionLegendaries then
---    local misc = {
---      LOOT_JOURNAL_LEGENDARIES = self.LegionLegendaries:GetList()
---    }
---    self:RegisterMiscItems(NH, misc)
---  end
+  if self.LegionLegendaries then
+    local misc = {
+      LOOT_JOURNAL_LEGENDARIES = self.LegionLegendaries:GetList()
+    }
+    self:RegisterMiscItems(NH, misc)
+  end
 end
 
 function Nighthold:InitializeZoneDetect(ZoneDetect)

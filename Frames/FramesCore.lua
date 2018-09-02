@@ -306,6 +306,9 @@ function BestInSlot:GameTooltip_OnTooltipSetItem(tooltip, ...)
           end
         end
         local item = self:GetItem(itemId)
+        -- local itemName, itemLink = GetItemInfo(itemId)
+        -- local itemString = select(3, strfind(itemLink, "|H(.+)|h"))        
+        -- print(itemString)
         if item and (self.db.char.options.tooltipSource or self.options.DEBUG) then
           if item.multiplesources then
             tooltip:AddLine(SOURCES..":")
@@ -441,7 +444,7 @@ local function GetFrame()
   tinsert(UISpecialFrames, frameName)
   UISpecialFramesId = #UISpecialFrames
   frame:SetTitle("Best In Slot Redux "..GetAddOnMetadata("BestInSlotRedux", "Version"))
-  frame:SetStatusText((L["Created by %s. Currently developed by %s."]):format(BestInSlot.Author1, BestInSlot.Author2))
+  frame:SetStatusText(("By: %s, %s, %s."):format(BestInSlot.Author1, BestInSlot.Author2, BestInSlot.Author3))
   local FrameBackdrop = {
     bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background-Dark",
     edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Border",

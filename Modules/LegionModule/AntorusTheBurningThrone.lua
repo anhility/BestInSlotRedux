@@ -3,16 +3,14 @@ local AtBT = "AtBT"
 function AntorusTheBurningThrone:OnEnable()
   local L = LibStub("AceLocale-3.0"):GetLocale("BestInSlotRedux")
 
-  local tierHelm, tierShoulders, tierChest, tierLegs, tierGloves, tierCloak = 1, 3, 5, 7, 10, 15
   local antorusTheBurningThroneName = GetMapNameByID(1188)
   self:RegisterExpansion("Legion", EXPANSION_NAME6)
-  self:RegisterRaidTier("Legion", 70300, antorusTheBurningThroneName, PLAYER_DIFFICULTY1, PLAYER_DIFFICULTY2, PLAYER_DIFFICULTY6, PLAYER_DIFFICULTY3)
+  self:RegisterRaidTier("Legion", 70300, antorusTheBurningThroneName, PLAYER_DIFFICULTY1, PLAYER_DIFFICULTY2, PLAYER_DIFFICULTY6)
   self:RegisterRaidInstance(70300, AtBT, antorusTheBurningThroneName,  {
     bonusids = {
-      [1] = {3610}, -- Normal
-      [2] = {3611}, -- Heroic
-      [3] = {3612}, -- Mythic
-      [4] = {3613}, -- LFR
+      [1] = {3524},
+      [2] = {3524},
+      [3] = {3524}
     }
   })
   --------------------------------------------------
@@ -102,7 +100,7 @@ function AntorusTheBurningThrone:OnEnable()
     151957, --Ishkar's Felshield Emitter
     151969, --Terminus Signaling Beacon
   }
-  self:RegisterBossLoot(AtBT, lootTable, bossName, tierCloak)
+  self:RegisterBossLoot(AtBT, lootTable, bossName)
   
 
   -----------------------------------
@@ -159,7 +157,7 @@ function AntorusTheBurningThrone:OnEnable()
     152688, --Loop of the Life-Binder
     151970, --Vitality Resonator
   }
-  self:RegisterBossLoot(AtBT, lootTable, bossName, tierChest)
+  self:RegisterBossLoot(AtBT, lootTable, bossName)
   
 
   -----------------------------------
@@ -192,7 +190,7 @@ function AntorusTheBurningThrone:OnEnable()
     151996, --Deft Soulhunter's Sabatons
     151939, --Whisperstep Runners
   }
-  self:RegisterBossLoot(AtBT, lootTable, bossName, tierLegs)
+  self:RegisterBossLoot(AtBT, lootTable, bossName)
   
 
   -----------------------------------
@@ -225,7 +223,7 @@ function AntorusTheBurningThrone:OnEnable()
     151975, --Apocalypse Drive
     151963, --Forgefiend's Fabricator
   }
-  self:RegisterBossLoot(AtBT, lootTable, bossName, tierGloves)
+  self:RegisterBossLoot(AtBT, lootTable, bossName)
   
 
   -----------------------------------
@@ -283,7 +281,7 @@ function AntorusTheBurningThrone:OnEnable()
     152289, --Highfather's Machination
     151971, --Sheath of Asara
   }
-  self:RegisterBossLoot(AtBT, lootTable, bossName, tierShoulders)
+  self:RegisterBossLoot(AtBT, lootTable, bossName)
   
 
   -----------------------------------
@@ -318,7 +316,7 @@ function AntorusTheBurningThrone:OnEnable()
     152093, --Gorshalach's Legacy
     151978, --Smoldering Titanguard
   }
-  self:RegisterBossLoot(AtBT, lootTable, bossName, tierHelm)
+  self:RegisterBossLoot(AtBT, lootTable, bossName)
   
 
   -----------------------------------
@@ -510,9 +508,8 @@ function AntorusTheBurningThrone:OnEnable()
     local misc = {
       LOOT_JOURNAL_LEGENDARIES = self.LegionLegendaries:GetList()
     }
-    self:RegisterMiscItems(AtBT, misc, true)
+    self:RegisterMiscItems(AtBT, misc)
   end
-  
 end
 
 function AntorusTheBurningThrone:InitializeZoneDetect(ZoneDetect)

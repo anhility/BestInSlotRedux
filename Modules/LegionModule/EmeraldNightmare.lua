@@ -337,12 +337,10 @@ function EmeraldNightmare:OnEnable()
       difficulty = worldDropDifficulty
     }
   } 
-  
   if self.LegionLegendaries then
     misc[LOOT_JOURNAL_LEGENDARIES] = self.LegionLegendaries:GetList()
   end
-  self:RegisterMiscItems(EN, misc, true)
-
+  self:RegisterMiscItems(EN, misc)
 end
 
 function EmeraldNightmare:InitializeZoneDetect(ZoneDetect)

@@ -1,0 +1,8 @@
+## Interface: 80000
+## Title: Best In Slot Redux [|cffff975bBattle for Azeroth|r]
+## Notes: Legion Raid Module for BestInSlotRedux
+## Author: Beleria @ Argent Dawn-EU, Anhility @ Ravencrest-EU, Saríth @ Tarren Mill-EU
+## Version: v7.3.16
+## Dependencies: BestInSlotRedux
+
+Uldir.lua

@@ -5,4 +5,5 @@
 	<Script file="Comm.lua"/>
 	<Script file="Console.lua"/>
 	<Script file="MiniMapLDB.lua"/>
+	<Script file="ExportRaid.lua"/>
 </Ui>

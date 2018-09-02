@@ -136,7 +136,7 @@ function BestInSlot:GetSpecForCustomList(name)
 end
 
 StaticPopupDialogs["BESTINSLOT_CANTDELETECUSTOMLIST"] = {
-  text = L["You can't delete this custom list."].."\r\n"..L["It's in use at:"].."\r\n%s",
+  text = L["You can't delete this custom list.\r\nIt is in use at:\r\n%s"],
   button1 = CLOSE,
   whileDead = true,
   hideOnEscape = true,

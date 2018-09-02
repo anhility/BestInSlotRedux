@@ -1,11 +1,10 @@
 # BestInSlotRedux Changelog
 
-## Release 7.3.17
-### Minor additions
-* Added additional translator to credits page (Iberian Spanish)
-
-### Bug fixes
-* Fixed a small bug with custom lists that caused an error message to be wrongly encoded when translated
+##Version 8.0.1
+###Major additions
+* Works now for Battle for Azeroth
+* Added the first raid
+* Added Battle for Azeroth Dungeons
 
 ## Release 7.3.16
 ### Minor additions

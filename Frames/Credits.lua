@@ -90,6 +90,7 @@ function Credits:Draw(container)
   -- authors
   scroll:AddChild(self:CreateTesterLabel("Beleria",   "Argent Dawn-EU", "DEMONHUNTER",  "A"))
   scroll:AddChild(self:CreateTesterLabel("Anhility",  "Ravencrest-EU",  "PALADIN",      "A"))
+  scroll:AddChild(self:CreateTesterLabel("Saríth",  "Tarren Mill-EU",  "ROGUE",      "A"))
   
   local header = AceGUI:Create("Heading")
   header:SetText("Contributors")
@@ -112,7 +113,7 @@ function Credits:Draw(container)
   scroll:AddChild(header)
   -- Translators
   scroll:AddChild(self:CreateTranslatorLabel(sDEDE, "Rushgarroth1337 & SpeedsharkX"))
-  scroll:AddChild(self:CreateTranslatorLabel(sESES, "gejobj"))
+  --scroll:AddChild(self:CreateTranslatorLabel(sESES, "to be added"))
   scroll:AddChild(self:CreateTranslatorLabel(sESMX, "xylons"))
   scroll:AddChild(self:CreateTranslatorLabel(sFRFR, "Meivyn & nitrodroki"))
   --scroll:AddChild(self:CreateTranslatorLabel(sITIT, "to be added"))
