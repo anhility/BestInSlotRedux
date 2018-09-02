@@ -20,6 +20,7 @@ BestInSlot.options.DEBUG = false
 -- Authors
 BestInSlot.Author1 = ("%s%s @ %s"):format("|c"..RAID_CLASS_COLORS.DEMONHUNTER.colorStr, "Beleria".."|r",ConvertRGBtoColorString(PLAYER_FACTION_COLORS[1]).."Argent Dawn-EU|r")
 BestInSlot.Author2 = ("%s%s @ %s"):format("|c"..RAID_CLASS_COLORS.PALADIN.colorStr, "Anhility".."|r",ConvertRGBtoColorString(PLAYER_FACTION_COLORS[1]).."Ravencrest-EU|r")
+BestInSlot.Author3 = ("%s%s @ %s"):format("|c"..RAID_CLASS_COLORS.ROGUE.colorStr, "Sar\195\173th".."|r",ConvertRGBtoColorString(PLAYER_FACTION_COLORS[1]).."Tarren Mill-EU|r")
 --[===[@non-debug@ 
 BestInSlot.version = @project-date-integer@
 --@end-non-debug@]===]
@@ -153,10 +154,18 @@ local data = {
   raidTiers = {},
   instances = {__default={
     difficultyconversion = {
-      [1] = 3, --default conversion of difficulties, normal -> 0
-      [2] = 5, --Heroic -> 5
-      [3] = 6, --Mythic -> 6
-      [4] = 17 --LFR
+      -- [1] = 3, --default conversion of difficulties, normal -> 0
+      -- [2] = 5, --Heroic -> 5
+      -- [3] = 6,  --Mythic -> 6
+      -- [4] = 23,  --Mythic -> 6
+      [3] = 1, --default conversion of difficulties, normal -> 0
+      [2] = 2, --"Heroic" (Dungeons)
+      [5] = 2, --"10 Player (Heroic)"
+      [6] = 3,  --Mythic
+      [14] = 1, --Raid Normal
+      [15] = 2, --Raid Heroic
+      [16] = 3, --Raid Mythic
+      [23] = 3, --Dungeon Mythic
     },
     bonusids = {
       [1] = 0,
@@ -565,8 +574,8 @@ function BestInSlot:GetDifficultyIdForDungeon(bisId, dungeon, toBiS)
   else
     local tbl = data.instances[dungeon] or data.instances.__default
     for BiSId, WoWId in pairs(tbl.difficultyconversion) do
-      if bisId == WoWId then
-        returnId, bonusIds = BiSId, tbl.bonusids[BiSId]
+      if bisId == BiSId then
+        returnId, bonusIds = WoWId, tbl.bonusids[WoWId]
       end
     end
   end
@@ -608,7 +617,7 @@ function BestInSlot:HasItemEquipped(itemid, difficulty)
 end
 
 function BestInSlot:GetItemInfoFromLink(itemlink)
-  local _,itemid, enchantId, gemId1, gemId2, gemId3, gemId4, suffixId, uniqueId, linkLevel, specId, upgradeId, instanceDifficultyID, numBonusId, bonusId1, bonusId2, upgradeVal = (":"):split(itemlink)
+  local _,itemid, enchantId, gemId1, gemId2, gemId3, gemId4, suffixId, uniqueId, linkLevel, specId, upgradeId, instanceDifficultyID, numBonusId, bonusId1, bonusId2, bonusId3, upgradeVal = (":"):split(itemlink)
   return tonumber(itemid), tonumber(instanceDifficultyID), bonusId1, bonusId2
 end
 
@@ -916,7 +925,7 @@ end
 local function addLootToTableByFilter(tbl, itemlist, slotId, difficulty)
   for id in pairs(itemlist) do
     local item = BestInSlot:GetItem(id, difficulty)
-    if (not slotId) or (type(BestInSlot.invSlots[slotId]) == "string" and BestInSlot.invSlots[slotId] == item.equipSlot) or tContains(BestInSlot.invSlots[slotId], item.equipSlot) then
+    if (not slotId) or (type(BestInSlot.invSlots[slotId]) == "string" and BestInSlot.invSlots[slotId] == item.equipSlot) or (type(BestInSlot.invSlots[slotId]) == "table" and tContains(BestInSlot.invSlots[slotId],item.equipSlot)) then
       if difficulty == 4 and (item.difficulty == -1) then --do nothing
       elseif (not difficulty) or (not item.difficulty or (item.difficulty == -1 or item.difficulty == difficulty or (type(item.difficulty) == "table") and tContains(item.difficulty, difficulty)) ) then
         tbl[id] = item
@@ -1022,10 +1031,10 @@ end
 function BestInSlot:GetItemString(itemid, difficulty)
   if not itemid then error("You should provide an itemid!") end
   difficulty = difficulty or 1
-  local instanceDifficulty, bonusID1, bonusID2 = self:GetDifficultyIdForDungeon(difficulty, itemData[itemid] and itemData[itemid].dungeon)
-  numBonusIDs = (bonusID2 ~= 0 and 2) or (bonusID1 ~= 0 and 1) or 0
+  local instanceDifficulty, bonusID1, bonusID2, bonusID3 = self:GetDifficultyIdForDungeon(difficulty, itemData[itemid] and itemData[itemid].dungeon)
+  numBonusIDs = (bonusID3 ~= 0 and 3) or (bonusID2 ~= 0 and 2) or (bonusID1 ~= 0 and 1) or 0
   --item:itemId:enchantId:gemId1:gemId2:gemId3:gemId4:suffixId:uniqueId:linkLevel:specializationID:upgradeId:instanceDifficultyId:numBonusIds:bonusId1:bonusId2:upgradeValue
-  return ("item:%d:::::::::::%d:%d:%d:%d:"):format(itemid, instanceDifficulty, numBonusIDs, bonusID1, bonusID2)
+  return ("item:%d:::::::::::%d:%d:%d:%d:%d:"):format(itemid, instanceDifficulty, numBonusIDs, bonusID1, bonusID2, bonusID3)
 end
 
 --- Gets the internal item table for the specified itemid

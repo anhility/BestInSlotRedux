@@ -12,12 +12,12 @@ local mapIds = {}
 local npcIds = {}
 
 function ZoneDetect:OnEnable()
-  self:RegisterEvent("WORLD_MAP_UPDATE")
-  self:WORLD_MAP_UPDATE()
+  self:RegisterEvent("ZONE_CHANGED_NEW_AREA")
+  self:ZONE_CHANGED_NEW_AREA()
 end
 
 function ZoneDetect:OnDisable()
-  self:UnregisterEvent("WORLD_MAP_UPDATE")
+  self:UnregisterEvent("ZONE_CHANGED_NEW_AREA")
 end
 
 function ZoneDetect:EnableBossTracking()
@@ -133,7 +133,7 @@ function ZoneDetect:TooltipSetUnit(tooltip)
   end 
 end
 
-function ZoneDetect:WORLD_MAP_UPDATE()
+function ZoneDetect:ZONE_CHANGED_NEW_AREA()
   if not waitingForMovement then
     self:RegisterEvent("PLAYER_STARTED_MOVING")
     waitingForMovement = true
@@ -142,8 +142,8 @@ end
 
 function ZoneDetect:PLAYER_STARTED_MOVING()
   if not WorldMapFrame:IsVisible() then
-    SetMapToCurrentZone()
-    local id = GetCurrentMapAreaID()
+    --SetMapToCurrentZone()
+    local id = C_Map.GetBestMapForUnit("player")
     if mapIds[id] and tContains(self:GetInstances(), mapIds[id]) then
       local raidTier = self:GetRaidTiers(self.INSTANCE, mapIds[id])
       self:SetSelected(self.INSTANCE, mapIds[id])

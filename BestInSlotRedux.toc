@@ -1,7 +1,7 @@
-## Interface: 70300
+## Interface: 80000
 ## Title: Best In Slot Redux
 ## Notes: Keep track of your, your raid members and your guilds Best in Slot list!
-## Author: Beleria @ Argent Dawn-EU, Anhility @ Ravencrest-EU
+## Author: Beleria @ Argent Dawn-EU, Anhility @ Ravencrest-EU, Sar\195\173th @ Tarren Mill-EU
 ## Version: @project-version@
 ## SavedVariables: BestInSlotDB
 
@@ -23,4 +23,6 @@ Modules\LegionModule\LegionArtifact.lua
 Modules\LegionModule\TrialOfValor.lua
 Modules\LegionModule\TombOfSargeras.lua
 Modules\LegionDungeon\BestInSlotRedux_LegionDungeons.lua
+Modules\BfaRaids\Uldir.lua
+Modules\BfaDungeons\BestInSlotRedux_BfaDungeons.lua
 #@end-do-not-package@

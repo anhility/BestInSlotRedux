@@ -90,6 +90,7 @@ function Credits:Draw(container)
   -- authors
   scroll:AddChild(self:CreateTesterLabel("Beleria",   "Argent Dawn-EU", "DEMONHUNTER",  "A"))
   scroll:AddChild(self:CreateTesterLabel("Anhility",  "Ravencrest-EU",  "PALADIN",      "A"))
+  scroll:AddChild(self:CreateTesterLabel("Sar\195\173th",  "Tarren Mill-EU",  "ROGUE",      "A"))
   
   local header = AceGUI:Create("Heading")
   header:SetText("Contributors")

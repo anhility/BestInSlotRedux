@@ -482,7 +482,7 @@ function Manager:PopulateSlots(slotContainer)
     local label = itemGroup:GetUserData("label")
     local itemid = BiSList[slotId] and BiSList[slotId].item
     local isLegionWeapon = false
-    if (slotId == 16 or slotId == 17) and self:GetSelected(self.RAIDTIER) >= 70000 then
+    if (slotId == 16 or slotId == 17) and (self:GetSelected(self.RAIDTIER) >= 70000 and self:GetSelected(self.RAIDTIER) < 80000) then
       --Artifact weapons
       icon:SetUserData("disabled", true)
       button:SetDisabled(true)
