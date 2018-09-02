@@ -11,5 +11,5 @@
 	<Script file="IO.lua"/>
 	<Script file="Options.lua"/>
 	<Script file="Credits.lua"/>
-	<!--<Script file="History.lua"/>-->
+	<Script file="History.lua"/>
 </Ui>

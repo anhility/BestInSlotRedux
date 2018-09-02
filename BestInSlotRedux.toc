@@ -1,8 +1,8 @@
-## Interface: 80000
+## Interface: 70300
 ## Title: Best In Slot Redux
 ## Notes: Keep track of your, your raid members and your guilds Best in Slot list!
-## Author: Beleria @ Argent Dawn-EU, Anhility @ Ravencrest-EU, Saríth @ Tarren Mill-EU
-## Version: v8.0.1
+## Author: Beleria @ Argent Dawn-EU, Anhility @ Ravencrest-EU
+## Version: @project-version@
 ## SavedVariables: BestInSlotDB
 
 Libs\Libs.xml
@@ -11,3 +11,16 @@ Include.xml
 Frames\Include.xml
 Modules\Include.xml
 
+#@do-not-package@
+Utils\ExportRaid.lua
+Utils\ItemInfo.lua
+Modules\BisLink.lua
+Modules\PreviewWindow.lua
+Modules\LegionModule\LegionLegendaries.lua
+Modules\LegionModule\EmeraldNightmare.lua
+Modules\LegionModule\Nighthold.lua
+Modules\LegionModule\LegionArtifact.lua
+Modules\LegionModule\TrialOfValor.lua
+Modules\LegionModule\TombOfSargeras.lua
+Modules\LegionDungeon\BestInSlotRedux_LegionDungeons.lua
+#@end-do-not-package@
