@@ -182,6 +182,7 @@ function Uldir:OnEnable()
 end
 
 function Uldir:InitializeZoneDetect(ZoneDetect)
+  ZoneDetect:RegisterMapID(1148, ULD)
   ZoneDetect:RegisterNPCID(137119, ULD, 1) --Taloc
   ZoneDetect:RegisterNPCID(135452, ULD, 2) --Mother
   ZoneDetect:RegisterNPCID(133298, ULD, 3) --Fetid Devourer
