@@ -841,7 +841,7 @@ function Dungeons:WaycrestManor()
 end
 
 function Dungeons:InitializeZoneDetect(ZoneDetect)
-  local AD = "ataldazar"
+  local ataldazar = "ataldazar"
   ZoneDetect:RegisterMapID(934, ataldazar)
   ZoneDetect:RegisterNPCID(122967, ataldazar, 1)
   ZoneDetect:RegisterNPCID(122965, ataldazar, 2)
