@@ -179,7 +179,7 @@ function Uldir:OnEnable()
     160654, --Vanquished Tendril of G'huun
   }
   self:RegisterBossLoot(UD, lootTable, bossName)
-end
+	
   --------------------------------------------------
   ----- World Boss
   --------------------------------------------------
