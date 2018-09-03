@@ -50,6 +50,7 @@ local difficultyTable = {
   [15] = 2,
   [16] = 3,
   [17] = 4,
+  [23] = 3, -- BfA Mythic Dungeon
 }
 
 function ZoneDetect:GetDifficulty()
