@@ -10,7 +10,7 @@ local bonusIds = {
 
 function Dungeons:VioletHold()
   local VH = "VH"
-  local name = GetMapNameByID(1066)
+  local name = C_Map.GetMapInfo(732).name
   self:RegisterRaidInstance(dungeonTierId, VH, name, bonusIds)
   --------------------------------------------------
   ----- Assault on Violet Hold
@@ -188,7 +188,7 @@ end
 
 function Dungeons:BlackRookHold()
   local BRH = "BRH"
-  local name = GetMapNameByID(1081)
+  local name = C_Map.GetMapInfo(751).name
   self:RegisterRaidInstance(dungeonTierId, BRH, name, bonusIds)
   --------------------------------------------------
   ----- Black Rook Hold
@@ -286,7 +286,7 @@ end
 
 function Dungeons:CourtOfStars()
   local CoS = "CoS"
-  local name = GetMapNameByID(1087)
+  local name = C_Map.GetMapInfo(761).name
   self:RegisterRaidInstance(dungeonTierId, CoS, name, bonusIds)
   --------------------------------------------------
   ----- Court of Stars
@@ -365,7 +365,7 @@ end
 
 function Dungeons:DarkheartThicket()
   local DT = "DT"
-  local name = GetMapNameByID(1067)
+  local name = C_Map.GetMapInfo(733).name
   self:RegisterRaidInstance(dungeonTierId, DT, name, bonusIds)
   --------------------------------------------------
   ----- Darkheart Thicket
@@ -465,7 +465,7 @@ end
 
 function Dungeons:EyeOfAzshara()
   local EoA = "EoA"
-  local name = GetMapNameByID(1046)
+  local name = C_Map.GetMapInfo(713).name
   self:RegisterRaidInstance(dungeonTierId, EoA, name, bonusIds)
   --------------------------------------------------
   ----- Eye of Azshara
@@ -576,7 +576,7 @@ end
 
 function Dungeons:HallsOfValor()
   local HoV = "HoV"
-  local name = GetMapNameByID(1041)
+  local name = C_Map.GetMapInfo(703).name
   self:RegisterRaidInstance(dungeonTierId, HoV, name, bonusIds)
   --------------------------------------------------
   ----- Halls of Valor
@@ -690,7 +690,7 @@ end
 
 function Dungeons:MawOfSouls()
   local MoS = "MoS"
-  local name = GetMapNameByID(1042)
+  local name = C_Map.GetMapInfo(706).name
   self:RegisterRaidInstance(dungeonTierId, MoS, name, bonusIds)
   --------------------------------------------------
   ----- Maw of Souls
@@ -767,7 +767,7 @@ end
 
 function Dungeons:NeltharionsLair()
   local NL = "NL"
-  local name = GetMapNameByID(1065)
+  local name = C_Map.GetMapInfo(731).name
   self:RegisterRaidInstance(dungeonTierId, NL, name, bonusIds)
   --------------------------------------------------
   ----- Neltharion's Lair
@@ -861,7 +861,7 @@ end
 
 function Dungeons:Arcway()
   local Arc = "Arc"
-  local name = GetMapNameByID(1079)
+  local name = C_Map.GetMapInfo(749).name
   self:RegisterRaidInstance(dungeonTierId, Arc, name, bonusIds)
   --------------------------------------------------
   ----- The Arcway
@@ -972,7 +972,7 @@ end
 
 function Dungeons:VaultOfTheWardens()
   local VotW = "VotW"
-  local name = GetMapNameByID(1045)
+  local name = C_Map.GetMapInfo(677).name
   self:RegisterRaidInstance(dungeonTierId, VotW, name, bonusIds)
   --------------------------------------------------
   ----- Vault of the Wardens
@@ -1082,9 +1082,9 @@ end
 
 function Dungeons:ReturnToKarazhan()
   local RtK = "RtK"
-  --local name1 = GetMapNameByID(1651) -- Lower
-  --local name2 = GetMapNameByID(1651) -- Upper
-  local name3 = GetMapNameByID(1115) -- Normal / Old (need real ID -.- )
+  --local name1 = C_Map.GetMapInfo(1651).name -- Lower
+  --local name2 = C_Map.GetMapInfo(1651).name -- Upper
+  local name3 = C_Map.GetMapInfo(809).name -- Normal / Old (need real ID -.- )
   self:RegisterRaidInstance(dungeonTierId, RtK, name3, bonusIds)
   --------------------------------------------------
   ----- Return to Karazhan
@@ -1287,7 +1287,7 @@ end
 
 function Dungeons:CathedralOfEternalNight()
   local CoEN = "CoEN"
-  local name = GetMapNameByID(1146)
+  local name = C_Map.GetMapInfo(845).name
   self:RegisterRaidInstance(dungeonTierId, CoEN, name, bonusIds)
   --------------------------------------------------
   ----- Cathedral of Eternal Night
@@ -1378,7 +1378,7 @@ end
 
 function Dungeons:SeatOfTheTriumvirate()
   local SotT = "SotT"
-  local name = GetMapNameByID(1178)
+  local name = C_Map.GetMapInfo(903).name
   self:RegisterRaidInstance(dungeonTierId, SotT, name, bonusIds)
   --------------------------------------------------
   ----- Seat of the Triumvirate
