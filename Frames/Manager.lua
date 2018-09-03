@@ -488,7 +488,7 @@ function Manager:PopulateSlots(slotContainer)
 		icon:SetUserData("disabled", true)
 		button:SetDisabled(true)
 			NeckItemId = 158075
-				local _, link, _, _, _, _, _, _, _, texture, _ = GetItemInfo(NeckItemId)
+				local _, link, _, _, _, _, _, _, _, texture = GetItemInfo(NeckItemId)
 				icon:SetImage(texture)
 				icon:SetUserData("itemid", NeckItemId)
 				icon:SetUserData("itemlink", link)
