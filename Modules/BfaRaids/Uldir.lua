@@ -182,13 +182,12 @@ function Uldir:OnEnable()
 end
 
 function Uldir:InitializeZoneDetect(ZoneDetect)
-  ZoneDetect:RegisterMapID(1148, UD)
-  ZoneDetect:RegisterNPCID(2168, UD, 1) --Taloc
-  ZoneDetect:RegisterNPCID(2167, UD, 2) --MOTHER
-  ZoneDetect:RegisterNPCID(2146, UD, 3) --Fetid Devourer
-  ZoneDetect:RegisterNPCID(2169, UD, 4) --Zek'voz, Herald of N'zoth
-  ZoneDetect:RegisterNPCID(2166, UD, 5) --Vectis
-  ZoneDetect:RegisterNPCID(2195, UD, 6) --Zul, Reborn
-  ZoneDetect:RegisterNPCID(2194, UD, 7) --Mythrax the Unraveler
-  ZoneDetect:RegisterNPCID(2147, UD, 8) --G'huun
+  ZoneDetect:RegisterNPCID(137119, ULD, 1) --Taloc
+  ZoneDetect:RegisterNPCID(135452, ULD, 2) --Mother
+  ZoneDetect:RegisterNPCID(133298, ULD, 3) --Fetid Devourer
+  ZoneDetect:RegisterNPCID(134445, ULD, 4) --Zek'voc, Herald of N'zoth
+  ZoneDetect:RegisterNPCID(134442, ULD, 5) --Vectis
+  ZoneDetect:RegisterNPCID(138967, ULD, 6) --Zul, Reborn
+  ZoneDetect:RegisterNPCID(134546, ULD, 7) --Mythrax the Unraveler
+  ZoneDetect:RegisterNPCID(132998, ULD, 8) --G'huun
 end
