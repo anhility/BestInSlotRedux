@@ -483,12 +483,12 @@ function Manager:PopulateSlots(slotContainer)
     local itemid = BiSList[slotId] and BiSList[slotId].item
     local isLegionWeapon = false
 ----------------------Artifact Neck------------------------------------
-	if (slotId == 2) and self:GetSelected(self.RAIDTIER) >= 80000 and self:GetSelected(self.RAIDTIER) < 90000 then
-    button:SetText(nil)
+	if slotId == 2 and self:GetSelected(self.RAIDTIER) >= 80000 and self:GetSelected(self.RAIDTIER) < 90000 then
+  		button:SetText(nil)
 		icon:SetUserData("disabled", true)
 		button:SetDisabled(true)
 			NeckItemId = 158075
-				local name, link, quality, iLevel, reqLevel, class, subclass, maxStack, equipSlot, texture, vendorPrice = GetItemInfo(NeckItemId)
+				local _, link, _, _, _, _, _, _, _, texture, _ = GetItemInfo(NeckItemId)
 				icon:SetImage(texture)
 				icon:SetUserData("itemid", NeckItemId)
 				icon:SetUserData("itemlink", link)
