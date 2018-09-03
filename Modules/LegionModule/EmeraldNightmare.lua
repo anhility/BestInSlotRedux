@@ -3,7 +3,7 @@ local EN = "EN"
 function EmeraldNightmare:OnEnable()
   local L = LibStub("AceLocale-3.0"):GetLocale("BestInSlotRedux")
   
-  local emeraldNightmareName = GetMapNameByID(1094)
+  local emeraldNightmareName = C_Map.GetMapInfo(777).name
   self:RegisterExpansion("Legion", EXPANSION_NAME6)
   self:RegisterRaidTier("Legion", 70010, emeraldNightmareName, PLAYER_DIFFICULTY1, PLAYER_DIFFICULTY2, PLAYER_DIFFICULTY6)
   self:RegisterRaidInstance(70010, EN, emeraldNightmareName, {
@@ -346,7 +346,7 @@ function EmeraldNightmare:OnEnable()
 end
 
 function EmeraldNightmare:InitializeZoneDetect(ZoneDetect)
-  ZoneDetect:RegisterMapID(1094, EN)
+  ZoneDetect:RegisterMapID(777, EN)
   
   ZoneDetect:RegisterNPCID(102672, EN, 1) --Nythendra
   ZoneDetect:RegisterNPCID(105393, EN, 2) --Il'gynoth
