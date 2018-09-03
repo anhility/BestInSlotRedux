@@ -3,7 +3,7 @@ local NH = "NH"
 function Nighthold:OnEnable()
   local L = LibStub("AceLocale-3.0"):GetLocale("BestInSlotRedux")
   
-  local nightHoldName = GetMapNameByID(1088)
+  local nightHoldName = C_Map.GetMapInfo(764).name
   self:RegisterExpansion("Legion", EXPANSION_NAME6)
   self:RegisterRaidTier("Legion", 70011, nightHoldName, PLAYER_DIFFICULTY1, PLAYER_DIFFICULTY2, PLAYER_DIFFICULTY6)
   self:RegisterRaidInstance(70011, NH, nightHoldName, {
@@ -331,7 +331,7 @@ function Nighthold:OnEnable()
 end
 
 function Nighthold:InitializeZoneDetect(ZoneDetect)
-  ZoneDetect:RegisterMapID(1088, NH)
+  ZoneDetect:RegisterMapID(764, NH)
   
   ZoneDetect:RegisterNPCID(102263, NH, 1) --Skorpyron
   ZoneDetect:RegisterNPCID(104415, NH, 2) --Chronomatic Anomaly
