@@ -8,7 +8,7 @@ local BestInSlot, L, AceGUI = unpack(select(2, ...))
 local CustomItems = BestInSlot:GetMenuPrototype(L["Custom Items"])
 CustomItems.Width = 500
 CustomItems.Height = 400
-local minimumIlvl = 550
+local minimumIlvl = 300
 local failtimer
 local upgradeStages = {
   [525] = "Stage 1", 
@@ -135,7 +135,7 @@ function CustomItems:IsItemAllowed(itemid)
       tinsert(errors, ("- "..L["This item already exists in the database! It is registered to %s"]):format(self:GetDescription(self.RAIDTIER, raidtier)))
     end
   end
-  if iLevel < 500 then
+  if iLevel < minimumIlvl then
     tinsert(errors, "- "..(L["The minimum item level of custom items is %d!"]):format(minimumIlvl))
   end
   if #errors > 0 then
