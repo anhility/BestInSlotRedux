@@ -8,14 +8,14 @@ function Uldir:OnEnable()
   self:RegisterRaidTier("Battle for Azeroth", 80000, uldirName, PLAYER_DIFFICULTY1, PLAYER_DIFFICULTY2, PLAYER_DIFFICULTY6)
   self:RegisterRaidInstance(80000, UD, uldirName, {
     bonusids = {
-      [1] = {4798, 1477},
-      [2] = {4799, 1492},
-      [3] = {4800, 1507},
+      [1] = {3524},
+      [2] = {3524},
+      [3] = {3524}
     },
     difficultyconversion = {
-      [1] = 14, --Raid Normal
-      [2] = 15, --Raid Heroic
-      [3] = 16, --Raid Mythic
+      [1] = 3, --Raid Normal
+      [2] = 5, --Raid Heroic
+      [3] = 6, --Raid Mythic
     }
   })
   --------------------------------------------------
