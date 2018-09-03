@@ -3,7 +3,7 @@ local ToS = "ToS"
 function TombOfSargeras:OnEnable()
   local L = LibStub("AceLocale-3.0"):GetLocale("BestInSlotRedux")
 
-  local tombOfSargerasName = GetMapNameByID(1147)
+  local tombOfSargerasName = C_Map.GetMapInfo(806).name
   self:RegisterExpansion("Legion", EXPANSION_NAME6)
   self:RegisterRaidTier("Legion", 70200, tombOfSargerasName, PLAYER_DIFFICULTY1, PLAYER_DIFFICULTY2, PLAYER_DIFFICULTY6)
   self:RegisterRaidInstance(70200, ToS, tombOfSargerasName,  {
@@ -330,7 +330,7 @@ function TombOfSargeras:OnEnable()
 --  end
 end
 function TombOfSargeras:InitializeZoneDetect(ZoneDetect)
-  ZoneDetect:RegisterMapID(1147, ToS)
+  ZoneDetect:RegisterMapID(806, ToS)
   ZoneDetect:RegisterNPCID(115844, ToS, 1) --Goroth
   
   ZoneDetect:RegisterNPCID(116691, ToS, 2) --Demonic Inquisition (Belac)
