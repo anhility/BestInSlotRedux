@@ -482,8 +482,19 @@ function Manager:PopulateSlots(slotContainer)
     local label = itemGroup:GetUserData("label")
     local itemid = BiSList[slotId] and BiSList[slotId].item
     local isLegionWeapon = false
-    if (slotId == 16 or slotId == 17) and (self:GetSelected(self.RAIDTIER) >= 70000 and self:GetSelected(self.RAIDTIER) < 80000) then
-      --Artifact weapons
+    ---------------------- Artifact Neck ------------------------------------
+    if slotId == 2 and self:GetSelected(self.RAIDTIER) >= 80000 and self:GetSelected(self.RAIDTIER) < 90000 then
+      icon:SetUserData("disabled", true)
+      button:SetDisabled(true)
+      NeckItemId = 158075
+      local _, link, _, _, _, _, _, _, _, texture = GetItemInfo(NeckItemId)
+      icon:SetImage(texture)
+      icon:SetUserData("itemid", NeckItemId)
+      icon:SetUserData("itemlink", link)
+      label:SetText(link)
+      isLegionWeapon = true
+    ---------------------- Artifact Weapons ------------------------------------
+    elseif (slotId == 16 or slotId == 17) and (self:GetSelected(self.RAIDTIER) >= 70000 and self:GetSelected(self.RAIDTIER) < 80000) then
       icon:SetUserData("disabled", true)
       button:SetDisabled(true)
       local artifactInfo = select(slotId == 16 and 1 or 2, self.Artifacts:ForSpecialization(specialization))
