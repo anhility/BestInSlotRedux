@@ -2,9 +2,9 @@ local Dungeons = LibStub("AceAddon-3.0"):GetAddon("BestInSlotRedux"):NewModule("
 local dungeonTierId = 80003
 local bonusIds = {
   bonusids = {
-    [1] = {4777, 1482, 4785},
-    [2] = {4778, 1497, 4785},
-    [3] = {4779, 1512, 4786}
+    [1] = {3524},
+    [2] = {3524},
+    [3] = {3524}
   },
   difficultyconversion = {
     [1] = 1, --Raid Normal
@@ -332,10 +332,25 @@ function Dungeons:SiegeOfBoralus()
   --------------------------------------------------
   ----- Siege of Boralus
   --------------------------------------------------
-  
-
+if UnitFactionGroup("player") == "Alliance" then
   -----------------------------------
-  ----- Sergeant Bainbridge
+  ----- Chopper Redhook (Alliance)
+  -----------------------------------
+  local bossName = EJ_GetEncounterInfo(2132)
+  local lootTable = {
+	159972, --Mutineer's Fate 
+	159973, --Boarder's Billy Club 
+	159968, --Gloves of the Iron Reavers 
+	159965, --Redhook's Cummerbund 
+	159427, --Legplates of the Irontide Raider 
+	159969, --Powdershot Leggings 
+	159251, --Top-Sail Footwraps 
+	162541, --Band of the Roving Scalawag
+  }  
+  self:RegisterBossLoot(siegeofboralus, lootTable, bossName)  
+else
+  -----------------------------------
+  ----- Sergeant Bainbridge (Horde)
   -----------------------------------
   local bossName = EJ_GetEncounterInfo(2133)
   local lootTable = {
@@ -349,7 +364,7 @@ function Dungeons:SiegeOfBoralus()
     162542, --Seal of the City Watch
   }
   self:RegisterBossLoot(siegeofboralus, lootTable, bossName)
-  
+end
 
   -----------------------------------
   ----- Dread Captain Lockwood
@@ -826,76 +841,86 @@ function Dungeons:WaycrestManor()
 end
 
 function Dungeons:InitializeZoneDetect(ZoneDetect)
-  local AD = "ataldazar"
-  ZoneDetect:RegisterMapID(934, AD)
-  ZoneDetect:RegisterNPCID(2082, AD, 1)
-  ZoneDetect:RegisterNPCID(2036, AD, 2)
-  ZoneDetect:RegisterNPCID(2083, AD, 3)
-  ZoneDetect:RegisterNPCID(2030, AD, 4)
+  local ataldazar = "ataldazar"
+  ZoneDetect:RegisterMapID(934, ataldazar)
+  ZoneDetect:RegisterNPCID(122967, ataldazar, 1)
+  ZoneDetect:RegisterNPCID(122965, ataldazar, 2)
+  ZoneDetect:RegisterNPCID(122963, ataldazar, 3)
+  ZoneDetect:RegisterNPCID(122968, ataldazar, 4)
 
   local freehold = "freehold"
   ZoneDetect:RegisterMapID(936, freehold)
-  ZoneDetect:RegisterNPCID(2102, freehold, 1)
-  ZoneDetect:RegisterNPCID(2093, freehold, 2)
-  ZoneDetect:RegisterNPCID(2094, freehold, 3)
-  ZoneDetect:RegisterNPCID(2095, freehold, 4)
+  ZoneDetect:RegisterNPCID(126832, freehold, 1)
+  ZoneDetect:RegisterNPCID(126845, freehold, 2)
+  ZoneDetect:RegisterNPCID(126847, freehold, 2)
+  ZoneDetect:RegisterNPCID(126848, freehold, 2)
+  ZoneDetect:RegisterNPCID(126969, freehold, 3)
+  ZoneDetect:RegisterNPCID(126983, freehold, 4)
 
   local kingsrest = "kingsrest"
   ZoneDetect:RegisterMapID(1004, kingsrest)
-  ZoneDetect:RegisterNPCID(2165, kingsrest, 1)
-  ZoneDetect:RegisterNPCID(2171, kingsrest, 2)
-  ZoneDetect:RegisterNPCID(2170, kingsrest, 3)
-  ZoneDetect:RegisterNPCID(2172, kingsrest, 4)
+  ZoneDetect:RegisterNPCID(135322, kingsrest, 1)
+  ZoneDetect:RegisterNPCID(134993, kingsrest, 2)
+  ZoneDetect:RegisterNPCID(135475, kingsrest, 3)
+  ZoneDetect:RegisterNPCID(135470, kingsrest, 3)
+  ZoneDetect:RegisterNPCID(135472, kingsrest, 3)
+  ZoneDetect:RegisterNPCID(136160, kingsrest, 4)
 
   local shrineofthestorm = "shrineofthestorm"
   ZoneDetect:RegisterMapID(1004, shrineofthestorm)
-  ZoneDetect:RegisterNPCID(2153, shrineofthestorm, 1)
-  ZoneDetect:RegisterNPCID(2154, shrineofthestorm, 2)
-  ZoneDetect:RegisterNPCID(2155, shrineofthestorm, 3)
-  ZoneDetect:RegisterNPCID(2156, shrineofthestorm, 4)
+  ZoneDetect:RegisterNPCID(134056, shrineofthestorm, 1)
+  ZoneDetect:RegisterNPCID(134063, shrineofthestorm, 2)
+  ZoneDetect:RegisterNPCID(134058, shrineofthestorm, 2)
+  ZoneDetect:RegisterNPCID(134060, shrineofthestorm, 3)
+  ZoneDetect:RegisterNPCID(134069, shrineofthestorm, 4)
 
   local siegeofboralus = "siegeofboralus"
   ZoneDetect:RegisterMapID(1162, siegeofboralus)
-  ZoneDetect:RegisterNPCID(2133, siegeofboralus, 1)
-  ZoneDetect:RegisterNPCID(2173, siegeofboralus, 2)
-  ZoneDetect:RegisterNPCID(2134, siegeofboralus, 3)
-  ZoneDetect:RegisterNPCID(2140, siegeofboralus, 4)
+  ZoneDetect:RegisterNPCID(128650, siegeofboralus, 1)--Redhook - Alliance
+  ZoneDetect:RegisterNPCID(130834, siegeofboralus, 1)--Bainbridge - Horde
+  ZoneDetect:RegisterNPCID(129208, siegeofboralus, 2)
+  ZoneDetect:RegisterNPCID(130836, siegeofboralus, 3)
+  ZoneDetect:RegisterNPCID(120553, siegeofboralus, 4)
 
   local templeofsethraliss = "templeofsethraliss"
   ZoneDetect:RegisterMapID(1038, templeofsethraliss)
-  ZoneDetect:RegisterNPCID(2142, templeofsethraliss, 1)
-  ZoneDetect:RegisterNPCID(2143, templeofsethraliss, 2)
-  ZoneDetect:RegisterNPCID(2144, templeofsethraliss, 3)
-  ZoneDetect:RegisterNPCID(2145, templeofsethraliss, 4)
+  ZoneDetect:RegisterNPCID(133379, templeofsethraliss, 1)
+  ZoneDetect:RegisterNPCID(133944, templeofsethraliss, 1)
+  ZoneDetect:RegisterNPCID(133384, templeofsethraliss, 2)
+  ZoneDetect:RegisterNPCID(133389, templeofsethraliss, 3)
+  ZoneDetect:RegisterNPCID(133392, templeofsethraliss, 4)
 
   local motherlode = "motherlode"
   ZoneDetect:RegisterMapID(1010, motherlode)
-  ZoneDetect:RegisterNPCID(2109, motherlode, 1)
-  ZoneDetect:RegisterNPCID(2114, motherlode, 2)
-  ZoneDetect:RegisterNPCID(2115, motherlode, 3)
-  ZoneDetect:RegisterNPCID(2116, motherlode, 4)
+  ZoneDetect:RegisterNPCID(129214, motherlode, 1)
+  ZoneDetect:RegisterNPCID(129227, motherlode, 2)
+  ZoneDetect:RegisterNPCID(129231, motherlode, 3)
+  ZoneDetect:RegisterNPCID(129232, motherlode, 4)
 
   local underrot = "underrot"
   ZoneDetect:RegisterMapID(1041, underrot)
-  ZoneDetect:RegisterNPCID(2157, underrot, 1)
-  ZoneDetect:RegisterNPCID(2131, underrot, 2)
-  ZoneDetect:RegisterNPCID(2130, underrot, 3)
-  ZoneDetect:RegisterNPCID(2158, underrot, 4)
+  ZoneDetect:RegisterNPCID(131318, underrot, 1)
+  ZoneDetect:RegisterNPCID(131817, underrot, 2)
+  ZoneDetect:RegisterNPCID(131383, underrot, 3)
+  ZoneDetect:RegisterNPCID(133007, underrot, 4)
 
   local toldagor = "toldagor"
   ZoneDetect:RegisterMapID(974, toldagor)
-  ZoneDetect:RegisterNPCID(2097, toldagor, 1)
-  ZoneDetect:RegisterNPCID(2098, toldagor, 2)
-  ZoneDetect:RegisterNPCID(2099, toldagor, 3)
-  ZoneDetect:RegisterNPCID(2096, toldagor, 4)
+  ZoneDetect:RegisterNPCID(127479, toldagor, 1)
+  ZoneDetect:RegisterNPCID(127484, toldagor, 2)
+  ZoneDetect:RegisterNPCID(127490, toldagor, 3)
+  ZoneDetect:RegisterNPCID(127503, toldagor, 4)
 
   local waycrestmanor = "waycrestmanor"
   ZoneDetect:RegisterMapID(1015, waycrestmanor)
-  ZoneDetect:RegisterNPCID(2125, waycrestmanor, 1)
-  ZoneDetect:RegisterNPCID(2126, waycrestmanor, 2)
-  ZoneDetect:RegisterNPCID(2127, waycrestmanor, 3)
-  ZoneDetect:RegisterNPCID(2128, waycrestmanor, 4)
-  ZoneDetect:RegisterNPCID(2129, waycrestmanor, 5)
+  ZoneDetect:RegisterNPCID(135358, waycrestmanor, 1)
+  ZoneDetect:RegisterNPCID(135359, waycrestmanor, 1)
+  ZoneDetect:RegisterNPCID(135360, waycrestmanor, 1)
+  ZoneDetect:RegisterNPCID(260551, waycrestmanor, 2)
+  ZoneDetect:RegisterNPCID(131863, waycrestmanor, 3)
+  ZoneDetect:RegisterNPCID(131527, waycrestmanor, 4)
+  ZoneDetect:RegisterNPCID(131545, waycrestmanor, 4)
+  ZoneDetect:RegisterNPCID(131864, waycrestmanor, 5)
 
 end
 

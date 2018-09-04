@@ -4,7 +4,7 @@ function AntorusTheBurningThrone:OnEnable()
   local L = LibStub("AceLocale-3.0"):GetLocale("BestInSlotRedux")
 
   local tierHelm, tierShoulders, tierChest, tierLegs, tierGloves, tierCloak = 1, 3, 5, 7, 10, 15
-  local antorusTheBurningThroneName = GetMapNameByID(1188)
+  local antorusTheBurningThroneName = C_Map.GetMapInfo(909).name
   self:RegisterExpansion("Legion", EXPANSION_NAME6)
   self:RegisterRaidTier("Legion", 70300, antorusTheBurningThroneName, PLAYER_DIFFICULTY1, PLAYER_DIFFICULTY2, PLAYER_DIFFICULTY6, PLAYER_DIFFICULTY3)
   self:RegisterRaidInstance(70300, AtBT, antorusTheBurningThroneName,  {
@@ -516,7 +516,7 @@ function AntorusTheBurningThrone:OnEnable()
 end
 
 function AntorusTheBurningThrone:InitializeZoneDetect(ZoneDetect)
-  ZoneDetect:RegisterMapID(1188, AtBT)
+  ZoneDetect:RegisterMapID(909, AtBT)
   -- Multiple boss ID's for some reason on most bosses
   ZoneDetect:RegisterNPCID(122450, AtBT, 1) --Garothi Worldbreaker
   ZoneDetect:RegisterNPCID(123371, AtBT, 1) --Garothi Worldbreaker
