@@ -5,17 +5,17 @@ function Uldir:OnEnable()
   
   local uldirName = C_Map.GetMapInfo(1148).name
   self:RegisterExpansion("Battle for Azeroth", EXPANSION_NAME7)
-  self:RegisterRaidTier("Battle for Azeroth", 80000, uldirName, PLAYER_DIFFICULTY1, PLAYER_DIFFICULTY2, PLAYER_DIFFICULTY6)
-  self:RegisterRaidInstance(80000, UD, uldirName, {
+  self:RegisterRaidTier("Battle for Azeroth", 80002, uldirName, PLAYER_DIFFICULTY1, PLAYER_DIFFICULTY2, PLAYER_DIFFICULTY6)
+  self:RegisterRaidInstance(80002, UD, uldirName, {
     bonusids = {
-      [1] = {4798, 1477},
-      [2] = {4799, 1492},
-      [3] = {4800, 1507},
+      [1] = {3524},
+      [2] = {3524},
+      [3] = {3524}
     },
     difficultyconversion = {
-      [1] = 14, --Raid Normal
-      [2] = 15, --Raid Heroic
-      [3] = 16, --Raid Mythic
+      [1] = 3, --Raid Normal
+      [2] = 5, --Raid Heroic
+      [3] = 6, --Raid Mythic
     }
   })
   --------------------------------------------------
@@ -183,12 +183,12 @@ end
 
 function Uldir:InitializeZoneDetect(ZoneDetect)
   ZoneDetect:RegisterMapID(1148, UD)
-  ZoneDetect:RegisterNPCID(2168, UD, 1) --Taloc
-  ZoneDetect:RegisterNPCID(2167, UD, 2) --MOTHER
-  ZoneDetect:RegisterNPCID(2146, UD, 3) --Fetid Devourer
-  ZoneDetect:RegisterNPCID(2169, UD, 4) --Zek'voz, Herald of N'zoth
-  ZoneDetect:RegisterNPCID(2166, UD, 5) --Vectis
-  ZoneDetect:RegisterNPCID(2195, UD, 6) --Zul, Reborn
-  ZoneDetect:RegisterNPCID(2194, UD, 7) --Mythrax the Unraveler
-  ZoneDetect:RegisterNPCID(2147, UD, 8) --G'huun
+  ZoneDetect:RegisterNPCID(137119, UD, 1) --Taloc
+  ZoneDetect:RegisterNPCID(135452, UD, 2) --Mother
+  ZoneDetect:RegisterNPCID(133298, UD, 3) --Fetid Devourer
+  ZoneDetect:RegisterNPCID(134445, UD, 4) --Zek'voc, Herald of N'zoth
+  ZoneDetect:RegisterNPCID(134442, UD, 5) --Vectis
+  ZoneDetect:RegisterNPCID(138967, UD, 6) --Zul, Reborn
+  ZoneDetect:RegisterNPCID(134546, UD, 7) --Mythrax the Unraveler
+  ZoneDetect:RegisterNPCID(132998, UD, 8) --G'huun
 end

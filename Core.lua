@@ -393,7 +393,7 @@ function BestInSlot:RegisterMiscItems(instance, miscItems, legionLegendary)
       if legionLegendary == true then --fix for Legion Legendaries itemlevel
         _, link, _, _, _, _, _, _, equipSlot = GetItemInfo(("item:%d::::::::::::1:3630"):format(itemid))
       else
-        _, link, _, _, _, _, _, _, equipSlot = GetItemInfo(("item:%d::::::::::::1:3630"):format(itemid))
+        _, link, _, _, _, _, _, _, equipSlot = GetItemInfo(("item:%d::::::::::::1:3524"):format(itemid))
       end
       if not link then self.unsafeIDs[itemid] = true end
       misc[itemid] = {

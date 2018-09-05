@@ -284,3 +284,5 @@ L["This name is invalid"] = true
 L["A list with this name already exists"] = true
 L["You must select a specialization."] = true
 L["You can't delete this custom list.\r\nIt is in use at:\r\n%s"] = true
+L["You can't delete this custom list."] = true
+L["It's in use at:"] = true

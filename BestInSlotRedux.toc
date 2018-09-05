@@ -16,13 +16,6 @@ Utils\ExportRaid.lua
 Utils\ItemInfo.lua
 Modules\BisLink.lua
 Modules\PreviewWindow.lua
-Modules\LegionModule\LegionLegendaries.lua
-Modules\LegionModule\EmeraldNightmare.lua
-Modules\LegionModule\Nighthold.lua
-Modules\LegionModule\LegionArtifact.lua
-Modules\LegionModule\TrialOfValor.lua
-Modules\LegionModule\TombOfSargeras.lua
-Modules\LegionDungeon\BestInSlotRedux_LegionDungeons.lua
 Modules\BfaRaids\Uldir.lua
 Modules\BfaDungeons\BestInSlotRedux_BfaDungeons.lua
 #@end-do-not-package@

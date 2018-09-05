@@ -30,10 +30,9 @@ ignore:
     - Utils
 
 move-folders:
-    BestInSlotRedux/Modules/LegionModule: BestInSlotRedux_Legion
-    BestInSlotRedux/Modules/LegionDungeon: BestInSlotRedux_LegionDungeons
     BestInSlotRedux/Modules/BfaRaids: BestInSlotRedux_BfaRaids
     BestInSlotRedux/Modules/BfaDungeons: BestInSlotRedux_BfaDungeons
+    BestInSlotRedux/Modules/BfaWorld: BestInSlotRedux_BfaWorld
 
 license-output: LICENSE.html
 
