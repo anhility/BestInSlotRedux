@@ -179,6 +179,28 @@ function Uldir:OnEnable()
     160654, --Vanquished Tendril of G'huun
   }
   self:RegisterBossLoot(UD, lootTable, bossName)
+  
+  
+  -----------------------------------
+  ----- Trash loot
+  -----------------------------------
+  local bossName = L["Trash Loot"]
+  local lootTable = {
+	----Cloth----
+	160612,--Spellbound Specimen Handlers
+	161071,--Bloody Experimenter's Wraps
+	----Leather----
+	161075,--Antiseptic Specimen Handlers
+	161072,--Splatterguards
+	----Mail----
+	161076,--Iron-Grip Specimen Handlers
+	161073,--Reinforced Test Subject Shackles
+	----Plate----
+	161077,--Fluid-Resistant Specimen Handlers
+	161074,--Crushproof Vambraces
+  }
+  
+  self:RegisterBossLoot(UD, lootTable, bossName)
 end
 
 function Uldir:InitializeZoneDetect(ZoneDetect)
