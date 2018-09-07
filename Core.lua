@@ -1360,6 +1360,7 @@ end
 function BestInSlot:GetInstanceBosses(instance)
   local bosses = {}
   local instanceData = data.bosses[instance]
+  if not instanceData then return bosses end
   for i=1,#instanceData do
     bosses[i] = instanceData[i]
   end
