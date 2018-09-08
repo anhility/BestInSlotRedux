@@ -1,5 +1,17 @@
 # BestInSlotRedux Changelog
 
+## Version 8.0.2
+### Minor additions
+* Removed Legion modules
+* Added Worldboss module
+* Added trash loot to Uldir
+
+### Bug fixes
+* Fixed minimum itemlevel for custom items
+* Artifact neck is being shown in the BiS List now
+* Tier levels revamped: dungeons -> worldbosses -> raids
+* Fixed NPCIds for zone detection
+
 ##Version 8.0.1
 ###Major changes
 * Works now for Battle for Azeroth
