@@ -574,7 +574,7 @@ function BestInSlot:GetDifficultyIdForDungeon(bisId, dungeon, toBiS)
   else
     local tbl = data.instances[dungeon] or data.instances.__default
     for BiSId, WoWId in pairs(tbl.difficultyconversion) do
-      if bisId == BiSId then
+      if bisId == WoWId then
         returnId, bonusIds = WoWId, tbl.bonusids[WoWId]
       end
     end
