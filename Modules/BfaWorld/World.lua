@@ -137,8 +137,24 @@ function BfaWorld:OnEnable()
     161399, --Cord of Flowing Sands 
     161408, --Sandswept Legionnaire's Legplates 
     161419, --Kraulok's Claw
-     difficulty = worldDropDifficulty
-   },
+    difficulty = worldDropDifficulty
+    },
+    -----------------------------------
+    ----- Ivus the Decayed
+    -----------------------------------
+    [EJ_GetEncounterInfo(2345)] = {
+      166695, --Petrified Ironbark Crown
+      166687, --Warring Ancient's Mask
+      166691, --Forest Protector's Shoulderguards
+      166683, --Garments of the Forest Lord
+      166694, --Gnarled Bough Gauntlets
+      166686, --Ivus' Tanglemoss Waistcord
+      166690, --Protector's Tangleroot Belt
+      166698, --Stoneroot Stompers
+      161417, --Ancient Knot of Wisdom
+      161415, --Forest Lord's Razorleaf
+      161413, --Knot of Ancient Fury
+    },
   } 
 ------------------------Horde------------------------------------------------  
   local misc_h = {
@@ -253,6 +269,23 @@ function BfaWorld:OnEnable()
       161399, --Cord of Flowing Sands 
       161408, --Sandswept Legionnaire's Legplates 
       161419, --Kraulok's Claw
+      difficulty = worldDropDifficulty
+    },
+    -----------------------------------
+    ----- Ivus the Forest Lord
+    -----------------------------------
+    [EJ_GetEncounterInfo(2329)] = {
+      166696, --Petrified Ironbark Crown
+      166688, --Warring Ancient's Crown
+      166692, --Forest Protector's Shoulderguards
+      166684, --Garments of the Forest Lord
+      166693, --Gnarled Bough Gauntlets
+      166685, --Ivus' Tanglemoss Waistcord
+      166689, --Protector's Tangleroot Belt
+      166697, --Stoneroot Stompers
+      166793, --Ancient Knot of Wisdom
+      166794, --Forest Lord's Razorleaf
+      166795, --Knot of Ancient Fury
       difficulty = worldDropDifficulty
     },
   } 
