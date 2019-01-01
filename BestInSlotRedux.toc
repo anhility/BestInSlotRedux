@@ -1,4 +1,4 @@
-## Interface: 80000
+## Interface: 80100
 ## Title: Best In Slot Redux
 ## Notes: Keep track of your, your raid members and your guilds Best in Slot list!
 ## Author: Beleria @ Argent Dawn-EU, Anhility @ Ravencrest-EU, Sar\195\173th @ Tarren Mill-EU
