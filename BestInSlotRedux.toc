@@ -17,5 +17,6 @@ Utils\ItemInfo.lua
 Modules\BisLink.lua
 Modules\PreviewWindow.lua
 Modules\BfaRaids\Uldir.lua
+Modules\BfaRaids\DazarAlor.lua
 Modules\BfaDungeons\BestInSlotRedux_BfaDungeons.lua
 #@end-do-not-package@
