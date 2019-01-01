@@ -306,7 +306,7 @@ function DazarAlor:OnEnable()
   self:RegisterBossLoot(dazaralor, lootTable, bossName)
 end
 
-function Uldir:InitializeZoneDetect(ZoneDetect)
+function DazarAlor:InitializeZoneDetect(ZoneDetect)
   if UnitFactionGroup("player") == "Alliance" then
     ZoneDetect:RegisterMapID(1352, dazaralor)
   else
