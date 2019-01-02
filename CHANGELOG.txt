@@ -1,5 +1,10 @@
 # BestInSlotRedux Changelog
 
+## Version 8.1.1
+### Bug fixes
+* Added loot for Conclave from Battle of Dazar Alor
+* Fixed loading the encounter information in Battle of Dazar Alor
+
 ## Version 8.1.0
 ### Minor additions
 * Added loot for Battle of Dazar Alor
