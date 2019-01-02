@@ -198,7 +198,7 @@ function DazarAlor:OnEnable()
     166418, --Crest of Pa'ku
     165579, --Kimbul's Razor Claw
   }
-
+  self:RegisterBossLoot(dazaralor, lootTable, bossName)
   
 
   -----------------------------------
