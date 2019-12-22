@@ -31,7 +31,7 @@ function BestInSlot.Print(module, str, overrideDebug, second)
     local colorHighlight = module.colorHighlight
     local textFormatSize = 40
     local maxSize = 255
-    local name = module.Description and "BestInSlot "..module.Description or module.name or "BestInSlot"
+    local name = module.Description and "BestInSlotRedux "..module.Description or module.name or "BestInSlotRedux"
     if type(str) == "string" or type(str) == "number" or type(str) == "nil" then
       str = tostring(str)
       if (#str + textFormatSize) > maxSize then
