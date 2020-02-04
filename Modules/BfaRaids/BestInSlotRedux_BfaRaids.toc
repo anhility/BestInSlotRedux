@@ -7,3 +7,4 @@
 
 Uldir.lua
 DazarAlor.lua
+Crucible.lua
