@@ -248,6 +248,173 @@ function Dungeons:KingsRest()
   self:RegisterBossLoot(kingsrest, lootTable, bossName)
 end
 
+function Dungeons:Mechagon()
+  local mechagon = "mechagon"
+  local name = C_Map.GetMapInfo(1490).name
+  self:RegisterRaidInstance(dungeonTierId, mechagon, name, bonusIds)
+  --------------------------------------------------
+  ----- Operation: Mechagon
+  --------------------------------------------------
+
+
+  -----------------------------------
+  ----- King Gobbamak
+  -----------------------------------
+  local bossName = EJ_GetEncounterInfo(2357)
+  local lootTable = {
+    170507, --
+    169050, --
+    169035, --
+    169052, --
+    169054, --
+    169051, --
+    169053, --
+    169049, --
+  }
+  self:RegisterBossLoot(mechagon, lootTable, bossName)
+
+
+  -----------------------------------
+  ----- Gunker
+  -----------------------------------
+  local bossName = EJ_GetEncounterInfo(2358)
+  local lootTable = {
+    170508, --
+    169058, --
+    169062, --
+    169061, --
+    169059, --
+    169060, --
+    169057, --
+    169055, --
+    169056, --
+  }
+  self:RegisterBossLoot(mechagon, lootTable, bossName)
+
+
+  -----------------------------------
+  ----- Trixie & Naeno
+  -----------------------------------
+  local bossName = EJ_GetEncounterInfo(2360)
+  local lootTable = {
+    170509, --
+    169066, --
+    169068, --
+    169064, --
+    169069, --
+    169063, --
+    169067, --
+    169065, --
+    169070, --
+    169769, --
+  }
+  self:RegisterBossLoot(mechagon, lootTable, bossName)
+
+
+  -----------------------------------
+  ----- HK-8 Aerial Oppression Unit
+  -----------------------------------
+  local bossName = EJ_GetEncounterInfo(2355)
+  local lootTable = {
+    170510, --
+    168657, --
+    167677, --
+    168909, --
+    168963, --
+    169077, --
+    169074, --
+    169075, --
+    169073, --
+    169072, --
+    169071, --
+    169157, --
+    169076, --
+    169158, --
+    169156, --
+  }
+  self:RegisterBossLoot(mechagon, lootTable, bossName)
+
+
+  -----------------------------------
+  ----- Tussle Tonks
+  -----------------------------------
+  local bossName = EJ_GetEncounterInfo(2336)
+  local lootTable = {
+    170510, --
+    168962, --
+    168955, --
+    168967, --
+    168957, --
+    168958, --
+    168966, --
+    168964, --
+    168965, --
+  }
+  self:RegisterBossLoot(mechagon, lootTable, bossName)
+
+
+  -----------------------------------
+  ----- K.U.-J.0.
+  -----------------------------------
+  local bossName = EJ_GetEncounterInfo(2339)
+  local lootTable = {
+    170508, --
+    168970, --
+    168969, --
+    168971, --
+    168968, --
+    168972, --
+  }
+  self:RegisterBossLoot(mechagon, lootTable, bossName)
+
+
+  -----------------------------------
+  ----- Machinist's Garden
+  -----------------------------------
+  local bossName = EJ_GetEncounterInfo(2348)
+  local lootTable = {
+    170507, --
+    167556, --
+    168973, --
+    169608, --
+    168976, --
+    168974, --
+    168975, --
+    169159, --
+    169161, --
+    168977, --
+    169160, --
+    169344, --
+  }
+  self:RegisterBossLoot(mechagon, lootTable, bossName)
+
+
+  -----------------------------------
+  ----- King Mechagon
+  -----------------------------------
+  local bossName = EJ_GetEncounterInfo(2331)
+  local lootTable = {
+    169172, --
+    168671, --
+    168842, --
+    170509, --
+    169774, --
+    168984, --
+    168987, --
+    168981, --
+    168979, --
+    168978, --
+    168989, --
+    168990, --
+    168985, --
+    168986, --
+    168983, --
+    168988, --
+    168982, --
+  }
+  self:RegisterBossLoot(mechagon, lootTable, bossName)
+end
+
 function Dungeons:ShrineOfTheStorm()
   local shrineofthestorm = "shrineofthestorm"
   local name = C_Map.GetMapInfo(1039).name
@@ -915,6 +1082,7 @@ function Dungeons:OnEnable()
   self:AtalDazar()
   self:Freehold()
   self:KingsRest()
+  self:Mechagon()
   self:ShrineOfTheStorm()
   self:SiegeOfBoralus()
   self:TempleOfSethraliss()
