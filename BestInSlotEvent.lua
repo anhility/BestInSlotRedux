@@ -7,18 +7,18 @@ local callbacks = {}
 -- InitializeLootTable: Fired when a loot table is initialized
 --    arg1 : eventName
 --    arg2 : ID of the raid Tier that's initialized
--- 
+--
 -- DebugOptionsChanged: Fired when the debug options have changed
---    arg1 :  True/false wether the options are now true or false 
--- 
+--    arg1 :  True/false wether the options are now true or false
+--
 -- Any AddonEvent Message received will automatically fire an event in the format
 -- AddonMessage_Identifier (for example: AddonMessage_version when a version message is received)
--- 
+--
 -- Any AddonEvent Message sent will automatically fire an event in the format
 -- MessageSent_Identifier (for example: MessageSent_versioncheck when a version message is received)
 ---
 
---- Register an event 
+--- Register an event
 -- @param #string name The event to register, * to register to all events
 -- @param #function callback The function to call when an event hits
 -- @return #number the unique id of this event
@@ -59,7 +59,7 @@ end
 --- Send an event
 -- @param #string name The name of the event to send
 -- @param #multiple ... Any extra parameters will be forwarded to the eventhandler
--- 
+--
 function BestInSlot:SendEvent(name, ...)
   local eventArgs = {...}
   if eventHandlers[name] then

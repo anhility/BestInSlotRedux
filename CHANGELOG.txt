@@ -157,7 +157,7 @@
 ###Major additions
 * You can now import BiS lists from other characters of the same class and spec, provided they made one
 
-###Bug fixes 
+###Bug fixes
 * Display issues in the BiS Manager should be fixed
 
 ##Release 7.1.02
@@ -408,7 +408,7 @@ Major changes
 * The tooltips on tier tokens will now show if you need an item.
 * zhCN translation by nrg3331
 * Russian translation by Je?ka and KAPMA
- 
+
 ###Minor additions
 * Added a credits section to BestInSlot
 * ItemRefTooltip tooltips (When you click on an item in the chat) now also show BestInSlot information.
@@ -458,7 +458,7 @@ Major changes
 * Russian translation (partially) available! Credits to KAPMA.
 
 ###Minor additions
-* BestInSlot will now detect instances. It will automatically set the right instance when opening the window.  
+* BestInSlot will now detect instances. It will automatically set the right instance when opening the window.
 
 ##Version 6.0.16
 ###Minor additions
@@ -524,7 +524,7 @@ Major changes
 
 ###Bug fixes
 Ticket 10: The overview section will now properly take difficulty into account when showing wether one has obtained an item or not.
-Ticket 11: Fixed error when viewing the Overview section when not all inventory slots have an item equipped.  (Version 6.0.11B only) 
+Ticket 11: Fixed error when viewing the Overview section when not all inventory slots have an item equipped.  (Version 6.0.11B only)
 
 ##Version 6.0.10
 ###Bug fixes
@@ -539,7 +539,7 @@ Ticket 11: Fixed error when viewing the Overview section when not all inventory 
 * Implemented timers to await information instead of immediatly refreshing
 ** When multiple responses were received, the screen would lag out. I've put the responses in a 1 second queue to prevent this from happening.
 ** When doing an automatic update towards your guild members, it'll now wait 10 seconds to gather up data, instead of sending each item when quickly selecting a lot of items.
- 
+
 ###Bug fixes
 * Rukhmar's loot table is now associated with Blackrock Foundry normal, instead of Highmaul Normal.
 * When requesting the BiS list from the raid/party/guild the player him/herself will also appear in the list now.

@@ -20,7 +20,7 @@ function Dungeons:AtalDazar()
   --------------------------------------------------
   ----- Atal'Dazar
   --------------------------------------------------
-  
+
 
   -----------------------------------
   ----- Priestess Alun'za
@@ -37,7 +37,7 @@ function Dungeons:AtalDazar()
     158319, --My'das Talisman
   }
   self:RegisterBossLoot(ataldazar, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- Vol'kaal
@@ -53,7 +53,7 @@ function Dungeons:AtalDazar()
     158320, --Revitalizing Voodoo Totem
   }
   self:RegisterBossLoot(ataldazar, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- Rezan
@@ -70,7 +70,7 @@ function Dungeons:AtalDazar()
     158712, --Rezan's Gleaming Eye
   }
   self:RegisterBossLoot(ataldazar, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- Yazma
@@ -89,7 +89,6 @@ function Dungeons:AtalDazar()
     159610, --Vessel of Skittering Shadows
   }
   self:RegisterBossLoot(ataldazar, lootTable, bossName)
-   
 end
 
 function Dungeons:Freehold()
@@ -99,7 +98,7 @@ function Dungeons:Freehold()
   --------------------------------------------------
   ----- Freehold
   --------------------------------------------------
-  
+
 
   -----------------------------------
   ----- Skycap'n Kragg
@@ -114,7 +113,7 @@ function Dungeons:Freehold()
     155862, --Kragg's Rigging Scalers
   }
   self:RegisterBossLoot(freehold, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- Council o' Captains
@@ -131,7 +130,7 @@ function Dungeons:Freehold()
     158314, --NO NAME?
   }
   self:RegisterBossLoot(freehold, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- Ring of Booty
@@ -149,7 +148,7 @@ function Dungeons:Freehold()
     158356, --Shell-Kickers
   }
   self:RegisterBossLoot(freehold, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- Harlan Sweete
@@ -168,7 +167,6 @@ function Dungeons:Freehold()
     155881, --NO NAME?
   }
   self:RegisterBossLoot(freehold, lootTable, bossName)
-    
 end
 
 function Dungeons:KingsRest()
@@ -178,7 +176,7 @@ function Dungeons:KingsRest()
   --------------------------------------------------
   ----- Kings' Rest
   --------------------------------------------------
-  
+
 
   -----------------------------------
   ----- The Golden Serpent
@@ -195,7 +193,7 @@ function Dungeons:KingsRest()
     159617, --Lustrous Golden Plumage
   }
   self:RegisterBossLoot(kingsrest, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- Mchimba the Embalmer
@@ -211,7 +209,7 @@ function Dungeons:KingsRest()
     159618, --Mchimba's Ritual Bandages
   }
   self:RegisterBossLoot(kingsrest, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- The Council of Tribes
@@ -228,7 +226,7 @@ function Dungeons:KingsRest()
     159243, --Sandals of Wise Voodoo
   }
   self:RegisterBossLoot(kingsrest, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- Dazar, The First King
@@ -248,7 +246,6 @@ function Dungeons:KingsRest()
     159301, --Primal Dinomancer's Belt
   }
   self:RegisterBossLoot(kingsrest, lootTable, bossName)
-  
 end
 
 function Dungeons:ShrineOfTheStorm()
@@ -258,7 +255,7 @@ function Dungeons:ShrineOfTheStorm()
   --------------------------------------------------
   ----- Shrine of the Storm
   --------------------------------------------------
-  
+
 
   -----------------------------------
   ----- Aqu'sirr
@@ -273,7 +270,7 @@ function Dungeons:ShrineOfTheStorm()
     159619, --Briny Barnacle
   }
   self:RegisterBossLoot(shrineofthestorm, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- Tidesage Council
@@ -289,7 +286,7 @@ function Dungeons:ShrineOfTheStorm()
     159614, --Galecaller's Boon
   }
   self:RegisterBossLoot(shrineofthestorm, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- Lord Stormsong
@@ -304,7 +301,7 @@ function Dungeons:ShrineOfTheStorm()
     159242, --Leggings of the Drowned Lord
   }
   self:RegisterBossLoot(shrineofthestorm, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- Vol'zith the Whisperer
@@ -338,16 +335,16 @@ function Dungeons:SiegeOfBoralus()
     -----------------------------------
     local bossName = EJ_GetEncounterInfo(2132)
     local lootTable = {
-    159972, --Mutineer's Fate 
-    159973, --Boarder's Billy Club 
-    159968, --Gloves of the Iron Reavers 
-    159965, --Redhook's Cummerbund 
-    159427, --Legplates of the Irontide Raider 
-    159969, --Powdershot Leggings 
-    159251, --Top-Sail Footwraps 
-    162541, --Band of the Roving Scalawag
-    }  
-    self:RegisterBossLoot(siegeofboralus, lootTable, bossName)  
+      159972, --Mutineer's Fate
+      159973, --Boarder's Billy Club
+      159968, --Gloves of the Iron Reavers
+      159965, --Redhook's Cummerbund
+      159427, --Legplates of the Irontide Raider
+      159969, --Powdershot Leggings
+      159251, --Top-Sail Footwraps
+      162541, --Band of the Roving Scalawag
+    }
+    self:RegisterBossLoot(siegeofboralus, lootTable, bossName)
   else
     -----------------------------------
     ----- Sergeant Bainbridge
@@ -365,7 +362,7 @@ function Dungeons:SiegeOfBoralus()
     }
     self:RegisterBossLoot(siegeofboralus, lootTable, bossName)
   end
-  
+
 
   -----------------------------------
   ----- Dread Captain Lockwood
@@ -384,7 +381,7 @@ function Dungeons:SiegeOfBoralus()
     159623, --Dead-Eye Spyglass
   }
   self:RegisterBossLoot(siegeofboralus, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- Hadal Darkfathom
@@ -399,7 +396,7 @@ function Dungeons:SiegeOfBoralus()
     159622, --Hadal's Nautilus
   }
   self:RegisterBossLoot(siegeofboralus, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- Viq'Goth
@@ -417,9 +414,6 @@ function Dungeons:SiegeOfBoralus()
     159256, --Iron-Kelp Wristwraps
   }
   self:RegisterBossLoot(siegeofboralus, lootTable, bossName)
-  
-
-
 end
 
 function Dungeons:TempleOfSethraliss()
@@ -429,7 +423,7 @@ function Dungeons:TempleOfSethraliss()
   --------------------------------------------------
   ----- Temple of Sethraliss
   --------------------------------------------------
-  
+
 
   -----------------------------------
   ----- Adderis and Aspix
@@ -448,7 +442,7 @@ function Dungeons:TempleOfSethraliss()
     159259, --Sandswept Sandals
   }
   self:RegisterBossLoot(templeofsethraliss, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- Merektha
@@ -465,7 +459,7 @@ function Dungeons:TempleOfSethraliss()
     158367, --Merektha's Fang
   }
   self:RegisterBossLoot(templeofsethraliss, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- Galvazzt
@@ -480,7 +474,7 @@ function Dungeons:TempleOfSethraliss()
     158374, --Tiny Electromental in a Jar
   }
   self:RegisterBossLoot(templeofsethraliss, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- Avatar of Sethraliss
@@ -499,9 +493,6 @@ function Dungeons:TempleOfSethraliss()
     158368, --Fangs of Intertwined Essence
   }
   self:RegisterBossLoot(templeofsethraliss, lootTable, bossName)
-  
-
-
 end
 
 function Dungeons:Motherlode()
@@ -511,7 +502,7 @@ function Dungeons:Motherlode()
   --------------------------------------------------
   ----- The MOTHERLODE!!
   --------------------------------------------------
-  
+
 
   -----------------------------------
   ----- Coin-Operated Crowd Pummeler
@@ -527,7 +518,7 @@ function Dungeons:Motherlode()
     159462, --NO NAME?
   }
   self:RegisterBossLoot(motherlode, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- Azerokk
@@ -545,7 +536,7 @@ function Dungeons:Motherlode()
     159612, --Azerokk's Resonating Heart
   }
   self:RegisterBossLoot(motherlode, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- Rixxa Fluxflame
@@ -561,7 +552,7 @@ function Dungeons:Motherlode()
     159235, --Deranged Alchemist's Slippers
   }
   self:RegisterBossLoot(motherlode, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- Mogul Razdunk
@@ -579,9 +570,6 @@ function Dungeons:Motherlode()
     159611, --Razdunk's Big Red Button
   }
   self:RegisterBossLoot(motherlode, lootTable, bossName)
-  
-
-
 end
 
 function Dungeons:Underrot()
@@ -591,7 +579,7 @@ function Dungeons:Underrot()
   --------------------------------------------------
   ----- The Underrot
   --------------------------------------------------
-  
+
 
   -----------------------------------
   ----- Elder Leaxa
@@ -606,7 +594,7 @@ function Dungeons:Underrot()
     159624, --Rotcrusted Voodoo Doll
   }
   self:RegisterBossLoot(underrot, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- Cragmaw the Infested
@@ -625,7 +613,7 @@ function Dungeons:Underrot()
     159396, --Waders of the Infested
   }
   self:RegisterBossLoot(underrot, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- Sporecaller Zancha
@@ -642,7 +630,7 @@ function Dungeons:Underrot()
     159626, --Lingering Sporepods
   }
   self:RegisterBossLoot(underrot, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- Unbound Abomination
@@ -662,9 +650,6 @@ function Dungeons:Underrot()
     159625, --Vial of Animated Blood
   }
   self:RegisterBossLoot(underrot, lootTable, bossName)
-  
-
-
 end
 
 function Dungeons:TolDagor()
@@ -674,7 +659,7 @@ function Dungeons:TolDagor()
   --------------------------------------------------
   ----- Tol Dagor
   --------------------------------------------------
-  
+
 
   -----------------------------------
   ----- The Sand Queen
@@ -690,7 +675,7 @@ function Dungeons:TolDagor()
     159460, --NO NAME?
   }
   self:RegisterBossLoot(toldagor, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- Jes Howlis
@@ -706,7 +691,7 @@ function Dungeons:TolDagor()
     159627, --Jes' Howler
   }
   self:RegisterBossLoot(toldagor, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- Knight Captain Valyri
@@ -724,7 +709,7 @@ function Dungeons:TolDagor()
     159615, --Ignition Mage's Fuse
   }
   self:RegisterBossLoot(toldagor, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- Overseer Korgus
@@ -744,7 +729,6 @@ function Dungeons:TolDagor()
     159628, --Kul Tiran Cannonball Runner
   }
   self:RegisterBossLoot(toldagor, lootTable, bossName)
-  
 end
 
 function Dungeons:WaycrestManor()
@@ -754,7 +738,7 @@ function Dungeons:WaycrestManor()
   --------------------------------------------------
   ----- Waycrest Manor
   --------------------------------------------------
-  
+
 
   -----------------------------------
   ----- Heartsbane Triad
@@ -772,7 +756,7 @@ function Dungeons:WaycrestManor()
     159404, --Bramble Looped Boots
   }
   self:RegisterBossLoot(waycrestmanor, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- Soulbound Goliath
@@ -788,7 +772,7 @@ function Dungeons:WaycrestManor()
     159630, --Balefire Branch
   }
   self:RegisterBossLoot(waycrestmanor, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- Raal the Gluttonous
@@ -804,7 +788,7 @@ function Dungeons:WaycrestManor()
     159616, --Gore-Crusted Butcher's Block
   }
   self:RegisterBossLoot(waycrestmanor, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- Lord and Lady Waycrest
@@ -820,7 +804,7 @@ function Dungeons:WaycrestManor()
     159631, --Lady Waycrest's Music Box
   }
   self:RegisterBossLoot(waycrestmanor, lootTable, bossName)
-  
+
 
   -----------------------------------
   ----- Gorak Tul
@@ -838,7 +822,6 @@ function Dungeons:WaycrestManor()
     159335, --Raiment of the Blighted Tribe
   }
   self:RegisterBossLoot(waycrestmanor, lootTable, bossName)
-  
 end
 
 function Dungeons:InitializeZoneDetect(ZoneDetect)
@@ -868,7 +851,7 @@ function Dungeons:InitializeZoneDetect(ZoneDetect)
   ZoneDetect:RegisterNPCID(136160, kingsrest, 4)
 
   local shrineofthestorm = "shrineofthestorm"
-  ZoneDetect:RegisterMapID(1004, shrineofthestorm)
+  ZoneDetect:RegisterMapID(1039, shrineofthestorm)
   ZoneDetect:RegisterNPCID(134056, shrineofthestorm, 1)
   ZoneDetect:RegisterNPCID(134063, shrineofthestorm, 2)
   ZoneDetect:RegisterNPCID(134058, shrineofthestorm, 2)
@@ -876,6 +859,7 @@ function Dungeons:InitializeZoneDetect(ZoneDetect)
   ZoneDetect:RegisterNPCID(134069, shrineofthestorm, 4)
 
   local siegeofboralus = "siegeofboralus"
+  ZoneDetect:RegisterMapID(1162, siegeofboralus)
   ZoneDetect:RegisterNPCID(128650, siegeofboralus, 1)--Redhook - Alliance
   ZoneDetect:RegisterNPCID(130834, siegeofboralus, 1)--Bainbridge - Horde
   ZoneDetect:RegisterNPCID(129208, siegeofboralus, 2)
@@ -927,7 +911,7 @@ end
 function Dungeons:OnEnable()
   self:RegisterExpansion("Battle for Azeroth", EXPANSION_NAME7)
   self:RegisterRaidTier("Battle for Azeroth", dungeonTierId, ("%s %s"):format(EXPANSION_NAME7, TRACKER_HEADER_DUNGEON), PLAYER_DIFFICULTY1, PLAYER_DIFFICULTY2, PLAYER_DIFFICULTY6)
-  
+
   self:AtalDazar()
   self:Freehold()
   self:KingsRest()

@@ -11,12 +11,12 @@ CustomItems.Height = 400
 local minimumIlvl = 300
 local failtimer
 local upgradeStages = {
-  [525] = "Stage 1", 
+  [525] = "Stage 1",
   [526] = "Stage 2",
   [527] = "Stage 3",
   [593] = "Stage 4",
   [617] = "Stage 5",
-  [618] = "Stage 6" 
+  [618] = "Stage 6"
 }
 
 local upgradeTypes = {
@@ -157,7 +157,7 @@ end
 
 function CustomItems:LoadCustomItem(itemid)
   local item = self:GetItem(itemid)
-  if item then 
+  if item then
     self.itemid = itemid
     self.itemstr = item.customitem
     self:DisableInput(true)
@@ -230,7 +230,7 @@ local function warlordsCraftedDropdownChanged()
   CustomItems.successlabel:SetUserData("link", link)
 end
 
-function CustomItems:GenerateWarlordsCraftedOptions(itemlink)  
+function CustomItems:GenerateWarlordsCraftedOptions(itemlink)
   local _,_, _, _, _, _, _, _, _, _, _, _, _, numBonusID, bonusId1, bonusId2 = strsplit(":", (itemlink):sub(1,(itemlink):find("|h") - 1), 15)
   numBonusID, bonusId1, bonusId2 = tonumber(numBonusID), tonumber(bonusId1), tonumber(bonusId2)
   for _,bonusId in pairs({bonusId1, bonusId2}) do
@@ -270,7 +270,7 @@ function CustomItems:TryGenerateCustomItem(input)
     local itemid = GetItemInfoFromHyperlink(link)
     self.itemid = itemid
     self.itemstr = itemStr
-    if failtimer then 
+    if failtimer then
       failtimer:Cancel()
       self:UnregisterEvent("GET_ITEM_INFO_RECEIVED", OnItemInfoReceived)
     end
@@ -330,7 +330,7 @@ function CustomItems:SetCustomItemDropdown()
   dropdown:SetDisabled(disabled)
   dropdown:SetText(disabled and L["There are no custom items present"] or "")
   dropdown:SetUserData("count", count)
-  
+
 end
 
 local function customItemDropdownValueChanged(widget, _, value)
@@ -344,30 +344,30 @@ function CustomItems:Draw(container, dungeon)
   editBox:SetCallback("OnEnterPressed", editBoxOnEnterPressed)
   container:SetUserData("input", editBox)
   container:AddChild(editBox)
-  
+
   local customItemDropdown = AceGUI:Create("Dropdown")
   customItemDropdown:SetFullWidth(true)
   customItemDropdown:SetLabel(L["Pick a previously created custom item"])
   customItemDropdown:SetCallback("OnValueChanged", customItemDropdownValueChanged)
   container:AddChild(customItemDropdown)
   container:SetUserData("customitem", customItemDropdown)
-  
-  
+
+
   local verifytext = AceGUI:Create("Label")
   verifytext:SetFullWidth(true)
   container:AddChild(verifytext)
-  
+
   local successlabel = AceGUI:Create("InteractiveLabel")
   successlabel:SetFullWidth(true)
   successlabel:SetText("")
   container:AddChild(successlabel)
-  
+
   local notallowedlabel = AceGUI:Create("Label")
   notallowedlabel:SetFullWidth(true)
   notallowedlabel:SetText("")
   container:AddChild(notallowedlabel)
-  
-  
+
+
   local suffixDropdown = AceGUI:Create("Dropdown")
   suffixDropdown:SetList(upgradeNames)
   suffixDropdown:SetFullWidth(true)
@@ -375,7 +375,7 @@ function CustomItems:Draw(container, dungeon)
   suffixDropdown:SetCallback("OnValueChanged", warlordsCraftedDropdownChanged)
   suffixDropdown:SetDisabled(true)
   --container:AddChild(suffixDropdown)
-  
+
   local stageDropdown = AceGUI:Create("Dropdown")
   stageDropdown:SetList(upgradeStages)
   stageDropdown:SetFullWidth(true)
@@ -383,7 +383,7 @@ function CustomItems:Draw(container, dungeon)
   stageDropdown:SetDisabled(true)
   --container:AddChild(stageDropdown)
   container:SetUserData("stage", stageDropdown)
-  
+
   local dungeonDropdown = AceGUI:Create("Dropdown")
   dungeonDropdown:SetLabel(L["Select the instance that you would like to add this item to."])
   local raidTiers = self:GetRaidTiers()
@@ -401,30 +401,30 @@ function CustomItems:Draw(container, dungeon)
   dungeonDropdown:SetCallback("OnValueChanged", onDungeonChanged)
   dungeonDropdown:SetValue(dungeon or self:GetSelected(self.INSTANCE))
   container:AddChild(dungeonDropdown)
-  
+
   local submitButton = AceGUI:Create("Button")
   submitButton:SetText(SUBMIT)
   submitButton:SetRelativeWidth(0.33)
   submitButton:SetDisabled(true)
   submitButton:SetCallback("OnClick", function() CustomItems:SubmitCustomItem() end)
   container:AddChild(submitButton)
-  
+
   local cancelButton = AceGUI:Create("Button")
   cancelButton:SetText(CANCEL)
   cancelButton:SetRelativeWidth(0.33)
   cancelButton:SetDisabled(true)
   cancelButton:SetCallback("OnClick", function() CustomItems:ResetCustomItem() end)
   container:AddChild(cancelButton)
-  
+
   local deleteButton = AceGUI:Create("Button")
   deleteButton:SetText(DELETE)
   deleteButton:SetRelativeWidth(0.33)
   deleteButton:SetDisabled(true)
   deleteButton:SetCallback("OnClick", function() CustomItems:DeleteCustomItem() end)
   container:AddChild(deleteButton)
-  
-  
-  
+
+
+
   self.inputbox = editBox
   self.customItemDropdown = customItemDropdown
   self.verifytext = verifytext
@@ -437,8 +437,8 @@ function CustomItems:Draw(container, dungeon)
   self.submitButton = submitButton
   self.cancelButton = cancelButton
   self.deleteButton = deleteButton
-  
-  
+
+
   self:SetCustomItemDropdown()
 end
 

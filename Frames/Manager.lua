@@ -24,7 +24,7 @@ function Manager:SetSlotContainerPosition(callback, funcArgs)
   selectContainer:SetPoint("TOPLEFT", slotContainer.frame, "TOPLEFT", -10, -45)
   selectContainer:SetPoint("BOTTOMRIGHT", dropdownImport.frame, "BOTTOMRIGHT", 0, 20)
   if callback then
-    local type = type(callback) 
+    local type = type(callback)
     if type == "function" then
       callback(unpack(funcArgs))
     elseif type == "string" and self[callback] then
@@ -58,10 +58,10 @@ function Manager:DoMoveAnimation(itemGroup, location, callback, ...)
     timer = self:ScheduleRepeatingTimer(function()
       local speedX = 12
       local speedY
-      if ofsX == targetX then 
-        speedY = speedX 
-      else 
-        speedY = abs(speedX * (ofsY / ofsX)) 
+      if ofsX == targetX then
+        speedY = speedX
+      else
+        speedY = abs(speedX * (ofsY / ofsX))
       end
       if ofsX < targetX then
         ofsX = min(ofsX + speedX, targetX)
@@ -156,14 +156,14 @@ function Manager:FillSelectContainer(itemGroup, raidTier, difficulty, slotid)
   local itemhighlight = "Interface\\QuestFrame\\UI-QuestTitleHighlight"
   selectContainer:SetLayout("Flow")
   selectContainer:ReleaseChildren()
-  
+
   local header = AceGUI:Create("Heading")
   header:SetFullWidth(true)
   local slotData = self.invSlots[slotid]
   if type(slotData) == "table" then
     slotData = slotData[1]
   end
-  
+
   --legion artifact relic
   local relic = itemGroup:GetUserData("relic")
   if relic then
@@ -172,14 +172,14 @@ function Manager:FillSelectContainer(itemGroup, raidTier, difficulty, slotid)
     header:SetText((L["%1$s from raid tier: %2$s"]):format(_G[slotData], self:GetDescription(self.RAIDTIER, raidTier)))
   end
   selectContainer:AddChild(header)
-  
+
   if itemSelectionMode[2] then
     local helpText = AceGUI:Create("Label")
     helpText:SetText(self.colorNormal..L["Use left-click to (de)select the left one, and right-click to select the right one"].."|r")
     helpText:SetFullWidth(true)
     selectContainer:AddChild(helpText)
   end
-  
+
   local scroll = AceGUI:Create("ScrollFrame")
   local simpleGroup = AceGUI:Create("SimpleGroup")
   simpleGroup:SetFullWidth(true)
@@ -262,7 +262,7 @@ function Manager:FillSelectContainer(itemGroup, raidTier, difficulty, slotid)
     lowerRaidTierLabel:SetImage(lowerRaidTiers and "Interface\\BUTTONS\\UI-GroupLoot-Pass-Up" or "Interface\\PaperDollInfoFrame\\Character-Plus")
     lowerRaidTierLabel:SetText(lowerRaidTiers and L["Only show this raid tier"] or L["Add lower raid tiers"])
     lowerRaidTierLabel:SetCallback("OnClick", function() lowerRaidTiers = not lowerRaidTiers Manager:FillSelectContainer(itemGroup, raidTier, difficulty, slotid) end)
-    scroll:AddChild(lowerRaidTierLabel)    
+    scroll:AddChild(lowerRaidTierLabel)
   end
 end
 
@@ -484,7 +484,7 @@ function Manager:PopulateSlots(slotContainer)
     local isLegionWeapon = false
     -- Fix by dioxina
     if slotId == 2 and (self:GetSelected(self.RAIDTIER) >= 80000 and self:GetSelected(self.RAIDTIER) < 90000) then
-      --Artifact neck      
+      --Artifact neck
       icon:SetUserData("disabled", true)
       button:SetDisabled(true)
       NeckItemId = 158075
@@ -512,13 +512,13 @@ function Manager:PopulateSlots(slotContainer)
       self:SetItemBestInSlot( selected.raidtier, selected.difficulty, selected.specialization, slotId, nil)
       icon:SetUserData("itemid", nil)
       icon:SetUserData("disabled", true)
-      
+
       button:SetDisabled(true)
-      
+
       itemid = nil
     else
       icon:SetUserData("disabled", false)
-      
+
       button:SetDisabled(false)
     end
     if type(itemid) == "number" and self:GetItem(itemid) then --Has a valid itemid value in the database
@@ -531,9 +531,9 @@ function Manager:PopulateSlots(slotContainer)
       end
       icon:SetImage(GetItemIcon(itemid))
       icon:SetUserData("itemid", itemid)
-      
+
       label:SetText(item.link)
-      
+
       button:SetDisabled(false)
     elseif not isLegionWeapon then
       icon:SetImage(unpack(itemGroup:GetUserData("defaultTexture")))
@@ -545,7 +545,7 @@ function Manager:PopulateSlots(slotContainer)
     button:SetUserData("raidTier",  self:GetSelected(self.RAIDTIER))
     button:SetUserData("difficulty", self:GetSelected(self.DIFFICULTY))
   end
-  
+
   self:SetLegionRelics(raidTier >= 70000 and raidTier < 80000, container, specialization, BiSList)
 end
 
@@ -553,7 +553,7 @@ function Manager:GetItemSelectionGroup(slotId, textureName, bisIndex)
   local itemGroup = AceGUI:Create("SimpleGroup")
   itemGroup:SetHeight(45)
   itemGroup:PauseLayout()
-  
+
   local icon = AceGUI:Create("Icon")
   icon:SetImage(textureName)
   icon:SetImageSize(40,40)
@@ -567,12 +567,12 @@ function Manager:GetItemSelectionGroup(slotId, textureName, bisIndex)
   icon:SetUserData("slotid", slotId)
   icon:SetUserData("group", itemGroup)
   itemGroup:AddChild(icon)
-  
+
   local label = AceGUI:Create("Label")
   label:SetHeight(20)
   label:SetPoint("TOPLEFT", icon.frame, "TOPRIGHT", 0, -5)
   itemGroup:AddChild(label)
-  
+
   local button = AceGUI:Create("Button")
   button:SetText(L["Select an item"])
   button:SetCallback("OnClick", selectItemButtonOnClick)
@@ -580,7 +580,7 @@ function Manager:GetItemSelectionGroup(slotId, textureName, bisIndex)
   button:SetPoint("BOTTOMLEFT", icon.frame, "BOTTOMRIGHT")
   button:SetUserData("slotid", slotId)
   itemGroup:AddChild(button)
-  
+
   itemGroup:SetUserData("defaultTexture", {textureName})
   itemGroup:SetUserData("slotid", slotId)
   itemGroup:SetUserData("index", bisIndex)
@@ -690,21 +690,21 @@ end
 
 function Manager:Draw(container)
   container:PauseLayout()
-  
+
   dropdownRaidtier = self:GetDropdown(self.RAIDTIER, nil, dropdownRaidtierOnValueChanged)
   dropdownRaidtier:SetPoint("TOPLEFT", container.frame, "TOPLEFT", 10, -10)
   container:AddChild(dropdownRaidtier)
-  
+
   dropdownDifficulty = self:GetDropdown(self.DIFFICULTY, nil, dropdownDifficultyOnValueChanged)
   dropdownDifficulty:SetPoint("TOPLEFT", dropdownRaidtier.frame, "TOPRIGHT")
   container:AddChild(dropdownDifficulty)
-  
+
   container:SetUserData("difficulty", dropdownDifficulty)
-  
+
   dropdownSpecialization = self:GetDropdown(self.SPECIALIZATION, nil, dropdownSpecializationOnValueChanged)
   dropdownSpecialization:SetPoint("TOPLEFT", dropdownDifficulty.frame, "TOPRIGHT")
   container:AddChild(dropdownSpecialization)
-  
+
   slotContainer = self:GetSlotContainer(self:GetSelected(self.RAIDTIER),1)
   slotContainer:SetPoint("TOPLEFT", dropdownRaidtier.frame, "BOTTOMLEFT")
   slotContainer:SetWidth(600)
@@ -715,12 +715,12 @@ function Manager:Draw(container)
   dropdownImport:SetLabel(L["Import from other difficulty/character"])
   dropdownImport:SetPoint("BOTTOMRIGHT", container.frame, "BOTTOMRIGHT", -78, 0)
   dropdownImport:SetCallback("OnValueChanged", dropdownImport_OnValueChanged)
-  
+
   self:SetImportDropdownData(dropdownImport)
-  
+
   container:AddChild(dropdownImport)
   container:SetUserData("importButton", dropdownImport)
-  
+
   self:PopulateSlots(slotContainer)
   slotContainer:DoLayout()
 end

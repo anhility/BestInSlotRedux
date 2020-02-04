@@ -1,5 +1,5 @@
 local DazarAlor = LibStub("AceAddon-3.0"):GetAddon("BestInSlotRedux"):NewModule("DazarAlor")
-local dazaralor = "dazaralor"
+local BOD = "BOD"
 function DazarAlor:OnEnable()
   local L = LibStub("AceLocale-3.0"):GetLocale("BestInSlotRedux")
 
@@ -9,10 +9,10 @@ function DazarAlor:OnEnable()
   else
     name = C_Map.GetMapInfo(1358).name
   end
-  
+
   self:RegisterExpansion("Battle for Azeroth", EXPANSION_NAME7)
-  self:RegisterRaidTier("Battle for Azeroth", 80102, name, PLAYER_DIFFICULTY1, PLAYER_DIFFICULTY2, PLAYER_DIFFICULTY6)
-  self:RegisterRaidInstance(80102, dazaralor, name, {
+  self:RegisterRaidTier("Battle for Azeroth", 80100, name, PLAYER_DIFFICULTY1, PLAYER_DIFFICULTY2, PLAYER_DIFFICULTY6)
+  self:RegisterRaidInstance(80100, BOD, name, {
     bonusids = {
       [1] = {3524},
       [2] = {3524},
@@ -27,7 +27,7 @@ function DazarAlor:OnEnable()
   --------------------------------------------------
   ----- Battle of Dazar'alor
   --------------------------------------------------
-  
+
 
   -----------------------------------
   ----- Champion of the Light
@@ -49,7 +49,7 @@ function DazarAlor:OnEnable()
       165533, --Lightgrace Sabatons
       165569, --Ward of Envelopment
     }
-    self:RegisterBossLoot(dazaralor, lootTable, bossName)
+    self:RegisterBossLoot(BOD, lootTable, bossName)
   else
     local bossName = EJ_GetEncounterInfo(2333)
     local lootTable = {
@@ -67,9 +67,9 @@ function DazarAlor:OnEnable()
       165533, --Lightgrace Sabatons
       165569, --Ward of Envelopment
     }
-    self:RegisterBossLoot(dazaralor, lootTable, bossName)
+    self:RegisterBossLoot(BOD, lootTable, bossName)
   end
-  
+
   if UnitFactionGroup("player") == "Alliance" then
     -----------------------------------
     ----- Grong, the Revenant
@@ -91,7 +91,7 @@ function DazarAlor:OnEnable()
       165499, --Leggings of Dire Research
       165574, --Grong's Primal Rage
     }
-    self:RegisterBossLoot(dazaralor, lootTable, bossName)
+    self:RegisterBossLoot(BOD, lootTable, bossName)
   else
     -----------------------------------
     ----- Grong, the Jungle Lord
@@ -113,7 +113,7 @@ function DazarAlor:OnEnable()
       165499, --Leggings of Dire Research
       165574, --Grong's Primal Rage
     }
-    self:RegisterBossLoot(dazaralor, lootTable, bossName)
+    self:RegisterBossLoot(BOD, lootTable, bossName)
   end
 
   -----------------------------------
@@ -134,7 +134,7 @@ function DazarAlor:OnEnable()
       165565, --Band of Multi-Sided Strikes
       165568, --Invocation of Yu'lon
     }
-    self:RegisterBossLoot(dazaralor, lootTable, bossName)
+    self:RegisterBossLoot(BOD, lootTable, bossName)
   else
     local bossName = EJ_GetEncounterInfo(2341)
     local lootTable = {
@@ -150,9 +150,9 @@ function DazarAlor:OnEnable()
       165565, --Band of Multi-Sided Strikes
       165568, --Invocation of Yu'lon
     }
-    self:RegisterBossLoot(dazaralor, lootTable, bossName)
+    self:RegisterBossLoot(BOD, lootTable, bossName)
   end
-  
+
 
   -----------------------------------
   ----- Opulence
@@ -174,8 +174,8 @@ function DazarAlor:OnEnable()
     165573, --Diamond-Laced Refracting Prism
     165571, --Incandescent Sliver
   }
-  self:RegisterBossLoot(dazaralor, lootTable, bossName)
-  
+  self:RegisterBossLoot(BOD, lootTable, bossName)
+
 
   -----------------------------------
   ----- Conclave of the Chosen
@@ -198,8 +198,8 @@ function DazarAlor:OnEnable()
     166418, --Crest of Pa'ku
     165579, --Kimbul's Razor Claw
   }
-  self:RegisterBossLoot(dazaralor, lootTable, bossName)
-  
+  self:RegisterBossLoot(BOD, lootTable, bossName)
+
 
   -----------------------------------
   ----- King Rastakhan
@@ -218,8 +218,8 @@ function DazarAlor:OnEnable()
     165577, --Bwonsamdi's Bargain
     165578, --Mirror of Entwined Fate
   }
-  self:RegisterBossLoot(dazaralor, lootTable, bossName)
-  
+  self:RegisterBossLoot(BOD, lootTable, bossName)
+
 
   -----------------------------------
   ----- High Tinker Mekkatorque
@@ -239,8 +239,8 @@ function DazarAlor:OnEnable()
     165580, --Ramping Amplitude Gigavolt Engine
     165572, --Variable Intensity Gigavolt Oscillating Reactor
   }
-  self:RegisterBossLoot(dazaralor, lootTable, bossName)
-  
+  self:RegisterBossLoot(BOD, lootTable, bossName)
+
 
   -----------------------------------
   ----- Stormwall Blockade
@@ -261,8 +261,8 @@ function DazarAlor:OnEnable()
     165528, --Kelp-Laced Greaves
     165506, --Wavecaller Leggings
   }
-  self:RegisterBossLoot(dazaralor, lootTable, bossName)
-  
+  self:RegisterBossLoot(BOD, lootTable, bossName)
+
 
   -----------------------------------
   ----- Lady Jaina Proudmoore
@@ -283,45 +283,45 @@ function DazarAlor:OnEnable()
     165570, --Everchill Anchor
     165576, --Tidestorm Codex
   }
-  self:RegisterBossLoot(dazaralor, lootTable, bossName)
-  
+  self:RegisterBossLoot(BOD, lootTable, bossName)
+
   -----------------------------------
   ----- Trash loot
   -----------------------------------
   local bossName = L["Trash Loot"]
   local lootTable = {
     ----Cloth----
-    -- 160612,--Spellbound Specimen Handlers
-    -- 161071,--Bloody Experimenter's Wraps
+    -- 160612, --Spellbound Specimen Handlers
+    -- 161071, --Bloody Experimenter's Wraps
     -- ----Leather----
-    -- 161075,--Antiseptic Specimen Handlers
-    -- 161072,--Splatterguards
+    -- 161075, --Antiseptic Specimen Handlers
+    -- 161072, --Splatterguards
     -- ----Mail----
-    -- 161076,--Iron-Grip Specimen Handlers
-    -- 161073,--Reinforced Test Subject Shackles
+    -- 161076, --Iron-Grip Specimen Handlers
+    -- 161073, --Reinforced Test Subject Shackles
     -- ----Plate----
-    -- 161077,--Fluid-Resistant Specimen Handlers
-    -- 161074,--Crushproof Vambraces
+    -- 161077, --Fluid-Resistant Specimen Handlers
+    -- 161074, --Crushproof Vambraces
   }
-  self:RegisterBossLoot(dazaralor, lootTable, bossName)
+  self:RegisterBossLoot(BOD, lootTable, bossName)
 end
 
 function DazarAlor:InitializeZoneDetect(ZoneDetect)
   if UnitFactionGroup("player") == "Alliance" then
-    ZoneDetect:RegisterMapID(1352, dazaralor)
+    ZoneDetect:RegisterMapID(1352, BOD)
   else
-    ZoneDetect:RegisterMapID(1358, dazaralor)
+    ZoneDetect:RegisterMapID(1358, BOD)
   end
-  ZoneDetect:RegisterNPCID(144683, dazaralor, 1) --Champion of the Light [H]  
-  ZoneDetect:RegisterNPCID(144680, dazaralor, 1) --Champion of the Light [A]
-  ZoneDetect:RegisterNPCID(144638, dazaralor, 3) --Grong, the Revenant [A]
-  ZoneDetect:RegisterNPCID(148117, dazaralor, 2) --Grong, the Jungle Lord [H]
-  ZoneDetect:RegisterNPCID(148238, dazaralor, 2) --Jadefire Masters [A]
-  ZoneDetect:RegisterNPCID(146099, dazaralor, 3) --Jadefire Masters [H]
-  ZoneDetect:RegisterNPCID(147564, dazaralor, 4) --Opulence
-  ZoneDetect:RegisterNPCID(144747, dazaralor, 5) --Conclave of the Chosen
-  ZoneDetect:RegisterNPCID(145616, dazaralor, 6) --King Rastakhan
-  ZoneDetect:RegisterNPCID(144838, dazaralor, 7) --High Tinker Mekkatorque
-  ZoneDetect:RegisterNPCID(146256, dazaralor, 8) --Stormwall Blockade
-  ZoneDetect:RegisterNPCID(149684, dazaralor, 9) --Lady Jaina Proudmoore
+  ZoneDetect:RegisterNPCID(144683, BOD, 1) --Champion of the Light [H]
+  ZoneDetect:RegisterNPCID(144680, BOD, 1) --Champion of the Light [A]
+  ZoneDetect:RegisterNPCID(144638, BOD, 3) --Grong, the Revenant [A]
+  ZoneDetect:RegisterNPCID(148117, BOD, 2) --Grong, the Jungle Lord [H]
+  ZoneDetect:RegisterNPCID(148238, BOD, 2) --Jadefire Masters [A]
+  ZoneDetect:RegisterNPCID(146099, BOD, 3) --Jadefire Masters [H]
+  ZoneDetect:RegisterNPCID(147564, BOD, 4) --Opulence
+  ZoneDetect:RegisterNPCID(144747, BOD, 5) --Conclave of the Chosen
+  ZoneDetect:RegisterNPCID(145616, BOD, 6) --King Rastakhan
+  ZoneDetect:RegisterNPCID(144838, BOD, 7) --High Tinker Mekkatorque
+  ZoneDetect:RegisterNPCID(146256, BOD, 8) --Stormwall Blockade
+  ZoneDetect:RegisterNPCID(149684, BOD, 9) --Lady Jaina Proudmoore
 end

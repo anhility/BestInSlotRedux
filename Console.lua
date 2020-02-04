@@ -84,7 +84,7 @@ end
 function BestInSlotConsole:Add(descr, ...)
   if not BestInSlot.options.DEBUG then return end
   local data = {
-    descr = descr, 
+    descr = descr,
     param = {...},
   }
   addNewItem(data)
@@ -234,7 +234,7 @@ local function Label_OnEnter(label)
         GameTooltip:AddLine(tostring(param))
       end
       first = false
-    end  
+    end
   end
   GameTooltip:Show()
 end
@@ -273,12 +273,12 @@ function BestInSlotConsole:ShowWindow()
   window:EnableResize(nil)
   window:SetTitle("Best In Slot Console")
   window:SetCallback("OnClose", windowOnClose)
-  
+
   local scroll = AceGUI:Create("ScrollFrame")
   scroll:SetFullWidth(true)
   scroll:SetFullHeight(true)
   scroll:SetLayout("List")
-  
+
   window:AddChild(scroll)
   window:SetUserData("scroll", scroll)
   for i=1,#history do

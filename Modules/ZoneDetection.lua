@@ -1,5 +1,5 @@
 --lua
-local unpack, select, wipe, pairs, GetInstanceInfo, strsplit, tonumber, type, tContains, tinsert 
+local unpack, select, wipe, pairs, GetInstanceInfo, strsplit, tonumber, type, tContains, tinsert
 =     unpack, select, wipe, pairs, GetInstanceInfo, strsplit, tonumber, type, tContains, tinsert
 local SetMapToCurrentZone, GetCurrentMapAreaID, GetSpecializationInfo, UnitAffectingCombat, UnitGUID, GetSpecializationInfoByID
 =     SetMapToCurrentZone, GetCurrentMapAreaID, GetSpecializationInfo, UnitAffectingCombat, UnitGUID, GetSpecializationInfoByID
@@ -131,7 +131,7 @@ function ZoneDetect:TooltipSetUnit(tooltip)
         tooltip:AddLine(("- %s"):format(self:GetItemText(item)))
       end
     end
-  end 
+  end
 end
 
 function ZoneDetect:ZONE_CHANGED_NEW_AREA()

@@ -91,8 +91,8 @@ function Overview:ReportRequiredItems()
     --  msg = bislink:GetShareLink(playerName, self.INSTANCE, selectedDungeon, selectedDifficulty, self:GetSelected(self.SPECIALIZATION))
     --else
       msg = (L["%1$s needs the following bosses from %2$s %3$s"]):format(
-        playerName, 
-        self:GetDescription(self.INSTANCE, selectedDungeon), 
+        playerName,
+        self:GetDescription(self.INSTANCE, selectedDungeon),
         self:GetDifficulties(self.INSTANCE, selectedDungeon)[selectedDifficulty]
       )
     --end
@@ -249,7 +249,7 @@ function Overview:UpdateContent()
     end
     if misc then
       for miscDesc, labels in pairs(misc) do
-        local miscgroup = AceGUI:Create("SimpleGroup")    
+        local miscgroup = AceGUI:Create("SimpleGroup")
         miscgroup:SetFullWidth(true)
         miscgroup:SetLayout("Flow")
         local header = AceGUI:Create("Heading")
@@ -263,7 +263,7 @@ function Overview:UpdateContent()
       end
     end
     if customitems then
-        local customItemGroup = AceGUI:Create("SimpleGroup")    
+        local customItemGroup = AceGUI:Create("SimpleGroup")
         customItemGroup:SetFullWidth(true)
         customItemGroup:SetLayout("Flow")
         local header = AceGUI:Create("Heading")
@@ -317,22 +317,22 @@ end
 
 function Overview:Draw(container)
   container:PauseLayout()
-  
+
   specFilter = self.db.char.options.overviewfilter
-  
+
   dropdownDungeon = self:GetDropdown(self.INSTANCE, nil, dropdownDungeonOnValueChanged)
   dropdownDungeon:SetPoint("TOPLEFT", container.frame, "TOPLEFT", 10, -10)
   container:AddChild(dropdownDungeon)
-  
+
   dropdownDifficulty = self:GetDropdown(self.DIFFICULTY, nil, dropdownDifficultyOnValueChanged)
   dropdownDifficulty:SetPoint("TOPLEFT", dropdownDungeon.frame, "TOPRIGHT")
   dropdownDifficulty:SetWidth(120)
-  
+
   dropdownDifficulty:SetCallback("OnValueChanged", dropdownDifficultyOnValueChanged)
-  
+
   container:AddChild(dropdownDifficulty)
   dropdownFilter = AceGUI:Create("Dropdown")
-  dropdownFilter:SetList({})  
+  dropdownFilter:SetList({})
   local specs = self:GetAllSpecializations()
   local customLists, hasCustomLists = self:GetCustomLists()
   if hasCustomLists then
@@ -356,7 +356,7 @@ function Overview:Draw(container)
   dropdownFilter:AddItem("spacer2", "")
   dropdownFilter:SetItemDisabled("spacer", true)
   dropdownFilter:SetItemDisabled("spacer2", true)
-    
+
   dropdownFilter:SetMultiselect(true)
   dropdownFilter:SetItemValue('obtainedOnly', showObtainedOnly)
   dropdownFilter:SetItemDisabled('spacer', true)
@@ -381,15 +381,15 @@ function Overview:Draw(container)
   dropdownFilter:SetPoint("TOPLEFT", dropdownDifficulty.frame, "TOPRIGHT")
   dropdownFilter:SetPoint("TOPRIGHT", container.frame, "TOPRIGHT", -10, -10)
   dropdownFilter:SetCallback("OnValueChanged", dropdownFilterOnValueChanged)
-  
+
   container:AddChild(dropdownFilter)
   container:SetUserData("filter", dropdownFilter)
-  
+
   contentContainer = AceGUI:Create("ScrollFrame")
   contentContainer:SetPoint("TOPLEFT", dropdownDungeon.frame, "BOTTOMLEFT")
   contentContainer:SetPoint("BOTTOMRIGHT", container.frame, "BOTTOMRIGHT", -10, 50)
   contentContainer:SetLayout("List")
-  
+
   container:AddChild(contentContainer)
   dropdownReport = AceGUI:Create("Dropdown")
   dropdownReport:SetPoint("TOPLEFT", contentContainer.frame, "BOTTOMLEFT")
@@ -445,13 +445,13 @@ function Overview:Draw(container)
   end)
   container:SetUserData("report", dropdownReport)
   container:AddChild(dropdownReport)
-  
+
   reportButton = AceGUI:Create("Button")
   reportButton:SetText(L["Report BestInSlot"])
   reportButton:SetDisabled(selectedReport == nil)
   reportButton:SetPoint("BOTTOMLEFT", dropdownReport.frame, "BOTTOMRIGHT")
   reportButton:SetCallback("OnClick", function() Overview:ReportRequiredItems() end)
-  
+
   container:AddChild(reportButton)
   local raidTier = self:GetSelected(self.RAIDTIER)
   Overview:UpdateContent()

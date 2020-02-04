@@ -5,4 +5,4 @@
 ## Version: @project-version@
 ## Dependencies: BestInSlotRedux
 
-BestInSlotRedux_BfaDungeons.lua
+Dungeons.lua

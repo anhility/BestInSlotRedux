@@ -68,10 +68,10 @@ function BestInSlot:SendAddonMessage(identifier, msg, chattype, target)
   if identifier and not communication[identifier] then error("The identifier "..identifier.." is not registered yet") end
   if not chattype then error("You must give a chattype for the SendAddonMessage to work") end
   if chattype == "WHISPER" and not target then error("The WHISPER chattype must supply a target") end
-  
+
   --make a dataPackage
   local dataPackage = {version = self.version, data=msg, id = identifier, Alpha = BestInSlot.AlphaVersion}
-  
+
   dataPackage = self:Serialize(dataPackage)
   self:SendCommMessage(BestInSlot.MSGPREFIX, dataPackage, chattype, target)
   self:SendEvent(("MessageSent_%s"):format(identifier), msg, chattype, target)
@@ -159,7 +159,7 @@ end
 -- @param #string channel The Channel to request the version off
 -- @param #string target The optional target if the channel is "WHISPER"
 local function SlashVersionCheck(channel, target)
-  if not channel then 
+  if not channel then
     if IsInGuild() then
       channel = "GUILD"
     elseif IsInGroup() then

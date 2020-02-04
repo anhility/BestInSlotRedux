@@ -75,7 +75,7 @@ end
 
 local function newListStringConstructor(obj, character)
   return ("%s - %s"):format(
-    getDateString(obj.time), 
+    getDateString(obj.time),
     L["Created BestInSlot list"]
   )
 end

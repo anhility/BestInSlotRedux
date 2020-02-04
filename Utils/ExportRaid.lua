@@ -28,7 +28,7 @@ function SlashCmdList.EXPORTRAID(msg,editbox)
     return
   end
   local AceGUI = LibStub("AceGUI-3.0")
-  if not AceGUI then 
+  if not AceGUI then
     print("Enable AceGUI")
     return
   end
@@ -39,7 +39,7 @@ function SlashCmdList.EXPORTRAID(msg,editbox)
   nameBox:SetLabel("Identifier")
   nameBox:SetCallback("OnTextChanged", function() replace = nameBox:GetText() setText() end)
   window:AddChild(nameBox)
-  
+
   local tierBox = AceGUI:Create("EditBox")
   tierBox:SetText(replace2)
   tierBox:SetLabel("Tier")
@@ -70,7 +70,7 @@ function SlashCmdList.EXPORTRAID(msg,editbox)
     addSpacer(35)
     addSpacer(5, bossName)
     addSpacer(35)
-    
+
     addLine(("local bossName = EJ_GetEncounterInfo(%d)"):format(encounterId))
     addLine("local lootTable = {")
     for i=1,#(lootInfo[encounterId] or {}) do
