@@ -483,7 +483,18 @@ function Manager:PopulateSlots(slotContainer)
     local itemid = BiSList[slotId] and BiSList[slotId].item
     local isLegionWeapon = false
     -- Fix by dioxina
-    if slotId == 2 and (self:GetSelected(self.RAIDTIER) >= 80000 and self:GetSelected(self.RAIDTIER) < 90000) then
+    if slotId == 15 and (self:GetSelected(self.RAIDTIER) >= 80200 and self:GetSelected(self.RAIDTIER) < 90000) then
+      --Legendary cloak
+      icon:SetUserData("disabled", true)
+      button:SetDisabled(true)
+      CloakItemId = 169223
+      local _, link, _, _, _, _, _, _, _, texture = GetItemInfo(CloakItemId)
+      icon:SetImage(texture)
+      icon:SetUserData("itemid", CloakItemId)
+      icon:SetUserData("itemlink", link)
+      label:SetText(link)
+      isLegionWeapon = true
+    elseif slotId == 2 and (self:GetSelected(self.RAIDTIER) >= 80000 and self:GetSelected(self.RAIDTIER) < 90000) then
       --Artifact neck
       icon:SetUserData("disabled", true)
       button:SetDisabled(true)
