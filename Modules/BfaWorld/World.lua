@@ -156,6 +156,37 @@ function BfaWorld:OnEnable()
       161413, --Knot of Ancient Fury
       difficulty = worldDropDifficulty
     },
+    -----------------------------------
+    ----- Ulmath, the Soulbinder
+    -----------------------------------
+    [EJ_GetEncounterInfo(2362)] = {
+      170089, --Liara's Spire
+      170093, --Tyr'mar's Greatsword
+      170091, --Willbinder's Halberd
+      170090, --Merciless Pincher
+      170095, --Moon Priestess' Baton
+      170092, --Netherdancer's Knife
+      170094, --Temple Guardian's Saber
+      170088, --Ulmath's Soulseeker
+      168603, --Cloak of Restless Spirits
+      169317, --Enthraller's Bindstone
+      difficulty = worldDropDifficulty
+    },
+    -----------------------------------
+    ----- Wekemara
+    -----------------------------------
+    [EJ_GetEncounterInfo(2363)] = {
+      168366, --Tidal Lurker's Greathelm
+      168340, --Naga Ritualist's Mantle
+      168351, --Spitcharged Shoulderguards
+      168358, --Chestguard of the Submerged
+      169926, --Belt of Rising Guardians
+      169927, --Deepcaller's Clasp
+      169925, --Serpentskin Splashers
+      169928, --Wekemara's Warboots
+      169318, --Shockbiter's Fang
+      difficulty = worldDropDifficulty
+    },
   }
   ------------------------Horde------------------------------------------------
   local misc_h = {
@@ -287,6 +318,37 @@ function BfaWorld:OnEnable()
       166793, --Ancient Knot of Wisdom
       166794, --Forest Lord's Razorleaf
       166795, --Knot of Ancient Fury
+      difficulty = worldDropDifficulty
+    },
+    -----------------------------------
+    ----- Ulmath, the Soulbinder
+    -----------------------------------
+    [EJ_GetEncounterInfo(2362)] = {
+      170089, --Liara's Spire
+      170093, --Tyr'mar's Greatsword
+      170091, --Willbinder's Halberd
+      170090, --Merciless Pincher
+      170095, --Moon Priestess' Baton
+      170092, --Netherdancer's Knife
+      170094, --Temple Guardian's Saber
+      170088, --Ulmath's Soulseeker
+      168603, --Cloak of Restless Spirits
+      169317, --Enthraller's Bindstone
+      difficulty = worldDropDifficulty
+    },
+    -----------------------------------
+    ----- Wekemara
+    -----------------------------------
+    [EJ_GetEncounterInfo(2363)] = {
+      168366, --Tidal Lurker's Greathelm
+      168340, --Naga Ritualist's Mantle
+      168351, --Spitcharged Shoulderguards
+      168358, --Chestguard of the Submerged
+      169926, --Belt of Rising Guardians
+      169927, --Deepcaller's Clasp
+      169925, --Serpentskin Splashers
+      169928, --Wekemara's Warboots
+      169318, --Shockbiter's Fang
       difficulty = worldDropDifficulty
     },
   }
