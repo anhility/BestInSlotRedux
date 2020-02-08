@@ -187,6 +187,28 @@ function BfaWorld:OnEnable()
       169318, --Shockbiter's Fang
       difficulty = worldDropDifficulty
     },
+    -----------------------------------
+    ----- Grand Empress Shek'zara
+    -----------------------------------
+    [EJ_GetEncounterInfo(2378)] = {
+      174243, --Guise of the Voracious Prowler
+      174234, --Maniacal Speaker's Cover
+      174264, --Chitinous Conqueror's Legplates
+      174255, --Greaves of Shattered Thoughts
+      174268, --Loop of Abhorrent Celerity
+      difficulty = worldDropDifficulty
+    },
+    -----------------------------------
+    -----  Vuk'laz the Earthbreaker
+    -----------------------------------
+    [EJ_GetEncounterInfo(2381)] = {
+      174258, --Greathelm of Indiscriminate Brutality
+      174250, --Psyche Tormentor's Visage
+      174237, --Breeches of Faithful Execution
+      174247, --Grotesque Mutilator's Leggings
+      174469, --Band of Insidious Ruminations
+      difficulty = worldDropDifficulty
+    },
   }
   ------------------------Horde------------------------------------------------
   local misc_h = {
@@ -349,6 +371,28 @@ function BfaWorld:OnEnable()
       169925, --Serpentskin Splashers
       169928, --Wekemara's Warboots
       169318, --Shockbiter's Fang
+      difficulty = worldDropDifficulty
+    },
+    -----------------------------------
+    ----- Grand Empress Shek'zara
+    -----------------------------------
+    [EJ_GetEncounterInfo(2378)] = {
+      174243, --Guise of the Voracious Prowler
+      174234, --Maniacal Speaker's Cover
+      174264, --Chitinous Conqueror's Legplates
+      174255, --Greaves of Shattered Thoughts
+      174268, --Loop of Abhorrent Celerity
+      difficulty = worldDropDifficulty
+    },
+    -----------------------------------
+    -----  Vuk'laz the Earthbreaker
+    -----------------------------------
+    [EJ_GetEncounterInfo(2381)] = {
+      174258, --Greathelm of Indiscriminate Brutality
+      174250, --Psyche Tormentor's Visage
+      174237, --Breeches of Faithful Execution
+      174247, --Grotesque Mutilator's Leggings
+      174469, --Band of Insidious Ruminations
       difficulty = worldDropDifficulty
     },
   }
