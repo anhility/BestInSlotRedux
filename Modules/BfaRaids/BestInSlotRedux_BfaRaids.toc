@@ -9,3 +9,4 @@ Uldir.lua
 DazarAlor.lua
 Crucible.lua
 EternalPalace.lua
+Nyalotha.lua
