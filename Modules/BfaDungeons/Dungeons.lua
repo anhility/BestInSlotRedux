@@ -1017,6 +1017,17 @@ function Dungeons:InitializeZoneDetect(ZoneDetect)
   ZoneDetect:RegisterNPCID(135472, kingsrest, 3)
   ZoneDetect:RegisterNPCID(136160, kingsrest, 4)
 
+  local mechagon = "mechagon"
+  ZoneDetect:RegisterMapID(1490, mechagon)
+  ZoneDetect:RegisterNPCID(150159, mechagon, 1)
+  ZoneDetect:RegisterNPCID(150222, mechagon, 2)
+  ZoneDetect:RegisterNPCID(155407, mechagon, 3)
+  ZoneDetect:RegisterNPCID(155157, mechagon, 4)
+  ZoneDetect:RegisterNPCID(144244, mechagon, 5)
+  ZoneDetect:RegisterNPCID(144246, mechagon, 6)
+  ZoneDetect:RegisterNPCID(144248, mechagon, 7)
+  ZoneDetect:RegisterNPCID(154817, mechagon, 8)
+
   local shrineofthestorm = "shrineofthestorm"
   ZoneDetect:RegisterMapID(1039, shrineofthestorm)
   ZoneDetect:RegisterNPCID(134056, shrineofthestorm, 1)
