@@ -71,9 +71,10 @@ function IO:GenerateWoWHeadLink(bisList, selected)
   local result = false
   for i, iteminfo in pairs(bisList) do
     local item = self:GetItem(iteminfo.item, selected.difficulty)
-    local itemstr = self:GetItemString(iteminfo.item, selected.difficulty)
-    wowheadstr = wowheadstr .. (i == 1 and "" or ";") .. getWowheadItemLink(item)
-    result = true
+    if item then
+      wowheadstr = wowheadstr .. (i == 1 and "" or ";") .. getWowheadItemLink(item)
+      result = true
+    end
   end
   if not result then
     setUneditableText(self.wowhead, "")
@@ -96,16 +97,18 @@ function IO:GenerateSimCraft(bisList, selected)
   for i, iteminfo in pairs(bisList) do
     if self.simcraftconversion[i] then
       local item = self:GetItem(iteminfo.item, selected.difficulty)
-      local itemName = item.link:match("%[(.+)%]")
-      local simcraftName = formatStringToSimcraft(itemName)
-      txt = txt .. ("%s=%s,id=%d"):format(self.simcraftconversion[i], simcraftName, iteminfo.item)
-      if dungeonId and item.difficulty and not (item.difficulty == 1 or item.difficulty == 4) then
-        txt = txt .. dungeonId
-      end
-      local spell = GetItemSpell(iteminfo.item)
-      if spell then
-        spells = spells or {}
-        tinsert(spells, simcraftName)
+      if item then
+        local itemName = item.link:match("%[(.+)%]")
+        local simcraftName = formatStringToSimcraft(itemName)
+        txt = txt .. ("%s=%s,id=%d"):format(self.simcraftconversion[i], simcraftName, iteminfo.item)
+        if dungeonId and item.difficulty and not (item.difficulty == 1 or item.difficulty == 4) then
+          txt = txt .. dungeonId
+        end
+        local spell = GetItemSpell(iteminfo.item)
+        if spell then
+          spells = spells or {}
+          tinsert(spells, simcraftName)
+        end
       end
     end
     txt = txt .. "\r\n"
