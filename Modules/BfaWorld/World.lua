@@ -12,9 +12,9 @@ function BfaWorld:OnEnable()
       [3] = {3524}
     },
     difficultyconversion = {
-      [1] = 1, --Raid Normal
-      [2] = 2, --Raid Heroic
-      [3] = 23, --Raid Mythic
+      [1] = 1,  --Dungeon Normal
+      [2] = 2,  --Dungeon Heroic
+      [3] = 23, --Dungeon Mythic
     }
   }
   self:RegisterExpansion("Battle for Azeroth", EXPANSION_NAME7)

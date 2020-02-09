@@ -154,24 +154,14 @@ local data = {
   raidTiers = {},
   instances = {__default={
     difficultyconversion = {
-      -- [1] = 3, --default conversion of difficulties, normal -> 0
-      -- [2] = 5, --Heroic -> 5
-      -- [3] = 6,  --Mythic -> 6
-      -- [4] = 23,  --Mythic -> 6
-      [3] = 1, --default conversion of difficulties, normal -> 0
-      [2] = 2, --"Heroic" (Dungeons)
-      [5] = 2, --"10 Player (Heroic)"
-      [6] = 3,  --Mythic
-      [14] = 1, --Raid Normal
-      [15] = 2, --Raid Heroic
-      [16] = 3, --Raid Mythic
-      [23] = 3, --Dungeon Mythic
+      [1] = 1,  --Dungeon Normal
+      [2] = 2,  --Dungeon Heroic
+      [3] = 23, --Dungeon Mythic
     },
     bonusids = {
-      [1] = 0,
-      [2] = 1798,
-      [3] = 1799,
-      [4] = 0
+      [1] = {3524},
+      [2] = {3524},
+      [3] = {3524}
     },
   }},
   expansions = {},
