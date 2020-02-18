@@ -916,8 +916,7 @@ local function addLootToTableByFilter(tbl, itemlist, slotId, difficulty)
   for id in pairs(itemlist) do
     local item = BestInSlot:GetItem(id, difficulty)
     if (not slotId) or (type(BestInSlot.invSlots[slotId]) == "string" and BestInSlot.invSlots[slotId] == item.equipSlot) or (type(BestInSlot.invSlots[slotId]) == "table" and tContains(BestInSlot.invSlots[slotId],item.equipSlot)) then
-      if difficulty == 4 and (item.difficulty == -1) then --do nothing
-      elseif (not difficulty) or (not item.difficulty or (item.difficulty == -1 or item.difficulty == difficulty or (type(item.difficulty) == "table") and tContains(item.difficulty, difficulty)) ) then
+      if (not difficulty) or (not item.difficulty or (item.difficulty == -1 or item.difficulty == difficulty or (type(item.difficulty) == "table") and tContains(item.difficulty, difficulty)) ) then
         tbl[id] = item
       end
     end
@@ -948,9 +947,7 @@ end
 local function helperFullLootTable(tbl, itemlist, difficulty)
   for id in pairs(itemlist) do
     local item = BestInSlot:GetItem(id, difficulty)
-    if difficulty == 4 and (item.difficulty == -1) then
-      --do nothing
-    elseif (not difficulty) or (not item.difficulty or (item.difficulty == -1 or item.difficulty == difficulty or (type(item.difficulty) == "table") and tContains(item.difficulty, difficulty)) ) then
+    if (not difficulty) or (not item.difficulty or (item.difficulty == -1 or item.difficulty == difficulty or (type(item.difficulty) == "table") and tContains(item.difficulty, difficulty)) ) then
       tbl[id] = item
     end
   end
@@ -1042,7 +1039,7 @@ function BestInSlot:GetItem(itemid, difficulty)
     if self.unsafeIDs[itemid] then self.console:AddError("Couldn't fetch data for itemid: "..itemid) end
     if itemData[itemid] then
       local newItemTable = setmetatable({}, {__index=itemData[itemid]})
-      if difficulty and difficulty ~= 4 and newItemTable.difficulty == -1 then --This is an item that has multiple states and not LFR, therefore we need to set it's state
+      if difficulty and newItemTable.difficulty == -1 then --This is an item that has multiple states and not LFR, therefore we need to set it's state
         newItemTable.itemstr = self:GetItemString(itemid, difficulty)
         local link = select(2,GetItemInfo(newItemTable.itemstr))
         newItemTable.link = link

@@ -671,22 +671,21 @@ local function dropdownImport_OnValueChanged(_,_,value)
 end
 
 function Manager:SetImportDropdownData(dropdown)
-  local selecDifficulty = self:GetSelected(self.DIFFICULTY)
+  local selectedDifficulty = self:GetSelected(self.DIFFICULTY)
   local selectedRaidTier = self:GetSelected(self.RAIDTIER)
   local selectedSpecialization = self:GetSelected(self.SPECIALIZATION)
   local list = self:GetDifficulties(self.RAIDTIER, selectedRaidTier)
   dropdownImport:SetList(list)
   dropdown:SetValue(nil)
-  dropdown:SetItemDisabled(selecDifficulty, true)
-  dropdown:SetItemDisabled(4, true)
-  dropdown:SetDisabled(self:GetSelected(self.RAIDTIER) < 59999 or #dropdown.list < 2 or selecDifficulty == 4)
+  dropdown:SetItemDisabled(selectedDifficulty, true)
+  dropdown:SetDisabled(self:GetSelected(self.RAIDTIER) < 59999 or #dropdown.list < 2)
   dropdown:AddItem("spacer", "")
   dropdown:SetItemDisabled("spacer", true)
   local firstChar = true
   local thisChar = self.db:GetCurrentProfile()
   for id, profile in pairs(self.db:GetProfiles()) do
     local charDb = BestInSlotDB.char[profile]
-    if charDb and profile ~= thisChar and charDb[selectedRaidTier] and charDb[selectedRaidTier][selecDifficulty] and charDb[selectedRaidTier][selecDifficulty][selectedSpecialization] then
+    if charDb and profile ~= thisChar and charDb[selectedRaidTier] and charDb[selectedRaidTier][selectedDifficulty] and charDb[selectedRaidTier][selectedDifficulty][selectedSpecialization] then
       if firstChar then
         firstChar = false
       end
@@ -766,7 +765,7 @@ function Manager:DoCopyChar()
       self:Print(i .. ": "..iteminfo)
       self:SetItemBestInSlot(selectedInfo.raidtier, selectedInfo.difficulty, selectedInfo.specialization, i, iteminfo)
     end
-    --if charDb and profile ~= thisChar and charDb[selectedRaidTier] and charDb[selectedRaidTier][selecDifficulty] and charDb[selectedRaidTier][selecDifficulty][selectedSpecialization] then
+    --if charDb and profile ~= thisChar and charDb[selectedRaidTier] and charDb[selectedRaidTier][selectedDifficulty] and charDb[selectedRaidTier][selectedDifficulty][selectedSpecialization] then
     self:PopulateSlots(slotContainer)
 end
 

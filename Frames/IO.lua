@@ -58,7 +58,7 @@ function IO:Close()
 end
 
 local function getWowheadItemLink(item)
-  if not item.difficulty or type(item.difficulty) == "table" or item.difficulty <= 1 or item.difficulty == 4 then
+  if not item.difficulty or type(item.difficulty) == "table" or item.difficulty <= 1 then
     return tostring(item.itemid)
   else
     return item.itemid .. ".0.0.0.0.0.0.0.0.0." .. (item.difficulty == 2 and "566" or "567")
@@ -90,7 +90,7 @@ end
 function IO:GenerateSimCraft(bisList, selected)
   local txt = ""
   local dungeonId
-  if not (selected.difficulty == 1 or selected.difficulty == 4) then
+  if selected.difficulty ~= 1 then
     dungeonId = ",bonus_id=" .. select(2, self:GetDifficultyIdForDungeon(selected.difficulty, selected.instance))
   end
   local spells
@@ -101,7 +101,7 @@ function IO:GenerateSimCraft(bisList, selected)
         local itemName = item.link:match("%[(.+)%]")
         local simcraftName = formatStringToSimcraft(itemName)
         txt = txt .. ("%s=%s,id=%d"):format(self.simcraftconversion[i], simcraftName, iteminfo.item)
-        if dungeonId and item.difficulty and not (item.difficulty == 1 or item.difficulty == 4) then
+        if dungeonId and item.difficulty and selected.difficulty ~= 1 then
           txt = txt .. dungeonId
         end
         local spell = GetItemSpell(iteminfo.item)
