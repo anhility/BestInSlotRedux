@@ -1019,7 +1019,7 @@ function BestInSlot:GetItemString(itemid, difficulty)
   if not itemid then error("You should provide an itemid!") end
   difficulty = difficulty or 1
   local instanceDifficulty, bonusID1, bonusID2, bonusID3 = self:GetDifficultyIdForDungeon(difficulty, itemData[itemid] and itemData[itemid].dungeon)
-  numBonusIDs = (bonusID3 ~= 0 and 3) or (bonusID2 ~= 0 and 2) or (bonusID1 ~= 0 and 1) or 0
+  numBonusIDs = (bonusID3 ~= nil and 3) or (bonusID2 ~= nil and 2) or (bonusID1 ~= nil and 1) or 0
   --item:itemId:enchantId:gemId1:gemId2:gemId3:gemId4:suffixId:uniqueId:linkLevel:specializationID:upgradeId:instanceDifficultyId:numBonusIds:bonusId1:bonusId2:upgradeValue
   return ("item:%d:::::::::::%d:%d:%d:%d:%d:"):format(itemid, instanceDifficulty, numBonusIDs, bonusID1, bonusID2, bonusID3)
 end
@@ -1039,7 +1039,7 @@ function BestInSlot:GetItem(itemid, difficulty)
     if self.unsafeIDs[itemid] then self.console:AddError("Couldn't fetch data for itemid: "..itemid) end
     if itemData[itemid] then
       local newItemTable = setmetatable({}, {__index=itemData[itemid]})
-      if difficulty and newItemTable.difficulty == -1 then --This is an item that has multiple states and not LFR, therefore we need to set it's state
+      if difficulty and newItemTable.difficulty == -1 then --This is an item that has multiple states, therefore we need to set it's state
         newItemTable.itemstr = self:GetItemString(itemid, difficulty)
         local link = select(2,GetItemInfo(newItemTable.itemstr))
         newItemTable.link = link
