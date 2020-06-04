@@ -5,17 +5,19 @@ function Nyalotha:OnEnable()
 
   local nyalothaName = C_Map.GetMapInfo(1580).name
   self:RegisterExpansion("Battle for Azeroth", EXPANSION_NAME7)
-  self:RegisterRaidTier("Battle for Azeroth", 80300, nyalothaName, PLAYER_DIFFICULTY1, PLAYER_DIFFICULTY2, PLAYER_DIFFICULTY6)
+  self:RegisterRaidTier("Battle for Azeroth", 80300, nyalothaName, PLAYER_DIFFICULTY3, PLAYER_DIFFICULTY1, PLAYER_DIFFICULTY2, PLAYER_DIFFICULTY6)
   self:RegisterRaidInstance(80300, NYA, nyalothaName, {
     bonusids = {
       [1] = {3524},
       [2] = {3524},
-      [3] = {3524}
+      [3] = {3524},
+      [4] = {3524},
     },
     difficultyconversion = {
-      [1] = 3, --Raid Normal
-      [2] = 5, --Raid Heroic
-      [3] = 6, --Raid Mythic
+      [1] = 4, --Raid LFR
+      [2] = 3, --Raid Normal
+      [3] = 5, --Raid Heroic
+      [4] = 6, --Raid Mythic
     }
   })
   --------------------------------------------------
@@ -259,9 +261,10 @@ function Nyalotha:OnEnable()
     175005, --Belt of Concealed Intent
     ----Plate----
     175006, --Gauntlets of Nightmare Manifest
-    ----Other----
+    ----Weapon----
     175010, --Maddened Adherent's Bulwark
     175009, --Zealous Ritualist's Reverie
+    ----Ring----
     175008, --Lurking Schemer's Band
   }
   self:RegisterBossLoot(NYA, lootTable, bossName)

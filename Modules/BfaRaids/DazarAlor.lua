@@ -11,17 +11,19 @@ function DazarAlor:OnEnable()
   end
 
   self:RegisterExpansion("Battle for Azeroth", EXPANSION_NAME7)
-  self:RegisterRaidTier("Battle for Azeroth", 80100, name, PLAYER_DIFFICULTY1, PLAYER_DIFFICULTY2, PLAYER_DIFFICULTY6)
+  self:RegisterRaidTier("Battle for Azeroth", 80100, name, PLAYER_DIFFICULTY3, PLAYER_DIFFICULTY1, PLAYER_DIFFICULTY2, PLAYER_DIFFICULTY6)
   self:RegisterRaidInstance(80100, BOD, name, {
     bonusids = {
       [1] = {3524},
       [2] = {3524},
-      [3] = {3524}
+      [3] = {3524},
+      [4] = {3524},
     },
     difficultyconversion = {
-      [1] = 3, --Raid Normal
-      [2] = 5, --Raid Heroic
-      [3] = 6, --Raid Mythic
+      [1] = 4, --Raid LFR
+      [2] = 3, --Raid Normal
+      [3] = 5, --Raid Heroic
+      [4] = 6, --Raid Mythic
     }
   })
   --------------------------------------------------
@@ -291,17 +293,17 @@ function DazarAlor:OnEnable()
   local bossName = L["Trash Loot"]
   local lootTable = {
     ----Cloth----
-    -- 160612, --Spellbound Specimen Handlers
-    -- 161071, --Bloody Experimenter's Wraps
-    -- ----Leather----
-    -- 161075, --Antiseptic Specimen Handlers
-    -- 161072, --Splatterguards
-    -- ----Mail----
-    -- 161076, --Iron-Grip Specimen Handlers
-    -- 161073, --Reinforced Test Subject Shackles
-    -- ----Plate----
-    -- 161077, --Fluid-Resistant Specimen Handlers
-    -- 161074, --Crushproof Vambraces
+    160612, --Spellbound Specimen Handlers
+    161071, --Bloody Experimenter's Wraps
+    ----Leather----
+    161075, --Antiseptic Specimen Handlers
+    161072, --Splatterguards
+    ----Mail----
+    161076, --Iron-Grip Specimen Handlers
+    161073, --Reinforced Test Subject Shackles
+    ----Plate----
+    161077, --Fluid-Resistant Specimen Handlers
+    161074, --Crushproof Vambraces
   }
   self:RegisterBossLoot(BOD, lootTable, bossName)
 end

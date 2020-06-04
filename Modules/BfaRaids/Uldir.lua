@@ -5,17 +5,19 @@ function Uldir:OnEnable()
 
   local uldirName = C_Map.GetMapInfo(1148).name
   self:RegisterExpansion("Battle for Azeroth", EXPANSION_NAME7)
-  self:RegisterRaidTier("Battle for Azeroth", 80002, uldirName, PLAYER_DIFFICULTY1, PLAYER_DIFFICULTY2, PLAYER_DIFFICULTY6)
+  self:RegisterRaidTier("Battle for Azeroth", 80002, uldirName, PLAYER_DIFFICULTY3, PLAYER_DIFFICULTY1, PLAYER_DIFFICULTY2, PLAYER_DIFFICULTY6)
   self:RegisterRaidInstance(80002, ULD, uldirName, {
     bonusids = {
       [1] = {3524},
       [2] = {3524},
-      [3] = {3524}
+      [3] = {3524},
+      [4] = {3524},
     },
     difficultyconversion = {
-      [1] = 3, --Raid Normal
-      [2] = 5, --Raid Heroic
-      [3] = 6, --Raid Mythic
+      [1] = 4, --Raid LFR
+      [2] = 3, --Raid Normal
+      [3] = 5, --Raid Heroic
+      [4] = 6, --Raid Mythic
     }
   })
   --------------------------------------------------

@@ -4,12 +4,14 @@ local bonusIds = {
   bonusids = {
     [1] = {3524},
     [2] = {3524},
-    [3] = {3524}
+    [3] = {3524},
+    [4] = {4786, 6536, 1637}
   },
   difficultyconversion = {
     [1] = 1,  --Dungeon Normal
     [2] = 2,  --Dungeon Heroic
     [3] = 23, --Dungeon Mythic
+    [4] = 8,  --Dungeon Mythic+
   }
 }
 
@@ -251,7 +253,15 @@ end
 function Dungeons:Mechagon()
   local mechagon = "mechagon"
   local name = C_Map.GetMapInfo(1490).name
-  self:RegisterRaidInstance(dungeonTierId, mechagon, name, bonusIds)
+  self:RegisterRaidInstance(dungeonTierId, mechagon, name, {
+    bonusids = {
+      [1] = {3524},
+      [2] = {3524},
+      [3] = {3524},
+      [4] = {4786, 6536, 1522} --Different itemlevel bonusid, due to mechagon items starting at a higher itemlevel.
+    },
+    difficultyconversion = bonusIds.difficultyconversion
+  })
   --------------------------------------------------
   ----- Operation: Mechagon
   --------------------------------------------------
@@ -1088,7 +1098,7 @@ end
 
 function Dungeons:OnEnable()
   self:RegisterExpansion("Battle for Azeroth", EXPANSION_NAME7)
-  self:RegisterRaidTier("Battle for Azeroth", dungeonTierId, ("%s %s"):format(EXPANSION_NAME7, TRACKER_HEADER_DUNGEON), PLAYER_DIFFICULTY1, PLAYER_DIFFICULTY2, PLAYER_DIFFICULTY6)
+  self:RegisterRaidTier("Battle for Azeroth", dungeonTierId, ("%s %s"):format(EXPANSION_NAME7, TRACKER_HEADER_DUNGEON), PLAYER_DIFFICULTY1, PLAYER_DIFFICULTY2, PLAYER_DIFFICULTY6, PLAYER_DIFFICULTY6.."+")
 
   self:AtalDazar()
   self:Freehold()
