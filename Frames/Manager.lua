@@ -406,8 +406,14 @@ local function iconOnClick(widget, _, button)
   local item = Manager:GetItem(itemid, Manager:GetSelected(Manager.DIFFICULTY))
   if shift then
     local link = (item and item.link) or widget:GetUserData("itemlink")
-    if not ChatEdit_InsertLink(link) then
-      ChatFrame_OpenChat(link)
+    if button == "LeftButton" then
+      if not ChatEdit_InsertLink(link) then
+        ChatFrame_OpenChat(link)
+      end
+    elseif button == "RightButton" then
+      if C_AzeriteEmpoweredItem.IsAzeriteEmpoweredItemByID(link) then
+        OpenAzeriteEmpoweredItemUIFromLink(link)
+      end
     end
   elseif ctrl then
     local link = (item and item.link) or widget:GetUserData("itemlink")

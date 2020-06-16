@@ -359,20 +359,26 @@ local function helperOnLeave(widget, ...)
   end
 end
 
-local function helperOnClick(widget, ...)
+local function helperOnClick(widget, event, button, ...)
   local itemlink = widget:GetUserData("itemlink")
   local callbacks = widget:GetUserData("callbacks")
   if not itemlink then return end
   if IsShiftKeyDown() then
-    if not ChatEdit_InsertLink(itemlink) then
-      ChatFrame_OpenChat(itemlink)
+    if button == "LeftButton" then
+      if not ChatEdit_InsertLink(itemlink) then
+        ChatFrame_OpenChat(itemlink)
+      end
+    elseif button == "RightButton" then
+      if C_AzeriteEmpoweredItem.IsAzeriteEmpoweredItemByID(itemlink) then
+        OpenAzeriteEmpoweredItemUIFromLink(itemlink)
+      end
     end
   elseif IsControlKeyDown() then
     DressUpItemLink(itemlink)
   end
   if callbacks.OnClick then
     for i=1,#callbacks.OnClick do
-      callbacks.OnClick[i](widget, ...)
+      callbacks.OnClick[i](widget, event, button, ...)
     end
   end
 end
