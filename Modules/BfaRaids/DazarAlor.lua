@@ -292,18 +292,20 @@ function DazarAlor:OnEnable()
   -----------------------------------
   local bossName = L["Trash Loot"]
   local lootTable = {
+    ----Cloak----
+    165925, --Drape of Valiant Defense
     ----Cloth----
-    160612, --Spellbound Specimen Handlers
-    161071, --Bloody Experimenter's Wraps
+    165765, --Cord of Zandalari Resolve
+    165509, --Slippers of the Encroaching Tide
     ----Leather----
-    161075, --Antiseptic Specimen Handlers
-    161072, --Splatterguards
+    165518, --Warbeast Hide Cinch
+    165520, --Silent Pillager's Footpads
     ----Mail----
-    161076, --Iron-Grip Specimen Handlers
-    161073, --Reinforced Test Subject Shackles
+    165545, --Waistguard of Elemental Resistance
+    165547, --City Crusher Sabatons
     ----Plate----
-    161077, --Fluid-Resistant Specimen Handlers
-    161074, --Crushproof Vambraces
+    165564, --Last Stand Greatbelt
+    165563, --Boots of the Dark Iron Raider
   }
   self:RegisterBossLoot(BOD, lootTable, bossName)
 end
