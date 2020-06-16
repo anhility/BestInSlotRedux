@@ -56,10 +56,10 @@ function CustomLists:CustomListMenuItem(customListName, customListSpecId, id)
     local icon = self:QuickCreate("Icon", {SetImageSize = {textHeight, textHeight}, SetRelativeWidth = 0.1, SetImage = select(4, GetSpecializationInfoByID(customListSpecId))}, group)
     group:AddChild(label)
     self:QuickCreate("InteractiveLabel", {
-      SetUserData = {"id", id}, 
-      SetText = DELETE, SetRelativeWidth = 0.399, 
-      SetColor = self:IsCustomListInUse(id) and {0.5, 0.5, 0.5} or {RED_FONT_COLOR.r, RED_FONT_COLOR.g, RED_FONT_COLOR.b}, 
-      SetHighlight = "Interface\\QuestFrame\\UI-QuestTitleHighlight", 
+      SetUserData = {"id", id},
+      SetText = DELETE, SetRelativeWidth = 0.399,
+      SetColor = self:IsCustomListInUse(id) and {0.5, 0.5, 0.5} or {RED_FONT_COLOR.r, RED_FONT_COLOR.g, RED_FONT_COLOR.b},
+      SetHighlight = "Interface\\QuestFrame\\UI-QuestTitleHighlight",
       SetCallback = {"OnClick", onDeleteClick}}, group)
     group:SetHeight(textHeight)
 end

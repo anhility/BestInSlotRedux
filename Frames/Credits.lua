@@ -39,7 +39,7 @@ function Credits:CreateTesterLabel(name, realm, class, faction)
         factionStr = allianceColor
       elseif faction == "H" then
         if not hordeColor then hordeColor = ConvertRGBtoColorString(PLAYER_FACTION_COLORS[0]) end
-        factionStr = hordeColor 
+        factionStr = hordeColor
       end
       txt = txt..factionStr
     end
@@ -56,7 +56,7 @@ function Credits:Draw(container)
   scroll:SetFullWidth(true)
   scroll:SetFullHeight(true)
   container:AddChild(scroll)
-  
+
   local header = AceGUI:Create("Heading")
   header:SetText("Foreword")
   header:SetFullWidth(true)
@@ -78,12 +78,12 @@ function Credits:Draw(container)
   )
   label:SetFullWidth(true)
   scroll:AddChild(label)
-  
+
   local header = AceGUI:Create("Heading")
   header:SetText("Authors")
   header:SetFullWidth(true)
   scroll:AddChild(header)
-  
+
   label = AceGUI:Create("Label")
   label:SetText(self.Author)
   label:SetFullWidth(true)
@@ -91,14 +91,14 @@ function Credits:Draw(container)
   scroll:AddChild(self:CreateTesterLabel("Beleria",   "Argent Dawn-EU", "DEMONHUNTER",  "A"))
   scroll:AddChild(self:CreateTesterLabel("Anhility",  "Ravencrest-EU",  "PALADIN",      "A"))
   scroll:AddChild(self:CreateTesterLabel("Sar\195\173th",  "Tarren Mill-EU",  "ROGUE",      "A"))
-  
+
   local header = AceGUI:Create("Heading")
   header:SetText("Contributors")
   header:SetFullWidth(true)
   scroll:AddChild(header)
   -- contributors
   scroll:AddChild(self:CreateTesterLabel("Sannath", "Elune-EU", "DRUID", "A"))
-  
+
   local header = AceGUI:Create("Heading")
   header:SetText("Official Websites")
   header:SetFullWidth(true)
@@ -106,7 +106,7 @@ function Credits:Draw(container)
   -- urls
   scroll:AddChild(self:CreateUneditableTextbox("https://www.curseforge.com/wow/addons/bestinslotredux", "BestInSlotRedux on Curse.com"))
   scroll:AddChild(self:CreateUneditableTextbox("https://github.com/anhility/BestInSlotRedux", "BestInSlotRedux on Github.com"))
-  
+
   local header = AceGUI:Create("Heading")
   header:SetText("Translators")
   header:SetFullWidth(true)
@@ -122,7 +122,7 @@ function Credits:Draw(container)
   scroll:AddChild(self:CreateTranslatorLabel(sRURU, "Hubbotu & SintlKun"))
   --scroll:AddChild(self:CreateTranslatorLabel(sZHCN, "to be added"))
   scroll:AddChild(self:CreateTranslatorLabel(sZHTW, "gaspy10"))
-  
+
   -- Old translators
   local label=AceGUI:Create("Label")
   label:SetFullWidth(true)
@@ -136,26 +136,26 @@ function Credits:Draw(container)
     sZHCN..": nrg3331"
   )
   scroll:AddChild(label)
-  
+
   -- Translation help
   scroll:AddChild(self:CreateUneditableTextbox("https://wow.curseforge.com/projects/bestinslotredux/localization", "Want to help translate BestInSlotRedux?"))
-  
+
   local header = AceGUI:Create("Heading")
   header:SetText("Testers")
   header:SetFullWidth(true)
   scroll:AddChild(header)
-  
+
   scroll:AddChild(self:CreateTesterLabel("Yulrich",       "Argent Dawn-EU",         "PRIEST", "A"))
   scroll:AddChild(self:CreateTesterLabel("Mard",          "Steamwheedle Cartel-EU", "DRUID",  "H"))
   scroll:AddChild(self:CreateTesterLabel("Minta",         "Defias Brotherhood-EU",  "PRIEST", "H"))
   scroll:AddChild(self:CreateTesterLabel("Peanut",        "Defias Brotherhood-EU",  "HUNTER", "A"))
   scroll:AddChild(self:CreateTesterLabel("Nema\195\175r", "Defias Brotherhood-EU",  "MAGE",   "A"))
-  
+
   local header = AceGUI:Create("Heading")
   header:SetText("Special Thanks")
   header:SetFullWidth(true)
   scroll:AddChild(header)
-  
+
   local label = AceGUI:Create("Label")
   label:SetFullWidth(true)
   label:SetText(

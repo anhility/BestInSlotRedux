@@ -29,13 +29,13 @@ function BestInSlot:CheckTutorials(menu)
     local tutorials = tutorials[menu]
     if not tutorials then return end
     local db = self.db.char.tutorials[menu]
-    if not db then 
-      id = 1 
-    else 
+    if not db then
+      id = 1
+    else
       for i=1,#tutorials do
-        if not db[i] then 
-          id = i 
-          break 
+        if not db[i] then
+          id = i
+          break
         end
       end
     end
@@ -47,8 +47,8 @@ end
 function BestInSlot:ShowTutorial(menu, id)
   if not self.db.global.tutorials then return end
   local db = self.db.char.tutorials
-  if db[menu] and db[menu][id] then 
-    return 
+  if db[menu] and db[menu][id] then
+    return
   else
     db[menu] = db[menu] or {}
     db[menu][id] = true
@@ -65,7 +65,7 @@ function BestInSlot:ShowTutorial(menu, id)
     tutorialFrame.currentMenu = menu
     tutorialFrame.currentId = id
     tutorialFrame.GlowBox.CheckBox:SetChecked(false)
-    
+
     local glowBox = tutorialFrame.GlowBox
     glowBox.BigText:SetText(tutorial.text)
     height = height + glowBox.BigText:GetHeight();
@@ -110,7 +110,7 @@ function BestInSlot:ShowTutorial(menu, id)
     elseif tutorial.UpArrow then
       glowBox.ArrowUp:Show()
       glowBox.ArrowGlowUp:Show()
-    end      
+    end
     tutorialFrame:Show()
   end
 end

@@ -1,27 +1,29 @@
 local Uldir = LibStub("AceAddon-3.0"):GetAddon("BestInSlotRedux"):NewModule("Uldir")
-local UD = "UD"
+local ULD = "ULD"
 function Uldir:OnEnable()
   local L = LibStub("AceLocale-3.0"):GetLocale("BestInSlotRedux")
-  
+
   local uldirName = C_Map.GetMapInfo(1148).name
   self:RegisterExpansion("Battle for Azeroth", EXPANSION_NAME7)
-  self:RegisterRaidTier("Battle for Azeroth", 80002, uldirName, PLAYER_DIFFICULTY1, PLAYER_DIFFICULTY2, PLAYER_DIFFICULTY6)
-  self:RegisterRaidInstance(80002, UD, uldirName, {
+  self:RegisterRaidTier("Battle for Azeroth", 80002, uldirName, PLAYER_DIFFICULTY3, PLAYER_DIFFICULTY1, PLAYER_DIFFICULTY2, PLAYER_DIFFICULTY6)
+  self:RegisterRaidInstance(80002, ULD, uldirName, {
     bonusids = {
       [1] = {3524},
       [2] = {3524},
-      [3] = {3524}
+      [3] = {3524},
+      [4] = {3524},
     },
     difficultyconversion = {
-      [1] = 3, --Raid Normal
-      [2] = 5, --Raid Heroic
-      [3] = 6, --Raid Mythic
+      [1] = 4, --Raid LFR
+      [2] = 3, --Raid Normal
+      [3] = 5, --Raid Heroic
+      [4] = 6, --Raid Mythic
     }
   })
   --------------------------------------------------
   ----- Uldir
   --------------------------------------------------
-  
+
 
   -----------------------------------
   ----- Taloc
@@ -40,8 +42,8 @@ function Uldir:OnEnable()
     160652, --Construct Overcharger
     160651, --Vigilant's Bloodshaper
   }
-  self:RegisterBossLoot(UD, lootTable, bossName)
-  
+  self:RegisterBossLoot(ULD, lootTable, bossName)
+
 
   -----------------------------------
   ----- MOTHER
@@ -60,8 +62,8 @@ function Uldir:OnEnable()
     160625, --Pathogenic Legwraps
     160645, --Rot-Scour Ring
   }
-  self:RegisterBossLoot(UD, lootTable, bossName)
-  
+  self:RegisterBossLoot(ULD, lootTable, bossName)
+
 
   -----------------------------------
   ----- Fetid Devourer
@@ -77,8 +79,8 @@ function Uldir:OnEnable()
     160628, --Fused Monstrosity Stompers
     160648, --Frenetic Corpuscle
   }
-  self:RegisterBossLoot(UD, lootTable, bossName)
-  
+  self:RegisterBossLoot(ULD, lootTable, bossName)
+
 
   -----------------------------------
   ----- Zek'voz, Herald of N'zoth
@@ -98,8 +100,8 @@ function Uldir:OnEnable()
     160647, --Ring of the Infinite Void
     160650, --Disc of Systematic Regression
   }
-  self:RegisterBossLoot(UD, lootTable, bossName)
-  
+  self:RegisterBossLoot(ULD, lootTable, bossName)
+
 
   -----------------------------------
   ----- Vectis
@@ -118,8 +120,8 @@ function Uldir:OnEnable()
     160649, --Inoculating Extract
     160655, --Syringe of Bloodborne Infirmity
   }
-  self:RegisterBossLoot(UD, lootTable, bossName)
-  
+  self:RegisterBossLoot(ULD, lootTable, bossName)
+
 
   -----------------------------------
   ----- Zul, Reborn
@@ -137,8 +139,8 @@ function Uldir:OnEnable()
     160723, --Imperious Vambraces
     160724, --Cincture of Profane Deeds
   }
-  self:RegisterBossLoot(UD, lootTable, bossName)
-  
+  self:RegisterBossLoot(ULD, lootTable, bossName)
+
 
   -----------------------------------
   ----- Mythrax the Unraveler
@@ -157,8 +159,8 @@ function Uldir:OnEnable()
     160656, --Twitching Tentacle of Xalzaix
     160653, --Xalzaix's Veiled Eye
   }
-  self:RegisterBossLoot(UD, lootTable, bossName)
-  
+  self:RegisterBossLoot(ULD, lootTable, bossName)
+
 
   -----------------------------------
   ----- G'huun
@@ -178,7 +180,7 @@ function Uldir:OnEnable()
     160729, --Striders of the Putrescent Path
     160654, --Vanquished Tendril of G'huun
   }
-  self:RegisterBossLoot(UD, lootTable, bossName)
+  self:RegisterBossLoot(ULD, lootTable, bossName)
 
 
   -----------------------------------
@@ -187,29 +189,29 @@ function Uldir:OnEnable()
   local bossName = L["Trash Loot"]
   local lootTable = {
     ----Cloth----
-    160612,--Spellbound Specimen Handlers
-    161071,--Bloody Experimenter's Wraps
+    160612, --Spellbound Specimen Handlers
+    161071, --Bloody Experimenter's Wraps
     ----Leather----
-    161075,--Antiseptic Specimen Handlers
-    161072,--Splatterguards
+    161075, --Antiseptic Specimen Handlers
+    161072, --Splatterguards
     ----Mail----
-    161076,--Iron-Grip Specimen Handlers
-    161073,--Reinforced Test Subject Shackles
+    161076, --Iron-Grip Specimen Handlers
+    161073, --Reinforced Test Subject Shackles
     ----Plate----
-    161077,--Fluid-Resistant Specimen Handlers
-    161074,--Crushproof Vambraces
+    161077, --Fluid-Resistant Specimen Handlers
+    161074, --Crushproof Vambraces
   }
-  self:RegisterBossLoot(UD, lootTable, bossName)
+  self:RegisterBossLoot(ULD, lootTable, bossName)
 end
 
 function Uldir:InitializeZoneDetect(ZoneDetect)
-  ZoneDetect:RegisterMapID(1148, UD)
-  ZoneDetect:RegisterNPCID(137119, UD, 1) --Taloc
-  ZoneDetect:RegisterNPCID(135452, UD, 2) --Mother
-  ZoneDetect:RegisterNPCID(133298, UD, 3) --Fetid Devourer
-  ZoneDetect:RegisterNPCID(134445, UD, 4) --Zek'voc, Herald of N'zoth
-  ZoneDetect:RegisterNPCID(134442, UD, 5) --Vectis
-  ZoneDetect:RegisterNPCID(138967, UD, 6) --Zul, Reborn
-  ZoneDetect:RegisterNPCID(134546, UD, 7) --Mythrax the Unraveler
-  ZoneDetect:RegisterNPCID(132998, UD, 8) --G'huun
+  ZoneDetect:RegisterMapID(1148, ULD)
+  ZoneDetect:RegisterNPCID(137119, ULD, 1) --Taloc
+  ZoneDetect:RegisterNPCID(135452, ULD, 2) --Mother
+  ZoneDetect:RegisterNPCID(133298, ULD, 3) --Fetid Devourer
+  ZoneDetect:RegisterNPCID(134445, ULD, 4) --Zek'voc, Herald of N'zoth
+  ZoneDetect:RegisterNPCID(134442, ULD, 5) --Vectis
+  ZoneDetect:RegisterNPCID(138967, ULD, 6) --Zul, Reborn
+  ZoneDetect:RegisterNPCID(134546, ULD, 7) --Mythrax the Unraveler
+  ZoneDetect:RegisterNPCID(132998, ULD, 8) --G'huun
 end

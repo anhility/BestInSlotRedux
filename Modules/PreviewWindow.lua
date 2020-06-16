@@ -12,7 +12,7 @@ Preview.raceids = {
   Gnome = 7,
   NightElf = 4,
   Draenei = 11,
-  Worgen = 22, 
+  Worgen = 22,
   Orc = 2,
   Undead = 5,
   Tauren = 6,
@@ -41,11 +41,11 @@ Preview.classinfo = {
     stats = {
       STRENGTH = {
         noBenefit,
-        {text = "DEFAULT_STAT1_TOOLTIP"}, 
+        {text = "DEFAULT_STAT1_TOOLTIP"},
         {text = "STAT_TOOLTIP_BONUS_AP_SP"}
       },
       AGILITY = {
-        noBenefit, 
+        noBenefit,
         {text = "DEFAULT_STAT2_TOOLTIP"}
       },
       INTELLECT = {
@@ -94,28 +94,28 @@ Preview.classinfo = {
     }
   },
   MAGE = {
-    modifiers = {INTELLECT = "*1.05"}, 
+    modifiers = {INTELLECT = "*1.05"},
     stats = {INTELLECT = 2}
   },
   [62] = { -- Mage: Arcane
-    basestat = {MASTERY = 550}, 
+    basestat = {MASTERY = 550},
     modifiers = {MASTERY = "* 1.05"}
-  }, 
+  },
   [63] = {-- Mage: Fire
-    basestat = {CRITCHANCE = 15}, 
+    basestat = {CRITCHANCE = 15},
     modifiers = {CRITCHANCE = "* 1.15"}
-  }, 
+  },
   [64] = {-- Mage: Frost
-    basestat = {MULTISTRIKE = 8}, 
+    basestat = {MULTISTRIKE = 8},
     modifiers = {MULTISTRIKE = "* 1.05"}
-  }, 
+  },
   --PALADIN = {},
   [65] =  { -- Paladin: Holy
-    modifiers = {INTELLECT = "* 1.05", CRITCHANCE = "*1.05"}, 
+    modifiers = {INTELLECT = "* 1.05", CRITCHANCE = "*1.05"},
     stats = {INTELLECT = 2, SPIRIT = 2}
   },
   [66] =  { -- Paladin: Protection
-    modifiers = {HASTE = "* 1.3", STAMINA = "* 1.15", HASTE = "* 1.3"}, 
+    modifiers = {HASTE = "* 1.3", STAMINA = "* 1.15", HASTE = "* 1.3"},
     stats = {STRENGTH = 3, BONUS_ARMOR = 2, CRITCHANCE = 2}
   },
   [70] =  { -- Paladin: Retribution
@@ -132,31 +132,31 @@ Preview.classinfo = {
     modifiers = {STRENGTH = "* 1.05", CRITCHANCE = "* 1.05"}
   },
   [73] =  { -- Warrior: Protection
-    modifiers = {STAMINA = "* 1.05 * 1.15"}, 
+    modifiers = {STAMINA = "* 1.05 * 1.15"},
     stats = {BONUS_ARMOR = 2, CRITCHANCE = 2}
   },
   --DRUID = {},
   [102] = { -- Druid: Balance
-    modifiers = {INTELLECT = "* 1.05", MASTERY = "* 1.05"}, 
+    modifiers = {INTELLECT = "* 1.05", MASTERY = "* 1.05"},
     stats = {INTELLECT = 2}
   },
   [103] = { -- Druid: Feral
-    modifiers = {CRITCHANCE = "* 1.05", AGILITY = "* 1.05"}, 
+    modifiers = {CRITCHANCE = "* 1.05", AGILITY = "* 1.05"},
     stats = {AGILITY = 2}
   },
   [104] = {  -- Druid: Guardian
-    modifiers = {STAMINA = "* 1.05 * 1.2", MASTERY = "* 1.05", ARMOR = "* 3.5"}, 
+    modifiers = {STAMINA = "* 1.05 * 1.2", MASTERY = "* 1.05", ARMOR = "* 3.5"},
     stats = {AGILITY = 2, BONUS_ARMOR = 2}
   },
   [105] = { -- Druid: Restoration
-    modifiers = {INTELLECT = "* 1.05", HASTE = "* 1.05"}, 
+    modifiers = {INTELLECT = "* 1.05", HASTE = "* 1.05"},
     stats = {INTELLECT = 2, SPIRIT = 2}
   },
   DEATHKNIGHT = {
     stats = {STRENGTH = 2}
   },
   [250] = { -- Death Knight: Blood
-    modifiers = {STAMINA = "* 1.05", TOTALSTAMINA = "* 1.2", ARMOR = "*1.3", MULTISTRIKE = "* 1.05"}, 
+    modifiers = {STAMINA = "* 1.05", TOTALSTAMINA = "* 1.2", ARMOR = "*1.3", MULTISTRIKE = "* 1.05"},
     stats = {BONUS_ARMOR = 2},
     basestat = {MULTISTRIKE = 10, HASTE = 10}
   },
@@ -169,7 +169,7 @@ Preview.classinfo = {
     basestat = {HASTE = 20}
   },
   HUNTER = {
-    modifiers = {AGILITY = "*1.05"}, 
+    modifiers = {AGILITY = "*1.05"},
     stats = {AGILITY = 2}
   },
   [253] = { -- Hunter: Beast Mastery
@@ -182,22 +182,22 @@ Preview.classinfo = {
     modifiers = {MULTISTRIKE = "* 1.05", MULTISTRIKEEFFECT = "* 1.2"}
   },
   PRIEST = {
-    modifiers = {INTELLECT = "* 1.05"}, 
+    modifiers = {INTELLECT = "* 1.05"},
     stats = {INTELLECT = 2}
   },
   [256] = { -- Priest: Discipline
-    modifiers = {CRITCHANCE = "* 1.05"}, 
+    modifiers = {CRITCHANCE = "* 1.05"},
     stats = {SPIRIT = 2}
   },
   [257] = { -- Priest: Holy
-    modifiers = {MULTISTRIKE = "* 1.05"}, 
+    modifiers = {MULTISTRIKE = "* 1.05"},
     stats = {SPIRIT = 2}
   },
   [258] = { -- Priest: Shadow
     modifiers = {HASTE = "* 1.05"}
   },
   ROGUE = {
-    modifiers = {AGILITY = "*1.05"}, 
+    modifiers = {AGILITY = "*1.05"},
     stats = {AGILITY = 2}
   },
   [259] = { -- Rogue: Assassination
@@ -211,8 +211,8 @@ Preview.classinfo = {
   },
   --SHAMAN = {},
   [262] = { -- Shaman: Elemental
-    basestat = {MULTISTRIKE = 20}, 
-    modifiers = {MULTISTRIKE = "* 1.05", MULTISTRIKEEFFECT = "* 1.35"}, 
+    basestat = {MULTISTRIKE = 20},
+    modifiers = {MULTISTRIKE = "* 1.05", MULTISTRIKEEFFECT = "* 1.35"},
     stats = {INTELLECT = 2, BONUS_ARMOR = 2}
   },
   [263] = { -- Shaman: Enhancement
@@ -224,7 +224,7 @@ Preview.classinfo = {
     modifiers = {INTELLECT = "* 1.05", MASTERY = "* 1.05"}
   },
   WARLOCK = {
-    modifiers = {INTELLECT = "*1.05"}, 
+    modifiers = {INTELLECT = "*1.05"},
     stats = {INTELLECT = 2}
   },
   [265] = { -- Warlock: Affliction
@@ -238,15 +238,15 @@ Preview.classinfo = {
   },
   --MONK = {},
   [268] = { -- Monk: Brewmaster
-    modifiers = {ARMOR = "* 1.75", TOTALSTAMINA = "* 1.25", STAMINA = "* 1.05", CRITCHANCE = "* 1.05"}, 
+    modifiers = {ARMOR = "* 1.75", TOTALSTAMINA = "* 1.25", STAMINA = "* 1.05", CRITCHANCE = "* 1.05"},
     stats = {AGILITY = 2, BONUS_ARMOR = 2}
   },
   [269] = { -- Monk: Windwalker
-    modifiers = {MULTISTRIKE = "* 1.05", AGILITY = "* 1.05"}, 
+    modifiers = {MULTISTRIKE = "* 1.05", AGILITY = "* 1.05"},
     stats = {AGILITY = 2}
   },
   [270] = { -- Monk: Mistweaver
-    modifiers = {MULTISTRIKE = "* 1.05", INTELLECT = "* 1.05"}, 
+    modifiers = {MULTISTRIKE = "* 1.05", INTELLECT = "* 1.05"},
     stats = {INTELLECT = 2, SPIRIT = 2}
   },
 }
@@ -256,7 +256,7 @@ local function requestCharInfo(data, channel, source)
 end
 
 local function charInfoReply(data, channel, source)
-  
+
 end
 
 local function defaultFormat(str, ...)
@@ -345,7 +345,7 @@ end
 function Preview:GetScanTooltip()
   if self.scantooltip then return self.scantooltip end
   if BestInSlotPreviewScanTooltip then
-    self.scantooltip = BestInSlotPreviewScanTooltip 
+    self.scantooltip = BestInSlotPreviewScanTooltip
     return BestInSlotPreviewScanTooltip
   end
   local tooltip = CreateFrame("GameTooltip", "BestInSlotPreviewScanTooltip", nil, "GameTooltipTemplate")
@@ -376,7 +376,7 @@ function Preview:SetCharacter(bislist, difficulty, charname, charspec, charsex, 
         end
         icon:SetImage(GetItemIcon(item.itemid))
         udt.itemlink = item.link
-      end 
+      end
       playermodel:TryOn(item.link)
     end
   end
@@ -427,7 +427,7 @@ function Preview:Show(bislist, difficulty, charparams, slots)
   self.oldbackdrop = panel.frame:GetBackdrop()
   self.panel = panel
   panel.frame:SetBackdrop({
-    bgFile = DressUpTexturePath(charrace).."1",  
+    bgFile = DressUpTexturePath(charrace).."1",
     tile = false,
   })
   panel:SetPoint("TOPLEFT", self.icons[1].frame, "TOPRIGHT")
@@ -592,7 +592,7 @@ function Preview:GetTooltipForEnhancement(name, locName, baseStat, bonusStat, cl
     local effectiveStat = bonusStat / 66
     local multistrikeEffect = self:ApplyStatModifier("MULTISTRIKEEFFECT", class, spec, 30)
     local totalEffect = effectiveStat + baseStat
-    
+
     header = self:GetTooltipHeader(name, baseStat, effectiveStat, true)
     content = self:GetTooltipForSpec(locName, class, spec, totalEffect, multistrikeEffect, BreakUpLargeNumbers(bonusStat), effectiveStat)
     valueWidget:SetText(("%.2F%%"):format(totalEffect))
@@ -628,7 +628,7 @@ function Preview:GetTooltipHeader(name, baseStat, bonusStat, isPercentage, total
   elseif isPercentage then
     tooltip = tooltip .. formatFunc(totalStat) .. FONT_COLOR_CODE_CLOSE
   else
-    tooltip = tooltip .. formatFunc(totalStat) .. " ( "  .. (baseStat > 0 and formatFunc(baseStat) or "")  .. FONT_COLOR_CODE_CLOSE .. GREEN_FONT_COLOR_CODE .. "+" .. bonusStat .. FONT_COLOR_CODE_CLOSE .. HIGHLIGHT_FONT_COLOR_CODE .. ")" 
+    tooltip = tooltip .. formatFunc(totalStat) .. " ( "  .. (baseStat > 0 and formatFunc(baseStat) or "")  .. FONT_COLOR_CODE_CLOSE .. GREEN_FONT_COLOR_CODE .. "+" .. bonusStat .. FONT_COLOR_CODE_CLOSE .. HIGHLIGHT_FONT_COLOR_CODE .. ")"
   end
   return tooltip
 end
@@ -641,7 +641,7 @@ local function isColorDisabledColor(r,g,b)
   r = (floor(r * 10))
   g = (floor(g * 10))
   b = (floor(b * 10))
-  return abs(r - GRAY_FONT_COLOR.r * 10) <= 5 and abs(g - GRAY_FONT_COLOR.g * 10) <= 5 and abs(b - GRAY_FONT_COLOR.b * 10) <= 1 
+  return abs(r - GRAY_FONT_COLOR.r * 10) <= 5 and abs(g - GRAY_FONT_COLOR.g * 10) <= 5 and abs(b - GRAY_FONT_COLOR.b * 10) <= 1
 end
 
 local searchPattern1 = "+(%d+) (.+)"
@@ -656,11 +656,11 @@ local function readLine(line, arr)
     amount, statName = text:match(searchPattern1)
     if not amount then
       amount = text:match(searchArmorPattern)
-      if not amount then 
+      if not amount then
         return
       else
         statName = "ARMOR"
-      end 
+      end
     end
   else
     amount = amount + thousands * 1000
@@ -715,7 +715,7 @@ function Preview:GetTotalStats(bislist, difficulty, class, spec)
 end
 
 function Preview:CreatePlayerModel(parent, race, sex)
-  local playermodel = self.playermodel 
+  local playermodel = self.playermodel
   if not playermodel then
     playermodel = CreateFrame("DressUpModel", "BestInSlotPlayerModel", UIParent)
     playermodel:SetHeight(self.panel.frame:GetHeight())
@@ -738,7 +738,7 @@ function Preview:CreatePlayerModel(parent, race, sex)
     playermodel:SetCustomRace(self.raceids[race], sex)
   end
   playermodel:Undress()
-  
+
   return playermodel
 end
 

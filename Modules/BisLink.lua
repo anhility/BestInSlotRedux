@@ -91,7 +91,7 @@ end
 function BiSLink:Validate(type, typeinfo, difficulty, spec, sender)
   if not type or not typeinfo or not difficulty or not spec or not sender then return false, "Invalid BiS link - Arguments missing" end
   difficulty = tonumber(difficulty)
-  local raidtier 
+  local raidtier
   if type == self.RAIDTIER then
     raidtier = tonumber(typeinfo)
   else
@@ -124,7 +124,7 @@ function BiSLink:ApplyChatFilter(chatframe, event, text, sender, lang, channel, 
   if first then
     local valid
     text, valid = self:MakeLink(text, first, last, type, typeinfo, difficulty, spec, sender)
-    if valid then 
+    if valid then
       self.chatfilter[sender] = time()
       C_Timer.After(0.01, function()
         BiSLink.chatfilter[sender] = false
@@ -135,7 +135,7 @@ function BiSLink:ApplyChatFilter(chatframe, event, text, sender, lang, channel, 
       self.chatfilter[sender] = false
     elseif text:find("item:") then --only filter itemlinks
       return true
-    end 
+    end
   end
   return false, text, sender, lang, channel, ...
 end

@@ -65,7 +65,7 @@ function GuildLists:GetContextMenu(character, spec)
   local raidTier = dropdownRaidTier:GetValue()
   local difficulty = dropdownDifficulty:GetValue()
   if self.History:HasHistory(character, raidTier, difficulty) then
-    tinsert(menu, {text = L["Show history for %s"]:format(character),           func = showHistory,     arg1 = character, arg2 = {raidtier = raidTier, difficulty = difficulty}})   
+    tinsert(menu, {text = L["Show history for %s"]:format(character),           func = showHistory,     arg1 = character, arg2 = {raidtier = raidTier, difficulty = difficulty}})
   else
     tinsert(menu, {text = L["There is no history available for %s"]:format(character), disabled = true})
   end
@@ -82,8 +82,8 @@ function GuildLists:GetContextMenu(character, spec)
     self.dialog = CreateFrame("Frame", "BiSGuildListDialog", UIParent, "UIDropDownMenuTemplate")
     self.dialog:SetFrameStrata("TOOLTIP")
   end
-  
-  -- Make the menu appear at the cursor: 
+
+  -- Make the menu appear at the cursor:
   EasyMenu(menu, self.dialog, "cursor", 0 , 0, "MENU")
   self.dialog:Show()
 end
@@ -151,7 +151,7 @@ function GuildLists:FillItemGroupsForSpec(specId)
         tinsert(self.processedSlots, slotId)
       end
     else
-      local name = GetItemInfo(BiSList[i].item) 
+      local name = GetItemInfo(BiSList[i].item)
       if not name then
         local eventId = self:RegisterEvent("GET_ITEM_INFO_RECEIVED", function(_, itemid)
           if BiSList[i].item == itemid then
@@ -266,7 +266,7 @@ local function itemGroupHelper(textureName, slotId, width, ...)
   itemGroup:SetHeight(45)
   itemGroup:PauseLayout()
   itemGroup:SetRelativeWidth(width or 0.49)
-  
+
   local icon = AceGUI:Create("Icon")
   icon:SetImageSize(40,40)
   icon:SetWidth(40)
@@ -276,20 +276,20 @@ local function itemGroupHelper(textureName, slotId, width, ...)
   icon:SetUserData("default", {textureName})
   itemGroup:AddChild(icon)
   itemGroup:SetUserData("icon", icon)
-  
+
   local label = GuildLists:GetItemLinkLabel("PLACEHOLDER")
   label:SetFontObject(GameFontNormal)
   label:SetPoint("LEFT", icon.frame, "RIGHT")
   label:SetWidth(260)
-  
+
   itemGroup:AddChild(label)
   itemGroup:SetUserData("label", label)
-  
-  
+
+
   icon:SetCallback("OnEnter", function(widget, ...) label:Fire("OnEnter", ...) end)
   icon:SetCallback("OnLeave", function(widget, ...) label:Fire("OnLeave", ...) end)
   icon:SetCallback("OnClick", function(widget, ...) label:Fire("OnClick", ...) end)
-  
+
   itemGroup:SetCallback("OnRelease", function()
     itemGroups[slotId] = nil
   end)
@@ -409,7 +409,7 @@ function GuildLists:GeneratePlayerScrollContainer()
       if playerData.guild == guild and playerData[j][1] == raidTier and playerData[j][2] == difficulty then
         hasABiSList = true
         break
-      end 
+      end
     end
     if hasABiSList then
       local playerClass = self:GetPlayerClass(player) or UNKNOWN
@@ -449,25 +449,25 @@ local function filterOnValueChanged(dropdown, _, value)
   GuildLists:GeneratePlayerScrollContainer()
 end
 
-function GuildLists:Draw(container)  
+function GuildLists:Draw(container)
   dropdownRaidTier = self:GetDropdown(self.RAIDTIER, nil, GeneratePlayerScrollContainer)
   dropdownRaidTier:SetRelativeWidth(0.32)
-  
+
   dropdownDifficulty = self:GetDropdown(self.DIFFICULTY, nil, GeneratePlayerScrollContainer)
   dropdownDifficulty:SetRelativeWidth(0.32)
-  
+
   dropdownFilter = AceGUI:Create("Dropdown")
   dropdownFilter:SetLabel(COMPACT_UNIT_FRAME_PROFILE_SORTBY)
   dropdownFilter:SetRelativeWidth(0.32)
   dropdownFilter:SetCallback("OnValueChanged", filterOnValueChanged)
   self:FillFilterOptions(dropdownFilter)
-  
+
   container:AddChild(dropdownRaidTier)
   container:AddChild(dropdownDifficulty)
   container:AddChild(dropdownFilter)
-  
+
   container:SetUserData("raidtier", dropdownRaidTier)
-  
+
   if dropdownRaidTier.disabled and dropdownDifficulty.disabled then
     local label = AceGUI:Create("Label")
     label:SetFont(GameFontNormal:GetFont(), 14, nil)
@@ -479,7 +479,7 @@ function GuildLists:Draw(container)
     contentPanel:SetWidth(600)
     contentPanel:SetHeight(485)
     contentPanel:SetPoint("TOPLEFT", dropdownRaidTier.frame, "BOTTOMLEFT", 10, 10)
-    
+
     container:AddChild(contentPanel)
     GuildLists:GeneratePlayerScrollContainer()
     GuildLists:ShowTutorial(L["Guild BiS lists"], 1)
@@ -510,7 +510,7 @@ GuildLists:RegisterTutorials(L["Guild BiS lists"], {
   [1] = {text = L["On this page you can view the BestInSlot lists of your guild."], xOffset = 0, yOffset = -50, container = "content", onRequest = true},
   [2] = {text = L["The dropdowns will only show BestInSlot lists that you have available."], text2 = (L["You can request BestInSlot lists in the '%s' page."]):format(L["Request BiS"]), xOffset = 0, yOffset = -10, container = "content", element = "raidtier", UpArrow = true },
   [3] = {text = L["Click on the class icons to view that characters BestInSlot list."], text2 = L["Right clicking the icons gives you options to delete them from your Saved Variables."], xOffset = 0, yOffset = -20, container = "content", element = "firstchar", UpArrow = true},
-  [4] = {text = L["Click on any specialization icon to view that specializations list."], text2 = L["Only the specializations that you received are enabled."], xOffset = 0, yOffset = -20, container = "content", element = "talent", onRequest = true, UpArrow = true}  
+  [4] = {text = L["Click on any specialization icon to view that specializations list."], text2 = L["Only the specializations that you received are enabled."], xOffset = 0, yOffset = -20, container = "content", element = "talent", onRequest = true, UpArrow = true}
 })
 
 StaticPopupDialogs["BESTINSLOT_CONFIRMDELETECACHE"] = {

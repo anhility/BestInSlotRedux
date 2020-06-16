@@ -103,7 +103,7 @@ Raid Tier: %9$s
 Instance: %10$s
 Difficulty: %11$s
 Specialization: %12$s
- 
+
 
 Active modules:
 %6$s
@@ -204,13 +204,13 @@ local function renderMissingSectionDump()
 ItemID:
 %s
 
-Dungeon Information: 
+Dungeon Information:
 %s
 
-Slot and information: 
+Slot and information:
 %s
 
-Additional Information: 
+Additional Information:
 %s]]):format(itemid, instance, slot, additional))
 end
 

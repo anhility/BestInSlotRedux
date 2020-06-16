@@ -1,5 +1,5 @@
 --  lua functions
-local select, setmetatable, error, type, rawget, rawset, pairs, tonumber, strsplit, tContains, unpack, tostring, wipe, tinsert, tsort, tconcat, tremove 
+local select, setmetatable, error, type, rawget, rawset, pairs, tonumber, strsplit, tContains, unpack, tostring, wipe, tinsert, tsort, tconcat, tremove
     = select, setmetatable, error, type, rawget, rawset, pairs, tonumber, strsplit, tContains, unpack, tostring, wipe, table.insert, table.sort, table.concat, table.remove
 -- WoW API
 local GetNumSpecializations, GetSpecializationInfo, GetItemInfo, IsEquippedItem, GetContainerNumSlots, GetContainerItemID, UnitClass, GetInventorySlotInfo, GetNumGuildMembers, ConvertRGBtoColorString, GetInventoryItemLink, GetContainerItemInfo, GetAddOnMetadata, GetItemSpecInfo, GetItemUniqueness, IsInGuild, GetGuildInfo, GetSpecialization, GetSpecializationInfoByID, IsInRaid, UnitName, IsInGroup, GetGuildRosterInfo, UnitFullName, UnitRace, UnitSex
@@ -21,7 +21,7 @@ BestInSlot.options.DEBUG = false
 BestInSlot.Author1 = ("%s%s @ %s"):format("|c"..RAID_CLASS_COLORS.DEMONHUNTER.colorStr, "Beleria".."|r",ConvertRGBtoColorString(PLAYER_FACTION_COLORS[1]).."Argent Dawn-EU|r")
 BestInSlot.Author2 = ("%s%s @ %s"):format("|c"..RAID_CLASS_COLORS.PALADIN.colorStr, "Anhility".."|r",ConvertRGBtoColorString(PLAYER_FACTION_COLORS[1]).."Ravencrest-EU|r")
 BestInSlot.Author3 = ("%s%s @ %s"):format("|c"..RAID_CLASS_COLORS.ROGUE.colorStr, "Sar\195\173th".."|r",ConvertRGBtoColorString(PLAYER_FACTION_COLORS[1]).."Tarren Mill-EU|r")
---[===[@non-debug@ 
+--[===[@non-debug@
 BestInSlot.version = @project-date-integer@
 --@end-non-debug@]===]
 BestInSlot.AlphaVersion = not (GetAddOnMetadata("BestInSlotRedux", "Version"):find("Release") and true or false)
@@ -69,19 +69,19 @@ local defaults = {
       instantAnimation = false,
     },
     customitems = {
-      
+
     },
     tutorials = true,
   },
   factionrealm = {
     _history = {
-      ['*'] = {}, --players database 
+      ['*'] = {}, --players database
     },
     ['*'] = { --guildname
       ['*'] = { -- charactername
         ['*'] = { -- raidTier
           ['*'] = { -- difficulty
-          
+
           }
         }
       }
@@ -115,7 +115,7 @@ BestInSlot.colorNormal = NORMAL_FONT_COLOR_CODE
 --    [raidTierId] = {
 --      description = "Raid Tier Description",
 --      difficulties = {"difficultyName1", "difficultyName2"},
---      expansion = expansionId, 
+--      expansion = expansionId,
 --      instances = {},
 --      tierTokens = {},
 --      tierItems = {
@@ -131,7 +131,7 @@ BestInSlot.colorNormal = NORMAL_FONT_COLOR_CODE
 --            tierItemId3,
 --          },
 --        }
---      } 
+--      }
 --    }
 --  },
 --  instances = {
@@ -139,7 +139,7 @@ BestInSlot.colorNormal = NORMAL_FONT_COLOR_CODE
 --      raidTier = raidTierID,
 --      expansion = expansionId,
 --      description = "Description
---    }    
+--    }
 --  },
 --  expansions = {
 --    [expansionId] = {
@@ -154,24 +154,14 @@ local data = {
   raidTiers = {},
   instances = {__default={
     difficultyconversion = {
-      -- [1] = 3, --default conversion of difficulties, normal -> 0
-      -- [2] = 5, --Heroic -> 5
-      -- [3] = 6,  --Mythic -> 6
-      -- [4] = 23,  --Mythic -> 6
-      [3] = 1, --default conversion of difficulties, normal -> 0
-      [2] = 2, --"Heroic" (Dungeons)
-      [5] = 2, --"10 Player (Heroic)"
-      [6] = 3,  --Mythic
-      [14] = 1, --Raid Normal
-      [15] = 2, --Raid Heroic
-      [16] = 3, --Raid Mythic
-      [23] = 3, --Dungeon Mythic
+      [1] = 1,  --Dungeon Normal
+      [2] = 2,  --Dungeon Heroic
+      [3] = 23, --Dungeon Mythic
     },
     bonusids = {
-      [1] = 0,
-      [2] = 1798,
-      [3] = 1799,
-      [4] = 0
+      [1] = {3524},
+      [2] = {3524},
+      [3] = {3524}
     },
   }},
   expansions = {},
@@ -236,12 +226,12 @@ BestInSlot.invSlots = {
   [15] = "INVTYPE_CLOAK",
   [16] = {"INVTYPE_WEAPON", "INVTYPE_2HWEAPON", "INVTYPE_WEAPONMAINHAND", "INVTYPE_RANGED", "INVTYPE_RANGEDRIGHT"},
   [17] = {"INVTYPE_WEAPONOFFHAND", "INVTYPE_SHIELD", "INVTYPE_WEAPON", "INVTYPE_HOLDABLE"},
-  --[18] = {"INVTYPE_RANGED", "INVTYPE_THROWN", "INVTYPE_RANGEDRIGHT", "INVTYPE_RELIC"} 
+  --[18] = {"INVTYPE_RANGED", "INVTYPE_THROWN", "INVTYPE_RANGEDRIGHT", "INVTYPE_RELIC"}
 }
 BestInSlot.dualWield = {250, 251, 252, 268, 269, 259, 260, 261, 263, 71, 72}
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
--- MODULE REGISTRATION 
+-- MODULE REGISTRATION
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
 --- This function can be used by modules to add their data to the add-on. It checks if the proper values are set
@@ -334,7 +324,7 @@ function BestInSlot:RegisterTierItems(dungeon, tierItems)
   if not data.instances[dungeon] then error("This dungeon is not registered yet") end
   local tieritems = {}
   for class in pairs(RAID_CLASS_COLORS) do
-    if not tierItems[class] then error("You are missing class "..class.." in the tier item list.") end 
+    if not tierItems[class] then error("You are missing class "..class.." in the tier item list.") end
     for i=1,#tierItems[class] do
       local itemid = tierItems[class][i]
       local _, link, _, _, _, _, _, _, equipSlot = GetItemInfo(i)
@@ -423,8 +413,8 @@ local  bossNewIndexMetatable = {
 -- @param #table lootTable The table containing the loot for the boss, must be formatted as follows: {["Normal"] = {itemId1, itemId2}, ["Heroic"] = {itemId1, itemId2}}
 -- @param #string bossName Localized name of the boss, you can use LibBabbleBoss-3.0 for this.
 -- @param #number tierToken If supplied, registers this item as a boss that drops the supplied tiertoken. 1 = HeadSlot, 3 = ShoulderSlot, 5 = ChestSlot, 7 = LegsSlot, 10 = Handslot, 15 = BackSlot.
-function BestInSlot:RegisterBossLoot(unlocalizedInstanceName, lootTable, bossName, tierToken, bossId) 
-  local instance = data.instances[unlocalizedInstanceName]                                                                                                 
+function BestInSlot:RegisterBossLoot(unlocalizedInstanceName, lootTable, bossName, tierToken, bossId)
+  local instance = data.instances[unlocalizedInstanceName]
   if not instance then error("The instance \""..unlocalizedInstanceName.."\" has not yet been registered!") end
   lootTable.info = {name = bossName}
   local bossLootTable = bossId and itemData[unlocalizedInstanceName][bossId] or setmetatable({}, bossNewIndexMetatable)
@@ -440,7 +430,7 @@ function BestInSlot:RegisterBossLoot(unlocalizedInstanceName, lootTable, bossNam
     end
     local item = itemData[itemid]
     if item and not item.customitem then --The item already existed
-      if not item.multiplesources then 
+      if not item.multiplesources then
         item.multiplesources = {}
         if item.bossid and item.dungeon then
           item.multiplesources[item.dungeon] = {}
@@ -472,7 +462,7 @@ function BestInSlot:RegisterBossLoot(unlocalizedInstanceName, lootTable, bossNam
     end
   end
   data.bosses[unlocalizedInstanceName] = data.bosses[unlocalizedInstanceName] or {}
-  if not addToBoss then 
+  if not addToBoss then
     tinsert(itemData[unlocalizedInstanceName], bossLootTable) --add loot to itemData
     tinsert(data.bosses[unlocalizedInstanceName], bossName) --add Boss info to data
   end
@@ -501,10 +491,10 @@ function BestInSlot:OnInitialize()
   self.options.windowFixed = self.db.char.options.windowFixed
   self.options.sendAutomaticUpdates = self.db.char.options.sendAutomaticUpdates
   self.options.receiveAutomaticUpdates = self.db.char.options.receiveAutomaticUpdates
-  
+
   AceEvent:RegisterEvent("GET_ITEM_INFO_RECEIVED", function(event, itemid) BestInSlot:SendEvent("GET_ITEM_INFO_RECEIVED", itemid) end)
   self:RegisterEvent("GET_ITEM_INFO_RECEIVED", "OnItemInfoGenerated")
-  
+
   self:Print((L["has been initialized, use %s to show the GUI"]):format((L["%s or %s"]):format(self.colorHighlight.."/bis"..self.colorNormal, self.colorHighlight.."/bestinslot"..self.colorNormal)))
 end
 
@@ -529,13 +519,13 @@ function BestInSlot:OnEnable()
   for i=1, #coreModules do
     self:EnableModule(coreModules[i])
   end
-  
+
   --Enable BiS Core modules
   local loadOrder = {}
   local waitList = {}
   local ZoneDetect = self:GetModule("ZoneDetect")
   for k,v in pairs(BestInSlot.modules) do
-    if not v.enabledState then 
+    if not v.enabledState then
       if v.dependancy then
         waitList[v.dependancy] = waitList[v.dependancy] or {}
         tinsert(waitList[v.dependancy], v)
@@ -575,7 +565,7 @@ function BestInSlot:GetDifficultyIdForDungeon(bisId, dungeon, toBiS)
     local tbl = data.instances[dungeon] or data.instances.__default
     for BiSId, WoWId in pairs(tbl.difficultyconversion) do
       if bisId == WoWId then
-        returnId, bonusIds = WoWId, tbl.bonusids[WoWId]
+        returnId, bonusIds = BiSId, tbl.bonusids[BiSId]
       end
     end
   end
@@ -638,7 +628,7 @@ function BestInSlot:HasItemInBag(itemid, difficulty)
         local id, instanceDifficulty = self:GetItemInfoFromLink(link)
         instanceDifficulty = tonumber(instanceDifficulty)
         if id == itemid then
-          if difficulty == nil then 
+          if difficulty == nil then
             difficulties = difficulties or {}
             local bisId = self:GetDifficultyIdForDungeon(instanceDifficulty, item.dungeon, true)
             if bisId then
@@ -671,7 +661,7 @@ end
 --- Checks if the player has an item either in their bags, or equipped
 -- @param #number itemid The itemID to check if the player has
 -- @param #number [difficulty] The DifficultyId that the item must have.
--- @param #bool [checkHigherDifficulties] When true will check higher difficulties and return the difficulty number when found, or nil when not found. 
+-- @param #bool [checkHigherDifficulties] When true will check higher difficulties and return the difficulty number when found, or nil when not found.
 -- @return #boolean true if the player has it, otherwise false
 function BestInSlot:HasItem(itemid, difficulty, checkHigherDifficulties)
   if not difficulty or not checkHigherDifficulties then
@@ -711,7 +701,7 @@ function BestInSlot:RegisterSlashCmd(cmd, descr, func, prefOrder)
   if slashCommands[cmd] then error("Slash command "..cmd.." is already registered!") end
   slashCommands[cmd] = {func = func, descr = descr, prefOrder = prefOrder}
 end
-                  
+
 function SlashCmdList.BESTINSLOT(msg, editbox)
   local args = {}
   local first = true
@@ -764,7 +754,7 @@ BestInSlot:RegisterSlashCmd("debug", (L["%s - enable/disable debug messages"]):f
     BestInSlot.options.DEBUG = true
     BestInSlot:Print(L["Enabling debug messages"])
   end
-  BestInSlot:SendEvent("DebugOptionsChanged", BestInSlot.options.DEBUG) 
+  BestInSlot:SendEvent("DebugOptionsChanged", BestInSlot.options.DEBUG)
 end)
 
 local itemslotidCache = {}
@@ -926,8 +916,7 @@ local function addLootToTableByFilter(tbl, itemlist, slotId, difficulty)
   for id in pairs(itemlist) do
     local item = BestInSlot:GetItem(id, difficulty)
     if (not slotId) or (type(BestInSlot.invSlots[slotId]) == "string" and BestInSlot.invSlots[slotId] == item.equipSlot) or (type(BestInSlot.invSlots[slotId]) == "table" and tContains(BestInSlot.invSlots[slotId],item.equipSlot)) then
-      if difficulty == 4 and (item.difficulty == -1) then --do nothing
-      elseif (not difficulty) or (not item.difficulty or (item.difficulty == -1 or item.difficulty == difficulty or (type(item.difficulty) == "table") and tContains(item.difficulty, difficulty)) ) then
+      if (not difficulty) or (not item.difficulty or (item.difficulty == -1 or item.difficulty == difficulty or (type(item.difficulty) == "table") and tContains(item.difficulty, difficulty)) ) then
         tbl[id] = item
       end
     end
@@ -958,9 +947,7 @@ end
 local function helperFullLootTable(tbl, itemlist, difficulty)
   for id in pairs(itemlist) do
     local item = BestInSlot:GetItem(id, difficulty)
-    if difficulty == 4 and (item.difficulty == -1) then 
-      --do nothing
-    elseif (not difficulty) or (not item.difficulty or (item.difficulty == -1 or item.difficulty == difficulty or (type(item.difficulty) == "table") and tContains(item.difficulty, difficulty)) ) then
+    if (not difficulty) or (not item.difficulty or (item.difficulty == -1 or item.difficulty == difficulty or (type(item.difficulty) == "table") and tContains(item.difficulty, difficulty)) ) then
       tbl[id] = item
     end
   end
@@ -992,7 +979,7 @@ end
 -- @param #number difficulty The difficulty ID of the raidTier to request the data off
 -- @param #boolean lowerRaidTiers Get data for lower raid tiers as well
 -- @return #table The loot table
-function BestInSlot:GetLootTableBySlot(raidTier, slotId, difficulty, lowerRaidTiers)  
+function BestInSlot:GetLootTableBySlot(raidTier, slotId, difficulty, lowerRaidTiers)
   local items = {}
   local dungeons = data.raidTiers[raidTier].instances
   for i=1,#dungeons do
@@ -1032,7 +1019,7 @@ function BestInSlot:GetItemString(itemid, difficulty)
   if not itemid then error("You should provide an itemid!") end
   difficulty = difficulty or 1
   local instanceDifficulty, bonusID1, bonusID2, bonusID3 = self:GetDifficultyIdForDungeon(difficulty, itemData[itemid] and itemData[itemid].dungeon)
-  numBonusIDs = (bonusID3 ~= 0 and 3) or (bonusID2 ~= 0 and 2) or (bonusID1 ~= 0 and 1) or 0
+  numBonusIDs = (bonusID3 ~= nil and 3) or (bonusID2 ~= nil and 2) or (bonusID1 ~= nil and 1) or 0
   --item:itemId:enchantId:gemId1:gemId2:gemId3:gemId4:suffixId:uniqueId:linkLevel:specializationID:upgradeId:instanceDifficultyId:numBonusIds:bonusId1:bonusId2:upgradeValue
   return ("item:%d:::::::::::%d:%d:%d:%d:%d:"):format(itemid, instanceDifficulty, numBonusIDs, bonusID1, bonusID2, bonusID3)
 end
@@ -1044,7 +1031,7 @@ end
 function BestInSlot:GetItem(itemid, difficulty)
   if type(itemid) == "string" then
     itemid = tonumber(itemid)
-  end  
+  end
   if itemid then
     if self.unsafeIDs[itemid] then
       self:OnItemInfoGenerated(nil, itemid)
@@ -1052,7 +1039,7 @@ function BestInSlot:GetItem(itemid, difficulty)
     if self.unsafeIDs[itemid] then self.console:AddError("Couldn't fetch data for itemid: "..itemid) end
     if itemData[itemid] then
       local newItemTable = setmetatable({}, {__index=itemData[itemid]})
-      if difficulty and difficulty ~= 4 and newItemTable.difficulty == -1 then --This is an item that has multiple states and not LFR, therefore we need to set it's state
+      if difficulty and newItemTable.difficulty == -1 then --This is an item that has multiple states, therefore we need to set it's state
         newItemTable.itemstr = self:GetItemString(itemid, difficulty)
         local link = select(2,GetItemInfo(newItemTable.itemstr))
         newItemTable.link = link
@@ -1101,7 +1088,7 @@ end
 local function helperGetCustomItems(dungeon)
   local result = {}
   local count = 0
-  if itemData[dungeon] and itemData[dungeon].customitems then 
+  if itemData[dungeon] and itemData[dungeon].customitems then
     for itemid, item in pairs(itemData[dungeon].customitems) do
       tinsert(result, itemid)
       count = count + 1
@@ -1137,7 +1124,7 @@ function BestInSlot:RegisterCustomItem(dungeon, itemid, itemlink)
   itemData[dungeon].customitems[itemid] = {
     dungeon = dungeon,
     isBiS = {
-    
+
     },
     link = link,
     equipSlot = equipSlot,
@@ -1225,7 +1212,7 @@ end
 -- @param #number datatype Optional datatype to query, if nil it will give everything as result can be BestInSlot.EXPANSION, BestInSlot_TYPE_RAIDTIER, BestInSlot.INSTANCE
 -- @param #multiple arg The filter for the supplied datatype
 function BestInSlot:GetRaidTiers(datatype, arg)
-  local raidTiers = {} 
+  local raidTiers = {}
   -- No Filter
   if not datatype or datatype == self.RAIDTIER then
     for k,v in pairs(data.raidTiers) do
@@ -1310,7 +1297,7 @@ function BestInSlot:GetLatest(datatype, filterdatatype, arg)
       end
     end
     return selectedExpansion
-    
+
  -- Get Latest Raid Tier
   elseif datatype == self.RAIDTIER then
     local selected = 0
@@ -1402,9 +1389,9 @@ end
 -- @param #number raidTier The raidTier to get the BestInSlot from
 -- @param #number difficulty The Difficulty to request
 function BestInSlot:GetBestInSlotItems(raidTier, difficulty, specialization, slotId)
-  if not raidTier or not difficulty then 
+  if not raidTier or not difficulty then
     BestInSlot.console:AddError("BestInSlot:GetBestInSlot() missed parameter RaidTier or difficulty", raidTier, difficulty, specialization)
-    return {} 
+    return {}
   end
   if not specialization then
     local bisItems = {}
@@ -1423,7 +1410,7 @@ end
 local function helperOrderBiSItems(table, orderTable)
   local newTable = {}
   for i in pairs(orderTable) do
-    newTable[orderTable[i]] = table[i] 
+    newTable[orderTable[i]] = table[i]
   end
   return newTable
 end
@@ -1490,7 +1477,7 @@ function BestInSlot:IsTokenBestInSlot(tokenItemId, difficulty, specId)
   local iteminfo = tierTokenData[tokenItemId]
   local _, class = UnitClass("player")
   if not tContains(iteminfo.classes, class) then return false end
-  if not specId then 
+  if not specId then
     local array = {}
     for specId, BiSList in pairs(self:GetBestInSlotItems(iteminfo.raidtier, difficulty)) do
       if specId ~= "spec" then
@@ -1512,7 +1499,7 @@ function BestInSlot:IsItemBestInSlot(itemId, difficulty, specId)
   if self:IsItemTierToken(itemId) then
     return self:IsTokenBestInSlot(itemId, difficulty, specId)
   end
-  
+
   local item = BestInSlot:GetItem(itemId)
   if item then
     if not item.isBiS then
@@ -1594,7 +1581,7 @@ function BestInSlot:SetItemBestInSlot(raidTier, difficultyId, specialization, sl
               break
             end
           end
-          i = i + 1 
+          i = i + 1
         end
         if not isStillBiS then
           itemData[currentId].isBiS[difficultyId][specialization] = nil
@@ -1686,7 +1673,7 @@ function BestInSlot:GetCacheData()
           if tableHasItems(playerData) then
             --checks if the player allready exists in the table
             result[playerName] = {guild = guildName}
-            
+
             for raidTier, raidTierData in pairs(playerData) do
               if tableHasItems(raidTierData) then
                 --checks if the raidTier allready exists in the table
@@ -1700,7 +1687,7 @@ function BestInSlot:GetCacheData()
                 if addRaidTier then
                   tinsert(raidTiers, raidTier)
                 end
-                
+
                 for difficulty, bisList in pairs(raidTierData) do
                   if tableHasItems(bisList) then
                     difficulties[raidTier] = difficulties[raidTier] or {}
@@ -1735,12 +1722,12 @@ end
 ---Gets a list with players who need the specified itemid
 -- @return table Table with player as key, and their specs as table as value
 function BestInSlot:GetGuildMembersByItemID(itemid, difficulty)
-  if GuildBiSCache[itemid] and GuildBiSCache[itemid][difficulty] then 
-    return GuildBiSCache[itemid][difficulty] 
+  if GuildBiSCache[itemid] and GuildBiSCache[itemid][difficulty] then
+    return GuildBiSCache[itemid][difficulty]
   end
   if not IsInGuild() then return {} end
   local guildName = GetGuildInfo("player")
-  local playerData, raidData, guildData, difficultyData = self:GetCacheData() 
+  local playerData, raidData, guildData, difficultyData = self:GetCacheData()
   if not tContains(guildData, guildName) then return {} end
   local result = {}
   local tokenData = tierTokenData[itemid]
@@ -1771,7 +1758,7 @@ function BestInSlot:GetGuildMembersByItemID(itemid, difficulty)
                     break
                   end
                 end
-              end 
+              end
             end
           end
         end
@@ -1829,7 +1816,7 @@ local playerClassCache = setmetatable({DEFAULT = {}}, {
     if IsInGuild() then
       local playerRealm = select(2, UnitFullName("player"))
       for i=1,GetNumGuildMembers() do
-        local nameWithRealm, _, _, _, localizedClass, _, _, _, _, _, class = GetGuildRosterInfo(i) --Warrior, WARRIOR 
+        local nameWithRealm, _, _, _, localizedClass, _, _, _, _, _, class = GetGuildRosterInfo(i) --Warrior, WARRIOR
         local playerName, realm = (nameWithRealm):match("(%D+)-(%D+)")
         if playerName == searchName and ((not searchRealm and realm == playerRealm) or realm == searchRealm) then
           table[key] = {class, localizedClass}

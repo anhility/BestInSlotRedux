@@ -187,26 +187,26 @@ end
 
 local function whisperToEnterPressed(_,_,value)
   whisperTo = value
-  RequestBiS:CanRequest()  
+  RequestBiS:CanRequest()
 end
 
 function RequestBiS:Draw(container)
   dropdownSelection = self:GetDropdown(self.INSTANCE, nil, self.CanRequest)
   dropdownSelection:SetRelativeWidth(0.33)
   container:AddChild(dropdownSelection)
-  
+
   dropdownDifficulty = self:GetDropdown(self.DIFFICULTY, nil, self.CanRequest)
   dropdownDifficulty:SetRelativeWidth(0.33)
-  
+
   container:AddChild(dropdownDifficulty)
-  
+
   dropdownRequestFrom = AceGUI:Create("Dropdown")
   dropdownRequestFrom:SetLabel(L["Request from"])
   dropdownRequestFrom:SetRelativeWidth(0.33)
   dropdownRequestFrom:SetList({
     RAID = ("%s/%s"):format(_G["PARTY"], _G["RAID"]),
     GUILD = _G["GUILD"],
-    WHISPER = _G["WHISPER"],    
+    WHISPER = _G["WHISPER"],
   })
   container:SetUserData("request", dropdownRequestFrom)
   if not IsInGuild() then
@@ -217,48 +217,48 @@ function RequestBiS:Draw(container)
   end
   dropdownRequestFrom:SetText(L["Select a channel"])
   dropdownRequestFrom:SetCallback("OnValueChanged", dropdownRequestFromOnValueChanged)
-  
+
   container:AddChild(dropdownRequestFrom)
-  
+
   whisperTarget = AceGUI:Create("EditBox")
   whisperTarget:SetLabel(L["Whisper target"])
   whisperTarget:SetRelativeWidth(0.245)
   whisperTarget:SetDisabled(true)
   whisperTarget:SetCallback("OnEnterPressed", whisperToEnterPressed)
-  
+
   container:AddChild(whisperTarget)
-  
+
   container:SetUserData("wtarget", whisperTarget)
-  
+
   requestButton = AceGUI:Create("Button")
   requestButton:SetText(L["Request"])
   requestButton:SetRelativeWidth(0.245)
   requestButton:SetDisabled(true)
   requestButton:SetCallback("OnClick", requestButtonOnClick)
-    
+
   container:AddChild(requestButton)
   dropdownRequestFrom:SetValue(selectedChannel)
   if selectedChannel == "WHISPER" then
     whisperTarget:SetDisabled(false)
   end
   whisperTarget:SetText(whisperTo)
-  
+
   dropdownFilter = AceGUI:Create("Dropdown")
   dropdownFilter:SetDisabled(true)
   dropdownFilter.dropdown.obj:SetDisabled(true)
   dropdownFilter:SetRelativeWidth(0.49)
   dropdownFilter:SetList({})
   dropdownFilter:SetLabel(FILTER)
-  
+
   container:AddChild(dropdownFilter)
   container:SetUserData("filter", dropdownFilter)
-  
+
   responseContainer = AceGUI:Create("ScrollFrame")
   responseContainer:SetLayout("List")
   responseContainer:SetFullWidth(true)
   responseContainer:SetFullHeight(true)
   responseContainer:SetPoint("BOTTOMRIGHT", container.frame, "BOTTOMRIGHT")
-    
+
   container:AddChild(responseContainer)
   self:CanRequest()
 end
@@ -284,7 +284,7 @@ local function sendRaidTierReply(raidTier, difficulty, source, version)
     local specId = GetSpecializationInfo(RequestBiS:GetSpecialization())
     bisList = RequestBiS:GetBestInSlotItems(raidTier, difficulty, specId)
   else
-    bisList = RequestBiS:GetBestInSlotItems(raidTier, difficulty) 
+    bisList = RequestBiS:GetBestInSlotItems(raidTier, difficulty)
   end
   RequestBiS:SendAddonMessage("requestRaidTierReply", bisList, "WHISPER", source)
 end
@@ -389,9 +389,9 @@ function RequestBiS:CheckGuildRankDisable(recursive)
   recursive = recursive or (recursive == nil and true)
   for i=1,GuildControlGetNumRanks() do
     local guildWidget = dropdownFilter:GetUserData("GuildRank"..i)
-    if guildWidget then 
+    if guildWidget then
       guildWidget:SetValue(false)
-      guildWidget:SetDisabled(true) 
+      guildWidget:SetDisabled(true)
     end --Disable it before looping through the roster
   end
   for i=1,GetNumGuildMembers() do
@@ -422,7 +422,7 @@ function RequestBiS:CheckPlayerDisable(recursive)
         if widget:GetValue() ~= (charFilter.show or false) then
           hasChanged = true
         end
-        widget:SetValue(charFilter.show or false)          
+        widget:SetValue(charFilter.show or false)
       elseif widget then --if it's a spec widget
         widget:SetValue(charFilter[widgetDescr] or false)
       end
@@ -443,7 +443,7 @@ end
 
 --- Simply (un)ticks all the options in the filter
 -- @param #boolean value Wether to tick, or untick everything
--- @param #boolean ignoreApply Optional, if true then doesn't apply the filter afterwards. 
+-- @param #boolean ignoreApply Optional, if true then doesn't apply the filter afterwards.
 function RequestBiS:SetAllFilter(value, ignoreApply)
   local userData = dropdownFilter:GetUserDataTable()
   for char, charFilter in pairs(filter) do
@@ -504,7 +504,7 @@ function RequestBiS:SetSpecFilter(char, spec, value, ignoreApply)
   end
   if shouldRefresh then
     self:VerifyCheckBoxes()
-  end 
+  end
   if not ignoreApply then
     self:ApplyNewFilter()
   end
@@ -655,23 +655,23 @@ function RequestBiS:MakeStandardOptions(submenu)
   selectAll.SetValue = emptySetValue
   selectAll:SetUserData("select", true)
   submenu:AddItem(selectAll)
-  
+
   --Add Deselect All button
   local deselectAll = AceGUI:Create("Dropdown-Item-Execute")
   deselectAll:SetText(L["Deselect all"])
   deselectAll:SetCallback("OnClick", onClickSelectAll)
   deselectAll.SetValue = emptySetValue
   submenu:AddItem(deselectAll)
-  
-  
+
+
   local showObtained = AceGUI:Create("Dropdown-Item-Toggle")
   showObtained:SetText(L["Show obtained items"])
   showObtained:SetCallback("OnValueChanged", onShowObtainedValue)
   submenu:AddItem(showObtained)
   showObtained:SetValue(showObtainedItems)
-  
+
   submenu:AddItem(self:GetDropdownSeperator())
-  
+
   --Add the class Menu
   local classMenu = AceGUI:Create("Dropdown-Item-Menu")
   classMenu:SetText(L["Class filter"])
@@ -693,7 +693,7 @@ function RequestBiS:MakeStandardOptions(submenu)
   end
   classMenu:SetMenu(classSubMenu)
   submenu:AddItem(classMenu)
-  
+
   --Add the token menu
   local tokenMenu = AceGUI:Create("Dropdown-Item-Menu")
   tokenMenu:SetText(L["Token filter"])
@@ -728,7 +728,7 @@ function RequestBiS:MakeStandardOptions(submenu)
   end
   tokenMenu:SetMenu(tokenSubMenu)
   submenu:AddItem(tokenMenu)
-  
+
   --Adds the armor filter
   local armorMenu = AceGUI:Create("Dropdown-Item-Menu")
   armorMenu:SetText(L["Armor filter"])
@@ -745,7 +745,7 @@ function RequestBiS:MakeStandardOptions(submenu)
   end
   armorMenu:SetMenu(armorSubMenu)
   submenu:AddItem(armorMenu)
-  
+
   --Adds the guild filter
   if responseContainer:GetUserData("channel") == "GUILD" or not responseContainer:GetUserData("channel") then -- if the guild window is shown
     local guildMenu = AceGUI:Create("Dropdown-Item-Menu")
@@ -782,7 +782,7 @@ function RequestBiS:MakeCharSpecificOptions(submenu, char)
   local specFilters = {}
   if history[char] and history[char].spec then
     submenu:AddItem(self:GetDropdownSeperator())
-    
+
     for specId in pairs(history[char]) do
       if type(tonumber(specId)) == "number" then
         local _, specName = GetSpecializationInfoByID(specId)
@@ -827,12 +827,12 @@ function RequestBiS:SetFilterOptions()
     disabled = false
     local submenu = AceGUI:Create("Dropdown-Pullout")
     self:MakeCharSpecificOptions(submenu, char)
-    
+
     local dropdownGroup = AceGUI:Create("Dropdown-Item-Menu")
     dropdownGroup:SetText(self:GetPlayerString(char))
     dropdownGroup:SetMenu(submenu)
     dropdownGroup.SetValue = emptySetValue
-    
+
     dropdownFilter.pullout:AddItem(dropdownGroup)
     dropdownFilter:SetUserData(char, submenu)
   end
@@ -868,7 +868,7 @@ function RequestBiS:HasSpecsFilledIn(itemlist)
 end
 
 ---
--- Itemlist format: 
+-- Itemlist format:
 -- {
 --  [specId1] = {{item = item1, obtained = false}, {item = item2, obtained = true}}
 --  [specId2] = {{item = item1, obtained = false}, {item = item2, obtained = true}}

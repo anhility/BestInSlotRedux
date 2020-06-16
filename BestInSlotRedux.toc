@@ -1,4 +1,4 @@
-## Interface: 80100
+## Interface: 80300
 ## Title: Best In Slot Redux
 ## Notes: Keep track of your, your raid members and your guilds Best in Slot list!
 ## Author: Beleria @ Argent Dawn-EU, Anhility @ Ravencrest-EU, Sar\195\173th @ Tarren Mill-EU
@@ -18,5 +18,5 @@ Modules\BisLink.lua
 Modules\PreviewWindow.lua
 Modules\BfaRaids\Uldir.lua
 Modules\BfaRaids\DazarAlor.lua
-Modules\BfaDungeons\BestInSlotRedux_BfaDungeons.lua
+Modules\BfaDungeons\Dungeons.lua
 #@end-do-not-package@
