@@ -273,14 +273,14 @@ function Dungeons:Mechagon()
   -----------------------------------
   local bossName = EJ_GetEncounterInfo(2357)
   local lootTable = {
-    170507, --
-    169050, --
-    169035, --
-    169052, --
-    169054, --
-    169051, --
-    169053, --
-    169049, --
+    170507, --Omnipurpose Logic Board
+    169050, --Logg
+    169035, --Reclaimed Shock Coil
+    169052, --Cranial Recalibrator
+    169054, --Galvanized Leather Grips
+    169051, --Anodized Plate Legguards
+    169053, --Roughshod Chain Boots
+    169049, --Supplicant's Soiled Slippers
   }
   self:RegisterBossLoot(mechagon, lootTable, bossName)
 
@@ -290,15 +290,15 @@ function Dungeons:Mechagon()
   -----------------------------------
   local bossName = EJ_GetEncounterInfo(2358)
   local lootTable = {
-    170508, --
-    169058, --
-    169062, --
-    169061, --
-    169059, --
-    169060, --
-    169057, --
-    169055, --
-    169056, --
+    170508, --Optimized Logic Board
+    169058, --Salvaged Incendiary Tool
+    169062, --Sharpened Trogg Femur
+    169061, --Insulating Threaded Gloves
+    169059, --Slick Tactical Grips
+    169060, --Mekgineer's Utility Belt
+    169057, --Well-Oiled Plate Girdle
+    169055, --Greaves of Acid Resistance
+    169056, --Ooey-Gooey Galoshes
   }
   self:RegisterBossLoot(mechagon, lootTable, bossName)
 
@@ -308,16 +308,16 @@ function Dungeons:Mechagon()
   -----------------------------------
   local bossName = EJ_GetEncounterInfo(2360)
   local lootTable = {
-    170509, --
-    169066, --
-    169068, --
-    169064, --
-    169069, --
-    169063, --
-    169067, --
-    169065, --
-    169070, --
-    169769, --
+    170509, --Performant Logic Board
+    169066, --Trixie's Backup Backbiter
+    169068, --Salvaged Mekacycle Shielding
+    169064, --Mountebank's Colorful Cloak
+    169069, --Wraps of Electrostatic Potential
+    169063, --High Speed Gauntlets
+    169067, --Silken Safety Harness
+    169065, --Reinforced Riding Chausses
+    169070, --Unseen Predator's Breeches
+    169769, --Remote Guidance Device
   }
   self:RegisterBossLoot(mechagon, lootTable, bossName)
 
@@ -327,21 +327,21 @@ function Dungeons:Mechagon()
   -----------------------------------
   local bossName = EJ_GetEncounterInfo(2355)
   local lootTable = {
-    170510, --
-    168657, --
-    167677, --
-    168909, --
-    168963, --
-    169077, --
-    169074, --
-    169075, --
-    169073, --
-    169072, --
-    169071, --
-    169157, --
-    169076, --
-    169158, --
-    169156, --
+    170510, --Forceful Logic Board
+    168657, --Friend-or-Foe Identifier
+    167677, --Harmonic Dematerializer
+    168909, --Subroutine: Emergency Repairs
+    168963, --Fusion Hacker
+    169077, --Light Auto-Stabilizing Energy Rifle
+    169074, --Epaulettes of Arcing Power
+    169075, --Tank Buster Pauldrons
+    169073, --Type II Bomber Jacket
+    169072, --Volatile Arming Doublet
+    169071, --Overcharged Pantaloons
+    169157, --Logic Loop of Division
+    169076, --Logic Loop of Maintenance
+    169158, --Logic Loop of Recursion
+    169156, --Logic Loop of Synergy
   }
   self:RegisterBossLoot(mechagon, lootTable, bossName)
 
@@ -351,15 +351,15 @@ function Dungeons:Mechagon()
   -----------------------------------
   local bossName = EJ_GetEncounterInfo(2336)
   local lootTable = {
-    170510, --
-    168962, --
-    168955, --
-    168967, --
-    168957, --
-    168958, --
-    168966, --
-    168964, --
-    168965, --
+    170510, --Forceful Logic Board
+    168962, --Apex Perforator
+    168955, --Electrifying Cognitive Amplifier
+    168967, --Gold-Coated Superconductors
+    168957, --Mekgineer's Championship Belt
+    168958, --Ringmaster's Cummerbund
+    168966, --Heavy Alloy Legplates
+    168964, --Hyperthread Boots
+    168965, --Modular Platinum Plating
   }
   self:RegisterBossLoot(mechagon, lootTable, bossName)
 
@@ -369,12 +369,12 @@ function Dungeons:Mechagon()
   -----------------------------------
   local bossName = EJ_GetEncounterInfo(2339)
   local lootTable = {
-    170508, --
-    168970, --
-    168969, --
-    168971, --
-    168968, --
-    168972, --
+    170508, --Optimized Logic Board
+    168970, --Trashmaster's Mantle
+    168969, --Operator's Mitts
+    168971, --Swift Pneumatic Grips
+    168968, --Flame-Seared Leggings
+    168972, --Pyroclastic Greatboots
   }
   self:RegisterBossLoot(mechagon, lootTable, bossName)
 
@@ -384,18 +384,18 @@ function Dungeons:Mechagon()
   -----------------------------------
   local bossName = EJ_GetEncounterInfo(2348)
   local lootTable = {
-    170507, --
-    167556, --
-    168973, --
-    169608, --
-    168976, --
-    168974, --
-    168975, --
-    169159, --
-    169161, --
-    168977, --
-    169160, --
-    169344, --
+    170507, --Omnipurpose Logic Board
+    167556, --Subroutine: Overclock
+    168973, --Neural Synapse Enhancer
+    169608, --Tearing Sawtooth Blade
+    168976, --Automatic Waist Tightener
+    168974, --Self-Repairing Cuisses
+    168975, --Machinist's Treasured Treads
+    169159, --Overclocking Bit Band
+    169161, --Protecting Bit Band
+    168977, --Rebooting Bit Band
+    169160, --Shorting Bit Band
+    169344, --Ingenious Mana Battery
   }
   self:RegisterBossLoot(mechagon, lootTable, bossName)
 
@@ -405,23 +405,23 @@ function Dungeons:Mechagon()
   -----------------------------------
   local bossName = EJ_GetEncounterInfo(2331)
   local lootTable = {
-    169172, --
-    168671, --
-    168842, --
-    170509, --
-    169774, --
-    168984, --
-    168987, --
-    168981, --
-    168979, --
-    168978, --
-    168989, --
-    168990, --
-    168985, --
-    168986, --
-    168983, --
-    168988, --
-    168982, --
+    169172, --Blueprint: Perfectly Timed Differential
+    168671, --Electromagnetic Resistors
+    168842, --Engine of Mecha-Perfection
+    170509, --Performant Logic Board
+    169774, --Progression Sprocket
+    168984, --Extravagant Epaulettes
+    168987, --Shoulderguards of Fraying Sanity
+    168981, --Circuit-Linked Chainmail
+    168979, --Mechanized Plate Chasse
+    168978, --Anodized Deflectors
+    168989, --Hyperthread Wristwraps
+    168980, --Gauntlets of Absolute Authority
+    168985, --Self-Sanitizing Handwraps
+    168986, --Mad King's Sporran
+    168983, --Maniacal Monarch's Girdle
+    168988, --Royal Attendant's Trousers
+    168982, --Regal Mekanospurs
   }
   self:RegisterBossLoot(mechagon, lootTable, bossName)
 end

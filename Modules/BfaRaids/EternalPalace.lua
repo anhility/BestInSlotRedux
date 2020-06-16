@@ -30,24 +30,24 @@ function EternalPalace:OnEnable()
   -----------------------------------
   local bossName = EJ_GetEncounterInfo(2352)
   local lootTable = {
-    168359, --
-    168273, --
-    168361, --
-    168345, --
-    168901, --
-    168903, --
-    168276, --
-    168386, --
-    168477, --
-    168387, --
-    168377, --
-    168306, --
-    168341, --
-    168390, --
-    168818, --
-    168371, --
-    168384, --
-    168905, --
+    168359, --Abyssal Commander's Mantle
+    168273, --Shiver Venom Crossbow
+    168361, --Naga Centaur's Shellplate
+    168345, --Helm of the Inexorable Tide
+    168901, --Royal Scaleguard's Battleaxe
+    168903, --Scepter of the Azsh'ari
+    168276, --Claw of the Myrmidon
+    168386, --Gauntlets of Overflowing Chill
+    168477, --Tidebinder's Driftglobe
+    168387, --Palace Sentinel Vambraces
+    168377, --Tideblood Bracers
+    168306, --Shiver Venom Lance
+    168341, --Siren Mystic's Vestments
+    168390, --Sabatons of the Stalwart
+    168818, --Sivara's Slitherblade
+    168371, --Seawrath Legwraps
+    168384, --Wavespine Clutch
+    168905, --Shiver Venom Relic
   }
   self:RegisterBossLoot(EP, lootTable, bossName)
 
@@ -57,22 +57,22 @@ function EternalPalace:OnEnable()
   -----------------------------------
   local bossName = EJ_GetEncounterInfo(2347)
   local lootTable = {
-    168389, --
-    168353, --
-    168397, --
-    168900, --
-    169304, --
-    168376, --
-    168343, --
-    168385, --
-    168373, --
-    169312, --
-    168885, --
-    168383, --
-    168362, --
-    168379, --
-    168342, --
-    169360, --
+    168389, --Fleetwrecker's Greaves
+    168353, --Hood of Lightless Depths
+    168397, --Fang of the Behemoth
+    168900, --Diver's Folly
+    169304, --Leviathan's Lure
+    168376, --Anglerfish Feelers
+    168343, --Blackwater Shimmerscale Vest
+    168385, --Slipstreamer's Saltwalkers
+    168373, --Eelskin Flippers
+    169312, --Luminous Jellyweed
+    168885, --Undercove Crushers
+    168383, --Pelagos Predator's Legguards
+    168362, --Trench Tyrant's Shoulderplates
+    168379, --Ship Swallower's Belt
+    168342, --Fathom-Feeder's Mantle
+    169360, --Mindlost Bloodfrenzy
   }
   self:RegisterBossLoot(EP, lootTable, bossName)
 
@@ -82,22 +82,22 @@ function EternalPalace:OnEnable()
   -----------------------------------
   local bossName = EJ_GetEncounterInfo(2353)
   local lootTable = {
-    168475, --
-    168478, --
-    168355, --
-    169313, --
-    168348, --
-    168336, --
-    168360, --
-    168388, --
-    168382, --
-    168375, --
-    168378, --
-    168380, --
-    168381, --
-    168372, --
-    168374, --
-    169694, --
+    168475, --Bulwark of the Seaborn Avatar
+    168478, --Monstrosity's Shipbreaker
+    168355, --Servitor's Heartguard
+    169313, --Phial of the Arcane Tempest
+    168348, --Shoulderpads of Frothing Rage
+    168336, --Handmaiden's Cowl of Sacrifice
+    168360, --Warhelm of Dread Waters
+    168388, --Storm-Tempered Girdle
+    168382, --Arcanamental Bindings
+    168375, --Gloves of Unshackled Arcana
+    168378, --Leggings of the Stormborn
+    168380, --Ancient Tempest Striders
+    168381, --Grips of the Scaled Arcanist
+    168372, --Sea Sculptor's Cuffs
+    168374, --Belt of Blind Devotion
+    169694, --Aqueous Reliquary
   }
   self:RegisterBossLoot(EP, lootTable, bossName)
 
@@ -107,20 +107,20 @@ function EternalPalace:OnEnable()
   -----------------------------------
   local bossName = EJ_GetEncounterInfo(2354)
   local lootTable = {
-    168354, --
-    168870, --
-    168877, --
-    168347, --
-    169311, --
-    169310, --
-    168904, --
-    168883, --
-    168367, --
-    168335, --
-    169305, --
-    168876, --
-    168889, --
-    169358, --
+    168354, --Shoulderguards of Crushing Depths
+    168870, --Tanglekelp Waistwrap
+    168877, --Coralshell Warboots
+    168347, --Helm of Hideous Transformation
+    169311, --Ashvane's Razor Coral
+    169310, --Bloodthirsty Urchin
+    168904, --Current-Weaver's Gavel
+    168883, --Cultured Pearl Armbands
+    168367, --Barnacle-Crusted Breastplate
+    168335, --Robes of Sunken Nobility
+    169305, --Aquipotent Nautilus
+    168876, --Priscilla's Fishnets
+    168889, --Boralus Noble's Seal
+    169358, --Lightless Ambusher
   }
   self:RegisterBossLoot(EP, lootTable, bossName)
 
@@ -130,21 +130,21 @@ function EternalPalace:OnEnable()
   -----------------------------------
   local bossName = EJ_GetEncounterInfo(2351)
   local lootTable = {
-    168346, --
-    168872, --
-    168274, --
-    168893, --
-    169309, --
-    168476, --
-    168339, --
-    169319, --
-    168899, --
-    168365, --
-    168604, --
-    168897, --
-    168894, --
-    168352, --
-    168875, --
+    168346, --Tidal Drifter's Shoulders
+    168872, --Cephalopod's Sash
+    168274, --Aqua-Pulse Trident
+    168893, --Hatchery Scraper
+    169309, --Zoatroid Egg Sac
+    168476, --Great Reef Barrier
+    168339, --Incubator's Bellcap
+    169319, --Dribbling Inkpod
+    168899, --Orgozoa's Paralytic Barb
+    168365, --Greathelm of the Tender
+    168604, --Drape of the Hatcher
+    168897, --Tentacle Crusher
+    168894, --Squidhunter Speargun
+    168352, --Scalemail of Unnatural Selection
+    168875, --Formcrafter's Pants
   }
   self:RegisterBossLoot(EP, lootTable, bossName)
 
@@ -154,19 +154,20 @@ function EternalPalace:OnEnable()
   -----------------------------------
   local bossName = EJ_GetEncounterInfo(2359)
   local lootTable = {
-    168892, --
-    168898, --
-    168896, --
-    168357, --
-    168338, --
-    168364, --
-    168350, --
-    168881, --
-    168886, --
-    168879, --
-    168890, --
-    169316, --
-    169315, --
+    168892, --Court Dagger of Sentencing
+    168898, --Pashmar's Finial
+    168896, --Stormtamer's Orb
+    168357, --Silivaz's Skullguard
+    168338, --Amice of the Reef Witch
+    168364, --Pauldrons of Fanatical Might
+    168350, --Tunic of the Sycophant
+    168881, --Naga Executor's Armguards
+    168886, --Hands of the Fanatic
+    168879, --Ardent Worshipper's Boots
+    168890, --Ring of the Highborne Courtier
+    169316, --Deferred Sentence
+    169315, --Edicts of the Faithless
+    169694, --Aqueous Reliquary
   }
   self:RegisterBossLoot(EP, lootTable, bossName)
 
@@ -176,20 +177,20 @@ function EternalPalace:OnEnable()
   -----------------------------------
   local bossName = EJ_GetEncounterInfo(2349)
   local lootTable = {
-    169307, --
-    168363, --
-    168337, --
-    168902, --
-    168884, --
-    169308, --
-    168301, --
-    169306, --
-    168391, --
-    169588, --
-    168882, --
-    168349, --
-    169362, --
-    168868, --
+    169307, --Vision of Demise
+    168363, --Dark Passenger's Breastplate
+    168337, --Vestments of Creeping Terror
+    168902, --Dream's End
+    168884, --Bindings of the Herald
+    169308, --Chain of Suffering
+    168301, --Sever, Edge of Madness
+    169306, --Za'qul's Portal Key
+    168391, --Cloak of Ill Tidings
+    169588, --Gardbrace of Fractured Reality
+    168882, --Shackles of Dissonance
+    168349, --Shroud of Unmooring Whispers
+    169362, --Nameless Octopode
+    168868, --Pauldrons of Za'qul
   }
   self:RegisterBossLoot(EP, lootTable, bossName)
 
@@ -199,22 +200,22 @@ function EternalPalace:OnEnable()
   -----------------------------------
   local bossName = EJ_GetEncounterInfo(2361)
   local lootTable = {
-    168874, --
-    168891, --
-    168888, --
-    168869, --
-    168887, --
-    168275, --
-    168880, --
-    168878, --
-    168873, --
-    168871, --
-    169314, --
-    169694, --
-    169348, --
-    168857, --
-    168538, --
-    168944, --
+    168874, --Cherished Empress's Leggings
+    168891, --Cursed Lover's Ring
+    168888, --Handguards of the Highest-Born
+    168869, --Eternity Keeper's Greatbelt
+    168887, --Gloves of Incomparable Beauty
+    168275, --Anu-Azshara, Staff of the Eternal
+    168880, --Slippers of the Sorceress-Queen
+    168878, --Vethan's Icewalkers
+    168873, --Tide Goddess's Wargreaves
+    168871, --Beloved Monarch's Waistwrap
+    169314, --Azshara's Font of Power
+    169694, --Aqueous Reliquary
+    169348, --Zanj'ir Poker
+    168857, --Sparkling Elemental Heart
+    168538, --Dazzling Azerite Formation
+    168944, --Web of Unbridled Vitality
   }
   self:RegisterBossLoot(EP, lootTable, bossName)
 
@@ -225,19 +226,19 @@ function EternalPalace:OnEnable()
   local bossName = L["Trash Loot"]
   local lootTable = {
     ----Cloak----
-    168602, --
+    168602, --Cloak of Blessed Depths
     ----Cloth----
-    169930, --
-    169929, --
+    169930, --Handwraps of Unhindered Resonance
+    169929, --Cuffs of Soothing Currents
     ----Leather----
-    169932, --
-    169931, --
+    169932, --Brineweaver Guardian's Gloves
+    169931, --Skulker's Blackwater Bands
     ----Mail----
-    169934, --
-    169933, --
+    169934, --Deepcrawler's Handguards
+    169933, --Abyssal Bubbler's Bracers
     ----Plate----
-    169936, --
-    169935, --
+    169936, --Gauntlets of Crashing Tides
+    169935, --Brutish Myrmidon's Vambraces
   }
   self:RegisterBossLoot(EP, lootTable, bossName)
 end
