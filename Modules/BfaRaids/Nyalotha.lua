@@ -8,10 +8,10 @@ function Nyalotha:OnEnable()
   self:RegisterRaidTier("Battle for Azeroth", 80300, nyalothaName, PLAYER_DIFFICULTY3, PLAYER_DIFFICULTY1, PLAYER_DIFFICULTY2, PLAYER_DIFFICULTY6)
   self:RegisterRaidInstance(80300, NYA, nyalothaName, {
     bonusids = {
-      [1] = {3524},
-      [2] = {3524},
-      [3] = {3524},
-      [4] = {3524},
+      [1] = {4825, 1472},
+      [2] = {4822, 1487},
+      [3] = {4823, 1502},
+      [4] = {4824, 1517},
     },
     difficultyconversion = {
       [1] = 4, --Raid LFR

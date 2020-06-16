@@ -8,10 +8,10 @@ function Crucible:OnEnable()
   self:RegisterRaidTier("Battle for Azeroth", 80101, crucibleName, PLAYER_DIFFICULTY3, PLAYER_DIFFICULTY1, PLAYER_DIFFICULTY2, PLAYER_DIFFICULTY6)
   self:RegisterRaidInstance(80101, COS, crucibleName, {
     bonusids = {
-      [1] = {3524},
-      [2] = {3524},
-      [3] = {3524},
-      [4] = {3524},
+      [1] = {4801, 1497},
+      [2] = {4798, 1512},
+      [3] = {4799, 1527},
+      [4] = {4800, 1542},
     },
     difficultyconversion = {
       [1] = 4, --Raid LFR

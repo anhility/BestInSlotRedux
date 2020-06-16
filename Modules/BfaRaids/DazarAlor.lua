@@ -14,10 +14,10 @@ function DazarAlor:OnEnable()
   self:RegisterRaidTier("Battle for Azeroth", 80100, name, PLAYER_DIFFICULTY3, PLAYER_DIFFICULTY1, PLAYER_DIFFICULTY2, PLAYER_DIFFICULTY6)
   self:RegisterRaidInstance(80100, BOD, name, {
     bonusids = {
-      [1] = {3524},
-      [2] = {3524},
-      [3] = {3524},
-      [4] = {3524},
+      [1] = {4801, 1492},
+      [2] = {4798, 1507},
+      [3] = {4799, 1522},
+      [4] = {4800, 1537},
     },
     difficultyconversion = {
       [1] = 4, --Raid LFR

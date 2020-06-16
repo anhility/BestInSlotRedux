@@ -2,9 +2,9 @@ local Dungeons = LibStub("AceAddon-3.0"):GetAddon("BestInSlotRedux"):NewModule("
 local dungeonTierId = 80000
 local bonusIds = {
   bonusids = {
-    [1] = {3524},
-    [2] = {3524},
-    [3] = {3524},
+    [1] = {4785, 4777, 1572},
+    [2] = {4785, 4778, 1587},
+    [3] = {4786, 4779, 1602},
     [4] = {4786, 6536, 1637}
   },
   difficultyconversion = {
@@ -255,10 +255,11 @@ function Dungeons:Mechagon()
   local name = C_Map.GetMapInfo(1490).name
   self:RegisterRaidInstance(dungeonTierId, mechagon, name, {
     bonusids = {
-      [1] = {3524},
-      [2] = {3524},
-      [3] = {3524},
-      [4] = {4786, 6536, 1522} --Different itemlevel bonusid, due to mechagon items starting at a higher itemlevel.
+      --Subtract 115 from itemlevel bonusid, mechagon items start at a higher itemlevel.
+      [1] = {4785, 4777, 1572-115},
+      [2] = {4785, 4778, 1587-115},
+      [3] = {4786, 4779, 1602-115},
+      [4] = {4786, 6536, 1637-115}
     },
     difficultyconversion = bonusIds.difficultyconversion
   })
