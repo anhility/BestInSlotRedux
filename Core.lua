@@ -228,7 +228,7 @@ BestInSlot.invSlots = {
   [17] = {"INVTYPE_WEAPONOFFHAND", "INVTYPE_SHIELD", "INVTYPE_WEAPON", "INVTYPE_HOLDABLE"},
   --[18] = {"INVTYPE_RANGED", "INVTYPE_THROWN", "INVTYPE_RANGEDRIGHT", "INVTYPE_RELIC"}
 }
-BestInSlot.dualWield = {250, 251, 252, 268, 269, 259, 260, 261, 263, 71, 72}
+BestInSlot.dualWield = {251, 577, 581, 269, 259, 260, 261, 263, 72}
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
 -- MODULE REGISTRATION
@@ -826,9 +826,6 @@ end
 function BestInSlot:GetPersonalizedLootTableBySlot(raidTier, slotId, difficulty, specializationId, lowerRaidTiers, uniquenessSpec)
   local specRole, class = select(6, GetSpecializationInfoByID(specializationId))
   uniquenessSpec = uniquenessSpec or specializationId
-  if specializationId == 261 then --Subtlety Rogues
-    return self:GetPersonalizedLootTableBySlot(raidTier, slotId, difficulty, 260, lowerRaidTiers, 261) --Return table for combat rogues. Non-Daggers can be used by sub aswell
-  end
   if specializationId == 72 and slotId == 17 then --Fury warriors can wield everything in their offhand
     return self:GetPersonalizedLootTableBySlot(raidTier, 16, difficulty, specializationId, lowerRaidTiers) --return main hand loot list instead
   end
@@ -880,33 +877,6 @@ function BestInSlot:GetPersonalizedLootTableBySlot(raidTier, slotId, difficulty,
     end
     if not canUse then
       items[id] = nil
-    end
-  end
-  local addSpec
-  if specializationId == 73 then --Prot warriors
-    addSpec = 71 --Arms
-  elseif specializationId == 104 then --Guardian Druid
-    addSpec = 103 --Feral Druid
-  elseif specializationId == 66 then --Prot Pally
-    addSpec = 70 --Ret Pally
-  elseif specializationId == 250 then --Blood DK
-    addSpec = 252 --Unholy DK
-  elseif specializationId == 268 then --Brewmaster Monk
-    addSpec = 269 --Windwalker Monk
-  elseif specializationId == 105 then --Resto Druid
-    addSpec = 102 --Balance Druid
-  elseif specializationId == 264 then --Resto Shaman
-    addSpec = 262 --Elemental Shaman
-  elseif specializationId == 257 or specializationId == 256 then --Both Healing Priests
-    addSpec = 258 --Shadow Priest
-  end
-  --ToDo Implement fix for paladin
-  if addSpec then
-    local dpsItems = self:GetPersonalizedLootTableBySlot(raidTier, slotId, difficulty, addSpec, lowerRaidTiers, specializationId)
-    for itemid, item in pairs(dpsItems) do
-      if not items[itemid] then
-        items[itemid] = item
-      end
     end
   end
   return items
