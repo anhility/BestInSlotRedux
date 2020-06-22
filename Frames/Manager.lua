@@ -96,37 +96,36 @@ end
 local function selectItemLabelOnClick(widget, _, key)
   if not IsControlKeyDown() and not IsShiftKeyDown() then
     local itemid = widget:GetUserData("itemid")
-    if itemid then
-      local itemGroup = itemGroups[itemSelectionMode[1]]
-      if itemSelectionMode[2] and key == "RightButton" then
-        itemGroup = itemGroups[itemSelectionMode[2]]
-      end
-      local difficulty = widget:GetUserData("difficulty") or Manager:GetSelected(Manager.DIFFICULTY)
-      local list, spec = Manager:GetSelected(Manager.SPECIALIZATION)
-      local item = Manager:GetItem(itemid, difficulty)
-      local raidTier = Manager:GetSelected(Manager.RAIDTIER)
-      local slotid = itemGroup:GetUserData("slotid")
-      Manager:SetItemBestInSlot(raidTier, difficulty, list, slotid, itemid)
-      local icon = itemGroup:GetUserData("icon")
-      local oldItemId = icon:GetUserData("itemid")
-      if item then
-        itemGroup:GetUserData("label"):SetText(item.link)
-        icon:SetImage(GetItemIcon(itemid))
-        icon:SetUserData("itemid", itemid)
-        icon:SetUserData("itemlink", item.link)
-      else
-        icon:SetUserData("itemid", nil)
-        icon:SetUserData("itemlink", nil)
-        icon:SetImage(unpack(itemGroup:GetUserData("defaultTexture")))
-        itemGroup:GetUserData("label"):SetText("")
-      end
-      if itemSelectionMode[1] == 15 then
-        if select(2, Manager:GetSelected(Manager.SPECIALIZATION)) ~= 72 then --Don't disable for fury warriors
+    local itemGroup = itemGroups[itemSelectionMode[1]]
+    if itemSelectionMode[2] and key == "RightButton" then
+      itemGroup = itemGroups[itemSelectionMode[2]]
+    end
+    local difficulty = widget:GetUserData("difficulty") or Manager:GetSelected(Manager.DIFFICULTY)
+    local list, spec = Manager:GetSelected(Manager.SPECIALIZATION)
+    local item = Manager:GetItem(itemid, difficulty)
+    local raidTier = Manager:GetSelected(Manager.RAIDTIER)
+    local slotid = itemGroup:GetUserData("slotid")
+    Manager:SetItemBestInSlot(raidTier, difficulty, list, slotid, itemid)
+    local icon = itemGroup:GetUserData("icon")
+    local oldItemId = icon:GetUserData("itemid")
+    if item then
+      itemGroup:GetUserData("label"):SetText(item.link)
+      icon:SetImage(GetItemIcon(item.itemid))
+      icon:SetUserData("itemid", item.itemid)
+      icon:SetUserData("itemlink", item.link)
+    else
+      itemGroup:GetUserData("label"):SetText("")
+      icon:SetImage(unpack(itemGroup:GetUserData("defaultTexture")))
+      icon:SetUserData("itemid", nil)
+      icon:SetUserData("itemlink", nil)
+    end
+    if item and itemSelectionMode[1] == 15 then
+      if select(2, Manager:GetSelected(Manager.SPECIALIZATION)) ~= 72 then --Don't disable for fury warriors
         local offhandGroup = itemGroups[16]
         local offhandIcon = offhandGroup:GetUserData("icon")
         local offhandLabel = offhandGroup:GetUserData("label")
         local offhandButton = offhandGroup:GetUserData("button")
-        local subclass = select(7, GetItemInfo(itemid))
+        local subclass = select(7, GetItemInfo(item.itemid))
         if item and (item.equipSlot == "INVTYPE_2HWEAPON" or item.equipSlot == "INVTYPE_RANGED" or (item.equipSlot == "INVTYPE_RANGEDRIGHT" and subclass ~= BabbleInventory.Wands)) then
           offhandIcon:SetUserData("disabled", true)
           offhandIcon:SetImage(unpack(offhandGroup:GetUserData("defaultTexture")))
@@ -137,18 +136,17 @@ local function selectItemLabelOnClick(widget, _, key)
           offhandIcon:SetUserData("disabled", false)
           offhandButton:SetDisabled(false)
         end
-        end
       end
-      local uniqueness, oldUniqueness
-      if item then
-        uniqueness = GetItemUniqueness(item.itemid)
-      end
-      if oldItemId then
-        oldUniqueness = GetItemUniqueness(oldItemId)
-      end
-      if uniqueness or oldUniqueness then
-        Manager:FillSelectContainer(itemGroups[itemSelectionMode[1]], raidTier, difficulty, slotid)
-      end
+    end
+    local uniqueness, oldUniqueness
+    if item then
+      uniqueness = GetItemUniqueness(item.itemid)
+    end
+    if oldItemId then
+      oldUniqueness = GetItemUniqueness(oldItemId)
+    end
+    if uniqueness or oldUniqueness then
+      Manager:FillSelectContainer(itemGroups[itemSelectionMode[1]], raidTier, difficulty, slotid)
     end
   end
 end
