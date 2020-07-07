@@ -836,7 +836,7 @@ function BestInSlot:GetPersonalizedLootTableBySlot(raidTier, slotId, difficulty,
   end
   for id, item in pairs(items) do
     local canUse
-    local statFilter = GetItemSpecInfo(item.itemid)
+    local specFilter = GetItemSpecInfo(item.itemid)
     if item.exceptions then
       local checks = {specRole, class}
       for i, check in pairs({"role", "class"}) do
@@ -847,18 +847,18 @@ function BestInSlot:GetPersonalizedLootTableBySlot(raidTier, slotId, difficulty,
         end
       end
     end
-    if statFilter then
-      if #statFilter == 0 then --There is no itemspecinfo available for this item, normally the table should be nil
+    if specFilter then
+      if #specFilter == 0 then --There is no itemspecinfo available for this item, normally the table should be nil
         if raidTier > 70000 and (slotId == 2 or slotId == 11 or slotId == 12) and item.misc ~= LOOT_JOURNAL_LEGENDARIES then
           canUse = true
         else
           canUse = item.customitem ~= nil
         end
       else
-        canUse = tContains(statFilter, specializationId)
+        canUse = tContains(specFilter, specializationId)
       end
     else
-      canUse = false
+      canUse = true
     end
     if canUse and tContains(data.raidTiers[raidTier].instances, item.dungeon) then --check item uniqueness
       local family, count = GetItemUniqueness(item.itemid)
