@@ -16,4 +16,5 @@ Utils\ExportRaid.lua
 Utils\ItemInfo.lua
 Modules\BisLink.lua
 Modules\PreviewWindow.lua
+Modules\SLDungeons\Dungeons.lua
 #@end-do-not-package@
