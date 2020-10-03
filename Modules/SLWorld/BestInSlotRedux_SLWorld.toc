@@ -1,0 +1,8 @@
+## Interface: 90001
+## Title: Best In Slot Redux [|cffff975bShadowlands World|r]
+## Notes: Shadowlands World Module for BestInSlotRedux
+## Author: Beleria @ Argent Dawn-EU, Anhility @ Ravencrest-EU, Sar\195\173th @ Tarren Mill-EU
+## Version: @project-version@
+## Dependencies: BestInSlotRedux
+
+World.lua

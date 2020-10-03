@@ -18,4 +18,5 @@ Modules\BisLink.lua
 Modules\PreviewWindow.lua
 Modules\SLRaids\CastleNathria.lua
 Modules\SLDungeons\Dungeons.lua
+Modules\SLWorld\World.lua
 #@end-do-not-package@
