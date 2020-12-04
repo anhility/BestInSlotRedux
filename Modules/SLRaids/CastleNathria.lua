@@ -26,6 +26,90 @@ function CastleNathria:OnEnable()
 
 
   -----------------------------------
+  ----- Tier Tokens
+  -----------------------------------
+  local tokenTable = {
+    [16] = {
+      -- Huntsman Altimor
+      [183892] = {
+        HUNTER,
+        MAGE,
+        DRUID
+      },
+      -- Sun King's Salvation
+      [183893] = {
+        DEATHKNIGHT,
+        WARLOCK,
+        DEMONHUNTER,
+      },
+      -- Hungering Destroyer
+      [183891] = {
+        PALADIN,
+        PRIEST,
+        SHAMAN,
+      },
+      -- The Council of Blood
+      [183890] = {
+        MONK,
+        WARRIOR,
+        ROGUE,
+      },
+      -- Sire Denathruis
+      [183896] = {
+        DEATHKNIGHT,
+        WARLOCK,
+        DEMONHUNTER,
+      },
+      [183897] = {
+        HUNTER,
+        MAGE,
+        DRUID,
+      },
+      [183898] = {
+        PALADIN,
+        PRIEST,
+        SHAMAN,
+      },
+      [183899] = {
+        MONK,
+        WARRIOR,
+        ROGUE,
+      },
+    },
+    [17] = {
+      -- Artificer Xy'mox
+      [183888] = {
+        PALADIN,
+        MONK,
+        WARRIOR,
+        PRIEST,
+      },
+      -- Lady Inerva Darkvein
+      [183889] = {
+        SHAMAN,
+        MAGE,
+        WARLOCK,
+        DRUID,
+      },
+      -- Stone Legion Generals
+      [183895] = {
+        PALADIN,
+        MONK,
+        WARRIOR,
+        PRIEST,
+      },
+      [183894] = {
+        SHAMAN,
+        MAGE,
+        WARLOCK,
+        DRUID,
+      },
+    },
+  }
+  self:RegisterTierTokens(90002, tokenTable)
+
+
+  -----------------------------------
   ----- Shriekwing
   -----------------------------------
   local bossName = EJ_GetEncounterInfo(2393)
@@ -70,7 +154,7 @@ function CastleNathria:OnEnable()
     182995, --
     184017, --
   }
-  self:RegisterBossLoot(CN, lootTable, bossName)
+  self:RegisterBossLoot(CN, lootTable, bossName, 16)
 
 
   -----------------------------------
@@ -97,7 +181,7 @@ function CastleNathria:OnEnable()
     184018, --
     184020, --
   }
-  self:RegisterBossLoot(CN, lootTable, bossName)
+  self:RegisterBossLoot(CN, lootTable, bossName, 16)
 
 
   -----------------------------------
@@ -124,7 +208,7 @@ function CastleNathria:OnEnable()
     183038, --
     184021, --
   }
-  self:RegisterBossLoot(CN, lootTable, bossName)
+  self:RegisterBossLoot(CN, lootTable, bossName, 17)
 
 
   -----------------------------------
@@ -151,7 +235,7 @@ function CastleNathria:OnEnable()
     184022, --
     184023, --
   }
-  self:RegisterBossLoot(CN, lootTable, bossName)
+  self:RegisterBossLoot(CN, lootTable, bossName, 16)
 
 
   -----------------------------------
@@ -182,7 +266,7 @@ function CastleNathria:OnEnable()
     183037, --
     184025, --
   }
-  self:RegisterBossLoot(CN, lootTable, bossName)
+  self:RegisterBossLoot(CN, lootTable, bossName, 17)
 
 
   -----------------------------------
@@ -215,7 +299,7 @@ function CastleNathria:OnEnable()
     182983, --
     184024, --
   }
-  self:RegisterBossLoot(CN, lootTable, bossName)
+  self:RegisterBossLoot(CN, lootTable, bossName, 16)
 
 
   -----------------------------------
@@ -291,7 +375,7 @@ function CastleNathria:OnEnable()
     183002, --
     184027, --
   }
-  self:RegisterBossLoot(CN, lootTable, bossName)
+  self:RegisterBossLoot(CN, lootTable, bossName, 17)
 
 
   -----------------------------------
@@ -335,7 +419,7 @@ function CastleNathria:OnEnable()
     184029, --
     184031, --
   }
-  self:RegisterBossLoot(CN, lootTable, bossName)
+  self:RegisterBossLoot(CN, lootTable, bossName, 16)
 
 
   -----------------------------------
