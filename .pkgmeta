@@ -30,9 +30,9 @@ ignore:
     - Utils
 
 move-folders:
-    BestInSlotRedux/Modules/BfaRaids: BestInSlotRedux_BfaRaids
-    BestInSlotRedux/Modules/BfaDungeons: BestInSlotRedux_BfaDungeons
-    BestInSlotRedux/Modules/BfaWorld: BestInSlotRedux_BfaWorld
+    BestInSlotRedux/Modules/SLRaids: BestInSlotRedux_SLRaids
+    BestInSlotRedux/Modules/SLDungeons: BestInSlotRedux_SLDungeons
+    BestInSlotRedux/Modules/SLWorld: BestInSlotRedux_SLWorld
 
 license-output: LICENSE.html
 
